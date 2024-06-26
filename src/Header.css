@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+header {
+    display: flex;
+    flex-direction: row;
+    padding: 0vh 4em;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+header div {
+    display: flex;
+    width: 60vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    width: 10vw;
+}
+
+a, button {
+    text-decoration: none;
+    color: black;
+    font-family: "Arvo", serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Add a transition for smooth scaling */
+}
+
+button {
+    border: none;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+a:hover {
+    transform: scale(1.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+#demo {
+    background-color: rgb(0, 31, 117);
+    color: white;
+}
+
+#cliente {
+    background-color: grey;
+}
