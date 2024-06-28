@@ -18,7 +18,7 @@ function App() {
       <main>
         <div id='page1'>
           <img src="https://cedoc.com/uploads/2024/02/macbookapp.png" alt="" />
-          <div>
+          <div id='title-actions'>
             <div id='titles'>
               <h1>Inove a gestão da informação da sua empresa</h1>
               <p>Armazenamento de Documentos Físicos, Desenvolvimento de Softwares, Digitalização, consultoria em processos</p>

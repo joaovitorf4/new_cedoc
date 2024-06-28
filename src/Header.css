@@ -3,13 +3,13 @@
 header {
     display: flex;
     flex-direction: row;
-    padding: 0vh 4em;
+    padding: 0vh 4vw;
     justify-content: space-between;
     align-items: center;
     height: 10vh;
 }
 
-header div {
+header ul {
     display: flex;
     width: 60vw;
     flex-direction: row;
@@ -21,7 +21,7 @@ img {
     width: 26vh;
 }
 
-a, button {
+a, button, li {
     text-decoration: none;
     color: black;
     font-family: "Arvo", serif;
@@ -36,7 +36,7 @@ button {
     border-radius: .5em;
 }
 
-a:hover {
+li:hover {
     transform: scale(1.1);
 }
 
@@ -53,3 +53,89 @@ button:hover {
 #cliente {
     background-color: grey;
 }
+
+ul li {
+    list-style: none;
+}
+/* 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  img {
+    max-width: 100px; 
+    height: auto;
+  }
+  
+  
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu li a,
+  .menu li button {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block; 
+  }
+  
+  .menu li a:hover,
+  .menu li button:hover {
+    background-color: #555;
+  } */
+
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle > svg {
+    width: 5vh;
+    height: 5vh;
+  }
+  
+  @media (max-aspect-ratio: 1.5 / 1) {
+    .menu {
+      height: 30vh;
+      padding: 2vh 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #bdbdbd;
+      display: none;
+    }
+  
+    .menu.active {
+      display: flex;
+      position: absolute;
+      top: 10vh;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
