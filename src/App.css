@@ -8,33 +8,116 @@
 
 main {
   display: flex;
-  height: 90vh;
+  /* height: 90vh; */
+  height: 100%;
   background-color: rgb(202, 202, 202);
   padding: 2vw 2vw;
   flex-direction: column;
-  gap: 3em;
 }
 
 h1 {
-  font-size: 4vw;
-  max-width: 50vw;
+  font-size: 5vw;
+  max-width: 60vw;
   font-family: "Arvo", serif;
   font-weight: 100;
 }
 
 p {
   font-family: 'Courier Prime', Courier, monospace;
-  font-size: 1vw;
+  font-size: 1.5vw;
+  max-width: 50vw;
+
 }
 
 #titles {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  margin-bottom: 2em;
 }
 
 #button-actions {
   display: flex;
   flex-direction: row;
   gap: 2em;
+}
+
+#button-actions button {
+  width: 50%;
+  height: 8vh;
+  font-size: 1.5em;
+}
+
+#page1 {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  min-height: 90vh;
+  align-items: flex-start;
+  padding-top: 12vh;
+}
+
+#page2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+#page1 img {
+  width: 40vw;
+  object-fit: contain;
+}
+
+.logos-carousel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2vw;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 1em 2em;
+  border-radius: 1em;
+  height: 8vw;
+  width: 16vw;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.logo-item:hover{
+  transform: scale(1.05);
+}
+
+.logos-carousel img {
+  height: 5vw;
+  width: 10vw;
+}
+
+.logo-link:hover {
+  transform: scale(1.0);
+}
+
+
+:root {
+  --scrollbar-track-color: #f0f0f0;
+  --scrollbar-thumb-color: rgb(0, 31, 117);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
 }
