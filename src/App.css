@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: "Euclid";
+  src: url('./fonts/Euclid_Circular_B_Light.ttf');
+}
 
 * {
   margin: 0;
@@ -18,8 +22,7 @@ main {
 h1 {
   font-size: 5vw;
   max-width: 60vw;
-  font-family: "Arvo", serif;
-  font-weight: 100;
+  font-family: "Euclid";
 }
 
 p {
@@ -43,7 +46,7 @@ p {
 }
 
 #button-actions button {
-  width: 50%;
+  width: 40%;
   height: 8vh;
   font-size: 1.5em;
   display: flex;
@@ -66,6 +69,10 @@ p {
   gap: 4em;
 }
 
+#page2 h1 {
+  max-width: 90vw;
+}
+
 #page1 img {
   width: 40vw;
   object-fit: contain;
@@ -74,9 +81,10 @@ p {
 .logos-carousel {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   gap: 2vw;
 }
 
@@ -87,8 +95,8 @@ p {
   background-color: white;
   padding: 1em 2em;
   border-radius: 1em;
-  height: 8vw;
-  width: 16vw;
+  height: 150px;
+  width: 250px;
   transition: transform 0.2s ease;
   cursor: pointer;
 }
@@ -98,8 +106,8 @@ p {
 }
 
 .logos-carousel img {
-  height: 5vw;
-  width: 10vw;
+  height: 100%;
+  width: 100%;
 }
 
 .logo-link:hover {
@@ -126,25 +134,41 @@ p {
 }
 
 @media (max-aspect-ratio: 1.25/1) {
+
+  main {
+    gap: 2em;
+    padding-bottom: 2em;
+  }
   
   #page1 {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  #titles {
+  #page2 {
     align-items: center;
   }
 
-  #page1 h1 {
+  #titles {
+    align-items: center;
+    width: 100%;
+  }
+
+  #page1 img {
+    width: 80vw;
+    object-fit: contain;
+  }
+
+  #page1 h1, #page2 h1 {
     text-align: center;
-    font-size: 8vw;
+    font-size: 2.5em;
+    max-width: 100vw;
   }
 
   #page1 p {
     text-align: center;
     font-size: 4vw;
+    max-width: 80vw;
   }
 
   #page1 #title-actions {
@@ -158,5 +182,31 @@ p {
     align-items: center;
     flex-direction: column;
     gap: 2em;
+  }
+
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 1em 2em;
+    border-radius: 1em;
+    height: 24vw;
+    width: 40vw;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  #button-actions button {
+    width: 75%;
+    height: 8vh;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logos-carousel {
+    gap: 4vw;
   }
 }
