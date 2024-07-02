@@ -12,7 +12,6 @@
 
 main {
   display: flex;
-  /* height: 90vh; */
   height: 100%;
   background-color: rgb(202, 202, 202);
   padding: 2vw 2vw;
@@ -37,6 +36,10 @@ p {
   flex-direction: column;
   gap: 2em;
   margin-bottom: 2em;
+}
+
+#titles p {
+  color: black;
 }
 
 #button-actions {
@@ -108,6 +111,15 @@ p {
 .logos-carousel img {
   height: 100%;
   width: 100%;
+}
+
+.logos-carousel .logo-item {
+  filter: grayscale(100%);
+  transition: all .2s ease-in;
+}
+
+.logos-carousel .logo-item:hover {
+  filter: grayscale(0%);
 }
 
 .logo-link:hover {

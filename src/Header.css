@@ -44,7 +44,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-
 #demo {
     background-color: rgb(0, 31, 117);
     color: white;
@@ -57,85 +56,41 @@ button:hover {
 ul li {
     list-style: none;
 }
-/* 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle > svg {
+  width: 5vh;
+  height: 5vh;
+}
   
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  img {
-    max-width: 100px; 
-    height: auto;
-  }
-  
-  
-  
+@media (max-aspect-ratio: 1.5 / 1) {
   .menu {
-    list-style-type: none;
-    padding: 0;
+    height: 30vh;
+    padding: 2vh 0px;
     display: flex;
-  }
-  
-  .menu li {
-    margin-right: 20px;
-  }
-  
-  .menu li a,
-  .menu li button {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    display: block; 
-  }
-  
-  .menu li a:hover,
-  .menu li button:hover {
-    background-color: #555;
-  } */
-
-  .menu-toggle {
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #bdbdbd;  
     display: none;
-    cursor: pointer;
-  }
-
-  .menu-toggle > svg {
-    width: 5vh;
-    height: 5vh;
   }
   
-  @media (max-aspect-ratio: 1.5 / 1) {
-    .menu {
-      height: 30vh;
-      padding: 2vh 0px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #bdbdbd;
-      display: none;
-    }
-  
-    .menu.active {
-      display: flex;
-      position: absolute;
-      top: 10vh;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
+  .menu.active {
+    display: flex;
+    position: absolute;
+    top: 10vh;
+    min-width: 100%;
   }
+  
+  .menu-toggle {
+    display: block;
+  }
+}
   
