@@ -46,23 +46,23 @@ ul {
 }
 
 #location {
-  background-image: url('./imgs/geo-alt-fill.svg'); /* Replace 'location-icon.png' with your image path */
+  background-image: url('./imgs/geo-alt-fill.svg');
   background-repeat: no-repeat;
-  padding-left: 20px; /* Adjust padding as needed */
+  padding-left: 20px;
 }
 
 #email {
-  background-image: url('./imgs/envelope-fill.svg'); /* Replace 'email-icon.png' with your image path */
+  background-image: url('./imgs/envelope-fill.svg');
   background-repeat: no-repeat;
   background-position: left center;
-  padding-left: 20px; /* Adjust padding as needed */
+  padding-left: 20px;
 }
 
 #number {
-  background-image: url('./imgs/telephone-fill.svg'); /* Replace 'phone-icon.png' with your image path */
+  background-image: url('./imgs/telephone-fill.svg');
   background-repeat: no-repeat;
   background-position: left center;
-  padding-left: 20px; /* Adjust padding as needed */
+  padding-left: 20px;
 }
 p, li {
   font-size: 1em;
@@ -73,7 +73,7 @@ li {
   font-weight: 100;
 }
 
-li a {
+.li-animation a {
   color: white;
 }
 
