@@ -27,7 +27,7 @@ h1 {
   font-family: "Euclid";
 }
 
-p {
+main p {
   font-family: 'Courier Prime', Courier, monospace;
   font-size: 1.5vw;
   max-width: 50vw;
@@ -165,7 +165,7 @@ h2 {
     text-align: center;
   }
 
-  p {
+  main p {
     font-size: 1em;
   }
 
