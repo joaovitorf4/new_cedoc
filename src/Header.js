@@ -1,30 +1,49 @@
 import './Header.css';
 import logo from './imgs/logo_cedoc.png'
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: '#333',
+  transition: 'transform 0.2s ease-in-out',
+};
+
+const hoverStyle = {
+  transform: 'scale(1.1)', // Corrected usage
+};
 
 function App() {
-    const [menuOpen, setMenuOpen] = useState(false);
-  
-    const toggleMenu = () => {
-      setMenuOpen(!menuOpen);
-    };
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="Header">
       <header>
-        <img src={logo} alt="Logo" />
+        <Link to={"/"} onClick={closeMenu}>
+          <img src={logo} alt="Logo" />
+        </Link>
         <nav>
           <div className="menu-toggle" onClick={toggleMenu}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+              <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
           </div>
           <ul className={`menu ${menuOpen ? 'active' : ''}`}>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">Serviços e Soluções</a></li>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">Clientes</a></li>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">Sobre nós</a></li>
-            <li><a href="http://" target="_blank" rel="noopener noreferrer">Suporte e Contato</a></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/"} onClick={closeMenu}>Home</Link></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/services"} onClick={closeMenu}>Serviços e Soluções</Link></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/clients"} onClick={closeMenu}>Clientes</Link></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/about"} onClick={closeMenu}>Sobre nós</Link></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"} onClick={closeMenu}>Suporte e Contato</Link></li>
             <li><button id="demo">Solicite uma demonstração</button></li>
-            <li><button id="cliente">Área do cliente</button></li>
+            <li><button id="client"><a href="" target='_blank'>Área do cliente</a></button></li>
           </ul>
         </nav>
       </header>

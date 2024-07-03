@@ -1,6 +1,17 @@
 import './Footer.css';
 // import logo from './imgs/logo_cedoc.png'
 // import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: '#ffffff',
+  transition: 'transform 0.2s ease-in-out',
+};
+
+const hoverStyle = {
+  transform: 'scale(1.1)', // Corrected usage
+};
 
 function App() {
   return (
@@ -8,7 +19,7 @@ function App() {
       <footer>
         <div id='footer-content'>
           <section id='first-sec'>
-            <h2>Contato</h2>
+          <Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"}><h2>Contato</h2></Link>
             <ul>
               <li id='location'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</li>
               <li id='email'>atendimento@cedoc.net.br</li>
@@ -18,9 +29,9 @@ function App() {
           <section id='second-sec'>
             <h2>Páginas</h2>
             <ul>
-              <li className='li-animation'><a href="http://" target="_blank" rel="noopener noreferrer">Serviços e Soluções</a></li>
-              <li className='li-animation'><a href="http://" target="_blank" rel="noopener noreferrer">Clientes</a></li>
-              <li className='li-animation'><a href="http://" target="_blank" rel="noopener noreferrer">Sobre nós</a></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/services"}>Serviços e Soluções</Link></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/clients"}>Clientes</Link></li>
+            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/about"}>Sobre nós</Link></li>
             </ul>
           </section>
         </div>
