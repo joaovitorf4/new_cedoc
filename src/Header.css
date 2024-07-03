@@ -17,6 +17,10 @@ header ul {
     align-items: center;
 }
 
+nav {
+  width: 70vw;
+}
+
 img {
     width: 26vh;
 }
@@ -53,7 +57,7 @@ button:hover {
     color: white;
 }
 
-#cliente {
+#client {
     background-color: #ff5000d6;
 }
 
@@ -95,6 +99,10 @@ ul li {
   
   .menu-toggle {
     display: block;
+  }
+
+  nav {
+    width: auto;
   }
 }
   

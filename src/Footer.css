@@ -25,6 +25,11 @@ section {
   padding: 1em 0px;
 }
 
+#first-sec ul li {
+  transform: none;
+  max-width: 80vw;
+}
+
 #copyright {
   display: flex;
   flex-direction: row;
@@ -34,7 +39,7 @@ section {
   border-top: 1px grey solid;
 }
 
-li:hover {
+li a:hover {
   transform: none;
 }
 
@@ -100,7 +105,9 @@ h2 {
   }
 
   #copyright > * {
+    min-width: 80vw;
     text-align: center;
+    font-size: 1em;
   }
 
   section {
