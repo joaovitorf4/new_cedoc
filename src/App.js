@@ -27,7 +27,7 @@ function App() {
             </div>
             <div id='button-actions'>
               <button id='demo'>Solicite uma demonstração</button>
-              <button id='cliente'>Área do cliente</button>
+              <button id='cliente'><a href="https://wa.me/553195704986" target='_blank' rel='noreferrer'>Área do cliente</a></button>
             </div>
           </div>
         </div>
@@ -35,64 +35,64 @@ function App() {
           <h1>Alguns dos nossos clientes</h1>
           <div className='logos-carousel'>
             <div className='logo-item'>
-              <a href="http://www.acosalianca.com.br/" target='_blank' className='logo-link'>
+              <a href="http://www.acosalianca.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_acos_alianca} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://prefeitura.pbh.gov.br/belotur" target='_blank' className='logo-link'>
+              <a href="https://prefeitura.pbh.gov.br/belotur" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_belotur} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://www.bancobmg.com.br/" target='_blank' className='logo-link'>
+              <a href="https://www.bancobmg.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_bmg} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="http://www.cohab.mg.gov.br/" target='_blank' className='logo-link'>
+              <a href="http://www.cohab.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_cohab} alt="" />
               </a>
             </div>
 
             <div className='logo-item'>
-                <a href="https://www.cramg.org.br/" target='_blank' className='logo-link'>
+                <a href="https://www.cramg.org.br/" target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_cra} alt="" />
                 </a>
             </div>
             <div className='logo-item'>
-              <a href="https://transito.mg.gov.br/" target='_blank' className='logo-link'>
+              <a href="https://transito.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_detran_mg} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://portal.fiocruz.br/" target='_blank' className='logo-link'>
+              <a href="https://portal.fiocruz.br/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_fiocruz} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://www.rhimagnesita.com/pt/" target='_blank' className='logo-link'>
+              <a href="https://www.rhimagnesita.com/pt/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_magnesita} alt="" />
               </a>
             </div>
 
             <div className='logo-item'>
-              <a href="https://prefeitura.pbh.gov.br/index.php/hospital-metropolitano-odilon-behrens" target='_blank' className='logo-link'>
+              <a href="https://prefeitura.pbh.gov.br/index.php/hospital-metropolitano-odilon-behrens" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_odilon} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://www.paulwurth.com/" target='_blank' className='logo-link'>
+              <a href="https://www.paulwurth.com/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_paul_wurth} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/spda/" target='_blank' className='logo-link'>
+              <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/spda/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_spda} alt="" />
               </a>
             </div>
             <div className='logo-item'>
-              <a href="https://www.unimed.coop.br/site/" target='_blank' className='logo-link'>
+              <a href="https://www.unimed.coop.br/site/" target='_blank' rel='noreferrer' className='logo-link'>
                 <img src={logo_unimed} alt="" />
               </a>
             </div>
