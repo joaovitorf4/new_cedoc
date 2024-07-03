@@ -21,6 +21,10 @@ img {
     width: 26vh;
 }
 
+ul {
+  min-width: 100%;
+}
+
 a, button, li {
     text-decoration: none;
     color: black;
