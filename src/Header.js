@@ -43,7 +43,7 @@ function App() {
             <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/about"} onClick={closeMenu}>Sobre nós</Link></li>
             <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"} onClick={closeMenu}>Suporte e Contato</Link></li>
             <li><button id="demo">Solicite uma demonstração</button></li>
-            <li><button id="client"><a href="https://wa.me/553195704986" target='_blank' rel='noreferrer'>Área do cliente</a></button></li>
+            <li><button id="client"><a href="tel:553136562040" target='_blank' rel='noreferrer'>Área do cliente</a></button></li>
           </ul>
         </nav>
       </header>

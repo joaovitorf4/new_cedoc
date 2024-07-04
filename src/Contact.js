@@ -36,7 +36,7 @@ function Contact() {
               </svg>
               <h2>Geral</h2>
             </div>
-            <p><a  target='_blank' rel='noreferrer' href="https://wa.me/553136562040">(31) 3656-2040</a></p>
+            <p><a  target='_blank' rel='noreferrer' href="tel:553136562040">(31) 3656-2040</a></p>
           </div>
           <div className="div-contacts">
             <div>
