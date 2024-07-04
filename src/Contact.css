@@ -206,3 +206,9 @@ h2 {
     font-size: 3em;
   }
 }
+
+@media (max-aspect-ratio: 0.4/1) {
+  #main-div-contacts h2 {
+    font-size: 1.5em;
+  }
+}
