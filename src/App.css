@@ -4,6 +4,15 @@
   src: url('./fonts/Euclid_Circular_B_Light.ttf');
 }
 
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey: #808080;
+  --grey2: #CACACA;
+  --darkBlue: #001F75;
+  --lightBlue: #4ea8ed;
+  --orange: #ff5000d6;
+}
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +22,7 @@
 main {
   display: flex;
   height: 100%;
-  background-color: rgb(202, 202, 202);
+  background-color: var(--grey2);
   padding: 2vw 2vw;
   flex-direction: column;
 }
@@ -49,7 +58,7 @@ p {
 }
 
 #cliente {
-  background-color: #ff5000d6;
+  background-color: var(--orange);
 }
 
 #button-actions button {
@@ -60,6 +69,8 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+
 
 #page1 {
   display: flex;
@@ -99,7 +110,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--white);
   padding: 1em 2em;
   border-radius: 1em;
   height: 150px;
@@ -110,6 +121,10 @@ p {
 
 .logo-item:hover{
   transform: scale(1.05);
+}
+
+main p:hover {
+  transform: none;
 }
 
 .logos-carousel img {
@@ -132,8 +147,8 @@ p {
 
 
 :root {
-  --scrollbar-track-color: #f0f0f0;
-  --scrollbar-thumb-color: rgb(0, 31, 117);
+  --scrollbar-track-color: var(--white);
+  --scrollbar-thumb-color: var(--darkBlue);
 }
 
 ::-webkit-scrollbar {
@@ -205,7 +220,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--white);
     padding: 1em 2em;
     border-radius: 1em;
     height: 24vw;

@@ -4,6 +4,16 @@
   src: url('./fonts/Euclid_Circular_B_Light.ttf');
 }
 
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey: #808080;
+  --grey2: #CACACA;
+  --darkBlue: #001F75;
+  --lightBlue: #4ea8ed;
+  --orange: #ff5000d6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +23,7 @@
 main {
   display: flex;
   height: 100%;
-  background-color: rgb(202, 202, 202);
+  background-color: var(--grey2);
   padding: 2vw 2vw;
   flex-direction: column;
   gap: 5em;
@@ -27,10 +37,17 @@ h1 {
   font-family: "Euclid";
 }
 
-main p {
+#main-div-contacts p, #main-div-contacts a {
   font-family: 'Courier Prime', Courier, monospace;
   font-size: 1.5vw;
   max-width: 50vw;
+  color: var(--lightBlue);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+#main-div-contacts p:hover {
+  transform: scale(1.025);
 }
 
 #main-div-contacts {
@@ -41,8 +58,8 @@ main p {
   gap: 2em;
 }
 
-#main-div-contacts h2, #main-div-contacts p {
-  color: white;
+#main-div-contacts h2 {
+  color: var(--white);
 }
 
 h2 {
@@ -54,7 +71,7 @@ h2 {
   flex-direction: column;
   width: 30vw;
   gap: 1em;
-  background-color: rgb(0, 31, 117);
+  background-color: var(--darkBlue);
   padding: 2em;
   border-radius: 1.5em;
   min-height: 30vh;
@@ -107,7 +124,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--white);
   padding: 1em 2em;
   border-radius: 1em;
   height: 150px;
@@ -140,8 +157,8 @@ h2 {
 
 
 :root {
-  --scrollbar-track-color: #f0f0f0;
-  --scrollbar-thumb-color: rgb(0, 31, 117);
+  --scrollbar-track-color: var(--white);
+  --scrollbar-thumb-color: var(--darkBlue);
 }
 
 ::-webkit-scrollbar {
@@ -167,15 +184,25 @@ h2 {
 
   main p {
     font-size: 1em;
+    min-width: 100%;
   }
 
   .div-contacts {
     min-width: 60vw;
   }
+
+  #main-div-contacts a {
+    font-size: 2em;
+  }
+
 }
 
 @media (max-aspect-ratio: 0.8/1) {
   .div-contacts {
     min-width: 90vw;
+  }
+
+  #main-div-contacts a {
+    font-size: 3em;
   }
 }

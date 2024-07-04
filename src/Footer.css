@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+:root {
+  --white: #fff;
+  --black: #000;
+  --grey: #808080;
+  --grey2: #CACACA;
+  --darkBlue: #001F75;
+  --lightBlue: #4ea8ed;
+  --orange: #ff5000d6;
+}
+
 h2, p, li {
-  color: white;
+  color: var(--white);
 }
 
 footer {
@@ -9,7 +19,7 @@ footer {
   flex-direction: column;
   width: 100%;
   gap: 1em;
-  background-color: rgb(0, 31, 117);
+  background-color: var(--darkBlue);
 }
 
 section {
@@ -36,7 +46,13 @@ section {
   justify-content: space-around;
   align-items: center;
   padding: 1em 0px;
-  border-top: 1px grey solid;
+  border-top: 1px var(--grey) solid;
+}
+
+footer li a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  color: var(--lightBlue);
 }
 
 li a:hover {
@@ -79,7 +95,7 @@ li {
 }
 
 .li-animation a {
-  color: white;
+  color: var(--white);
 }
 
 .li-animation:hover {
