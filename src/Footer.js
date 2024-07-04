@@ -23,7 +23,7 @@ function App() {
             <ul>
               <li id='location'><a href="https://wa.me/5531971714838" target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
               <li id='email'><a href="mailto:atendimento@cedoc.net.br" target='_blank' rel='noreferrer'>atendimento@cedoc.net.br</a></li>
-              <li id='number'>(31) 3656-2040</li>
+              <li id='number'><a href="tel:553136562040" target='_blank' rel='noreferrer'>(31) 3656-2040</a></li>
             </ul>
           </section>
           <section id='second-sec'>
