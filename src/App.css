@@ -13,6 +13,26 @@
   --lightBlue: #4ea8ed;
   --orange: #ff5000d6;
 }
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -69,8 +89,6 @@ p {
   justify-content: center;
   align-items: center;
 }
-
-
 
 #page1 {
   display: flex;
