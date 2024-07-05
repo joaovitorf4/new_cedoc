@@ -2,6 +2,8 @@ import './Footer.css';
 // import logo from './imgs/logo_cedoc.png'
 // import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 const linkStyle = {
   textDecoration: 'none',
@@ -14,8 +16,23 @@ const hoverStyle = {
 };
 
 function App() {
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    // Set inProp to true after a short delay to trigger the transition
+    setTimeout(() => {
+      setInProp(true);
+    }, 100);
+  }, []);
+
   return (
     <div className="Footer">
+      <CSSTransition
+        in={inProp}
+        timeout={500} // Duration of the transition in milliseconds
+        classNames="fade"
+        unmountOnExit
+      >
       <footer>
         <div id='footer-content'>
           <section id='first-sec'>
@@ -40,6 +57,7 @@ function App() {
           <p>Direção Roosevelt Mello Passos</p>
         </div>
       </footer>
+      </CSSTransition>
     </div>
   );
 }

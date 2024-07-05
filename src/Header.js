@@ -2,6 +2,8 @@ import './Header.css';
 import logo from './imgs/logo_cedoc.png'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
+import { useEffect } from 'react';
 
 const linkStyle = {
   textDecoration: 'none',
@@ -14,6 +16,15 @@ const hoverStyle = {
 };
 
 function App() {
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    // Set inProp to true after a short delay to trigger the transition
+    setTimeout(() => {
+      setInProp(true);
+    }, 100);
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -26,6 +37,12 @@ function App() {
 
   return (
     <div className="Header">
+      <CSSTransition
+        in={inProp}
+        timeout={500} // Duration of the transition in milliseconds
+        classNames="fade"
+        unmountOnExit
+      >
       <header>
         <Link to={"/"} onClick={closeMenu}>
           <img src={logo} alt="Logo" />
@@ -47,6 +64,7 @@ function App() {
           </ul>
         </nav>
       </header>
+      </CSSTransition>
     </div>
   );
 }

@@ -1,10 +1,27 @@
 import React from 'react';
 import './About.css';
 import BackToTop from './BackToTop';
+import { CSSTransition } from 'react-transition-group';
+import { useState, useEffect } from 'react';
 
 function About() {
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    // Set inProp to true after a short delay to trigger the transition
+    setTimeout(() => {
+      setInProp(true);
+    }, 100);
+  }, []);
+
   return (
     <div className="About">
+      <CSSTransition
+        in={inProp}
+        timeout={500} // Duration of the transition in milliseconds
+        classNames="fade"
+        unmountOnExit
+      >
       <main>
         <h1>Sobre Nós</h1>
         <div id="main-about">
@@ -17,6 +34,7 @@ function About() {
           </ul>
         </div>
       </main>
+      </CSSTransition>
       <BackToTop />
     </div>
   );
