@@ -21,7 +21,7 @@ function App() {
           <section id='first-sec'>
           <Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"}><h2>Contato</h2></Link>
             <ul>
-              <li id='location'><a href="https://wa.me/5531971714838" target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
+              <li id='location'><a href="https://maps.app.goo.gl/GARdsWj9x7AW2UZt6" target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
               <li id='email'><a href="mailto:atendimento@cedoc.net.br" target='_blank' rel='noreferrer'>atendimento@cedoc.net.br</a></li>
               <li id='number'><a href="tel:553136562040" target='_blank' rel='noreferrer'>(31) 3656-2040</a></li>
             </ul>
