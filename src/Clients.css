@@ -25,6 +25,7 @@ main {
   background-color: var(--grey2);
   padding: 2vw 2vw;
   flex-direction: column;
+  min-height: 70vh;
 }
 
 h1 {
