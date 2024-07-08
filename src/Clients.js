@@ -14,6 +14,7 @@ import logo_paul_wurth from './imgs/logo_paul_wurth.png';
 import logo_spda from './imgs/logo_spda.png';
 import logo_unimed from './imgs/logo_unimed.png';
 import BackToTop from './BackToTop';
+import Title from './styled-components/Title';
 
 function Clients() {
   const [inProp, setInProp] = useState(false);
@@ -37,7 +38,7 @@ function Clients() {
         >
           <main>
             <div id='page2'>
-              <h1>Alguns dos nossos clientes</h1>
+              <Title>Alguns dos nossos clientes</Title>
               <div className='logos-carousel'>
                 <div className='logo-item'>
                   <a href="http://www.acosalianca.com.br/" target='_blank' rel='noreferrer' className='logo-link'>

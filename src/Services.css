@@ -41,7 +41,7 @@ main {
   width: 80vw;
 }
 
-#main-div-services div {
+#main-div-services a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,16 +56,6 @@ main {
 
 #main-div-services p {
   text-align: center;
-}
-
-h1 {
-  font-size: 5vw;
-  max-width: 60vw;
-  font-family: "Euclid";
-}
-
-h2 {
-  font-size: 2.5em;
 }
 
 main svg {
@@ -97,13 +87,6 @@ main svg:hover {
 }
 
 @media (max-aspect-ratio: 1.25/1) {
-  h1 {
-    font-size: 7vh;
-    min-width: 90vw;
-    font-family: "Euclid";
-    text-align: center;
-  }
-
   main p {
     font-size: 1em;
     min-width: 100%;

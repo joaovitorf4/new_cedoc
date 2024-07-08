@@ -31,12 +31,6 @@ main {
   align-items: center;
 }
 
-h1 {
-  font-size: 5vw;
-  max-width: 60vw;
-  font-family: "Euclid";
-}
-
 #main-div-contacts p, #main-div-contacts a {
   font-family: 'Courier Prime', Courier, monospace;
   font-size: 1.5vw;
@@ -58,13 +52,13 @@ h1 {
   gap: 2em;
 }
 
-#main-div-contacts h2 {
+/* #main-div-contacts h2 {
   color: var(--white);
-}
+} */
 
-h2 {
+/* h2 {
   font-size: 2.5em;
-}
+} */
 
 .div-contacts {
   display: flex;
@@ -99,10 +93,6 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 4em;
-}
-
-#page2 h1 {
-  max-width: 90vw;
 }
 
 #page1 img {
@@ -175,13 +165,6 @@ h2 {
 }
 
 @media (max-aspect-ratio: 1.25/1) {
-  h1 {
-    font-size: 2.5em;
-    min-width: 90vw;
-    font-family: "Euclid";
-    text-align: center;
-  }
-
   main p {
     font-size: 1em;
     min-width: 100%;

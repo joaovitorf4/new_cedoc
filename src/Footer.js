@@ -4,6 +4,7 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Title2Footer from './styled-components/Title2Footer';
 
 const linkStyle = {
   textDecoration: 'none',
@@ -36,7 +37,7 @@ function App() {
       <footer>
         <div id='footer-content'>
           <section id='first-sec'>
-          <Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"}><h2>Contato</h2></Link>
+          <Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"}><Title2Footer>Contato</Title2Footer></Link>
             <ul>
               <li id='location'><a href="https://maps.app.goo.gl/GARdsWj9x7AW2UZt6" target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
               <li id='email'><a href="mailto:atendimento@cedoc.net.br" target='_blank' rel='noreferrer'>atendimento@cedoc.net.br</a></li>
@@ -44,7 +45,7 @@ function App() {
             </ul>
           </section>
           <section id='second-sec'>
-            <h2>Páginas</h2>
+            <Title2Footer>Páginas</Title2Footer>
             <ul>
             <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/services"}>Serviços e Soluções</Link></li>
             <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/clients"}>Clientes</Link></li>

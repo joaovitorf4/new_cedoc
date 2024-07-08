@@ -30,12 +30,6 @@ main {
   align-items: center;
 }
 
-h1 {
-  font-size: 5vw;
-  max-width: 60vw;
-  font-family: "Euclid";
-}
-
 #main-about {
   display: flex;
   align-items: center;
@@ -89,13 +83,6 @@ ul {
 }
 
 @media (max-aspect-ratio: 1.25/1) {
-  h1 {
-    font-size: 2.5em;
-    min-width: 90vw;
-    font-family: "Euclid";
-    text-align: center;
-  }
-
   #main-about p {
     font-size: 1.5em;
   }

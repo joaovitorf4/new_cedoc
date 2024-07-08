@@ -15,6 +15,7 @@ import logo_spda from './imgs/logo_spda.png';
 import logo_unimed from './imgs/logo_unimed.png';
 import logo_laptop from './imgs/laptop.png';
 import BackToTop from './BackToTop';
+import Title from './styled-components/Title';
 
 function App() {
   const [inProp, setInProp] = useState(false);
@@ -39,7 +40,7 @@ function App() {
             <img src={logo_laptop} alt="" />
             <div id='title-actions'>
               <div id='titles'>
-                <h1>Inove a gestão da informação da sua empresa</h1>
+                <Title>Inove a gestão da informação da sua empresa</Title>
                 <p>Armazenamento de Documentos Físicos, Desenvolvimento de Softwares, Digitalização, consultoria em processos</p>
               </div>
               <div id='button-actions'>
@@ -49,7 +50,7 @@ function App() {
             </div>
           </div>
           <div id='page2'>
-            <h1>Alguns dos nossos clientes</h1>
+            <Title>Alguns dos nossos clientes</Title>
             <div className='logos-carousel'>
               <div className='logo-item'>
                 <a href="http://www.acosalianca.com.br/" target='_blank' rel='noreferrer' className='logo-link'>

@@ -85,7 +85,8 @@ ul {
   background-position: left center;
   padding-left: 20px;
 }
-p, li {
+
+#footer-content p, li {
   font-size: 1em;
 }
 

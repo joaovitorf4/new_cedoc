@@ -28,12 +28,6 @@ main {
   min-height: 70vh;
 }
 
-h1 {
-  font-size: 5vw;
-  max-width: 60vw;
-  font-family: "Euclid";
-}
-
 p {
   font-family: 'Courier Prime', Courier, monospace;
   max-width: 50vw;
@@ -69,8 +63,6 @@ p {
   align-items: center;
 }
 
-
-
 #page1 {
   display: flex;
   flex-direction: row;
@@ -84,10 +76,6 @@ p {
   display: flex;
   flex-direction: column;
   gap: 4em;
-}
-
-#page2 h1 {
-  max-width: 90vw;
 }
 
 #page1 img {
@@ -144,7 +132,6 @@ main p:hover {
   transform: scale(1.0);
 }
 
-
 :root {
   --scrollbar-track-color: var(--white);
   --scrollbar-thumb-color: var(--darkBlue);
@@ -188,12 +175,6 @@ main p:hover {
   #page1 img {
     width: 80vw;
     object-fit: contain;
-  }
-
-  #page1 h1, #page2 h1 {
-    text-align: center;
-    font-size: 7vh;
-    max-width: 100vw;
   }
 
   #page1 p {
