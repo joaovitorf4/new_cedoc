@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Title2Footer from './styled-components/Title2Footer';
+import Paragraph from './styled-components/Paragraph';
 
 const linkStyle = {
   textDecoration: 'none',
@@ -54,8 +55,8 @@ function App() {
           </section>
         </div>
         <div id='copyright'>
-          <p>© cedoc.net.br. Todos os diretios reservados.</p>
-          <p>Direção Roosevelt Mello Passos</p>
+          <Paragraph>© cedoc.net.br. Todos os diretios reservados.</Paragraph>
+          <Paragraph>Direção Roosevelt Mello Passos</Paragraph>
         </div>
       </footer>
       </CSSTransition>

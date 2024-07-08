@@ -57,20 +57,8 @@ main svg:hover {
   transform: translateY(-12px) scale(1.05);
 }
 
-@media (max-aspect-ratio: 1.25/1) {
-  main p {
-    font-size: 1em;
-    min-width: 100%;
-  }
-
-}
-
 @media (max-aspect-ratio: 0.8/1) {
   #main-div-services {
     justify-content: center;
   }
-}
-
-@media (max-aspect-ratio: 0.4/1) {
-
 }

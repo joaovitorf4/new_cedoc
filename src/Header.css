@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-:root {
-  --white: #fff;
-  --black: #000;
-  --grey: #808080;
-  --grey2: #CACACA;
-  --darkBlue: #001F75;
-  --lightBlue: #4ea8ed;
-  --orange: #ff5000d6;
-}
-
-
 header {
     display: flex;
     flex-direction: row;
@@ -40,7 +29,7 @@ ul {
   min-width: 100%;
 }
 
-a, button, li {
+header a, header button, header li {
     text-decoration: none;
     color: var(--black);
     font-family: "Arvo", serif;

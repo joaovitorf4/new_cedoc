@@ -38,8 +38,22 @@ main {
   flex-direction: column;
 }
 
-.App p {
+.App main:first-child {
+  min-height: 100vh;
+}
+
+a, button, li {
+  text-decoration: none;
+  color: var(--black);
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+h3 {
   font-family: 'Courier Prime', Courier, monospace;
+  font-weight: 100;
   font-size: 1.5vw;
   max-width: 50vw;
 
@@ -50,10 +64,6 @@ main {
   flex-direction: column;
   gap: 2em;
   margin-bottom: 2em;
-}
-
-#titles p {
-  color: black;
 }
 
 #button-actions {

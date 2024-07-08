@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-:root {
-  --white: #fff;
-  --black: #000;
-  --grey: #808080;
-  --grey2: #CACACA;
-  --darkBlue: #001F75;
-  --lightBlue: #4ea8ed;
-  --orange: #ff5000d6;
-}
-
 h2, p, li {
   color: var(--white);
 }
@@ -101,10 +91,6 @@ li {
 
 .li-animation:hover {
   transform: scale(1.1);
-}
-
-h2 {
-  font-family: "Euclid";
 }
 
 @media (max-aspect-ratio: 1.05/1) {

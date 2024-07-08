@@ -7,9 +7,9 @@ import Footer from './Footer';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './Contact';
-import About from './About'
-import Clients from './Clients'
-import Services from './Services'
+import About from './About';
+import Clients from './Clients';
+import Services from './Services';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
