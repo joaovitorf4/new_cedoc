@@ -4,16 +4,6 @@
   src: url('./fonts/Euclid_Circular_B_Light.ttf');
 }
 
-:root {
-  --white: #fff;
-  --black: #000;
-  --grey: #808080;
-  --grey2: #CACACA;
-  --darkBlue: #001F75;
-  --lightBlue: #4ea8ed;
-  --orange: #ff5000d6;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -65,25 +55,6 @@ main svg {
 
 main svg:hover {
   transform: translateY(-12px) scale(1.05);
-}
-
-
-:root {
-  --scrollbar-track-color: var(--white);
-  --scrollbar-thumb-color: var(--darkBlue);
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  background-color: var(--scrollbar-track-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track-color);
 }
 
 @media (max-aspect-ratio: 1.25/1) {
