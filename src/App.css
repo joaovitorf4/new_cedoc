@@ -225,4 +225,10 @@ main p:hover {
   .logos-carousel {
     gap: 4vw;
   }
+
+  h3 {
+    font-size: 1.2em;
+    text-align: justify;
+    min-width: 80vw;
+  }
 }

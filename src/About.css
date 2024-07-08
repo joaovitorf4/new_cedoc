@@ -35,7 +35,7 @@ ul {
 }
 
 #main-about p, #main-about li, #main-about strong {
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: "Arvo";
   color: var(--blacks);
   list-style: disc;
@@ -48,6 +48,11 @@ ul {
 
 #main-about strong {
   text-align: center;
+}
+
+#main-about li {
+  font-weight: 100;
+  list-style-position: inside;
 }
 
 #main-about li:hover {
