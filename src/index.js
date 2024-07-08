@@ -10,6 +10,11 @@ import Contact from './Contact';
 import About from './About';
 import Clients from './Clients';
 import Services from './Services';
+import BPO from './BPO';
+import RH from './RH';
+import Scanning from './Scanning';
+import Signature from './Signature';
+import Documents from './Documents';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +27,11 @@ root.render(
         <Route path="/about" element={<About />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/BPO" element={<BPO />} />
+        <Route path="/RH" element={<RH />} />
+        <Route path="/scanning" element={<Scanning />} />
+        <Route path="/signature" element={<Signature />} />
+        <Route path="/documents" element={<Documents />} />
       </Routes>
       <Footer />
     </Router>
