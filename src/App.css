@@ -211,7 +211,7 @@ main p:hover {
 
   #page1 h1, #page2 h1 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 7vh;
     max-width: 100vw;
   }
 

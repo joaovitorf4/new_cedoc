@@ -57,7 +57,7 @@ ul {
 }
 
 #main-about p {
-  min-width: 70vw;
+  min-width: 80vw;
   text-align: justify;
 }
 
@@ -94,5 +94,9 @@ ul {
     min-width: 90vw;
     font-family: "Euclid";
     text-align: center;
+  }
+
+  #main-about p {
+    font-size: 1.5em;
   }
 }
