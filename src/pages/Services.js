@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
 import './Services.css';
-import BackToTop from './pages/BackToTop';
-import Title from './styled-components/Title';
-import Paragraph from './styled-components/Paragraph';
+import BackToTop from './BackToTop';
+import Title from '../styled-components/Title';
+import Paragraph from '../styled-components/Paragraph';
 
 function Services() {
   const [inProp, setInProp] = useState(false);

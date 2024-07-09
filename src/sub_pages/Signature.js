@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import '../Services.css';
+import '../pages/Services';
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 

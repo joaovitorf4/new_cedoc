@@ -4,7 +4,7 @@ import './App.css';
 import logo_laptop from './imgs/laptop.png';
 import BackToTop from './pages/BackToTop';
 import Title from './styled-components/Title';
-import Services from './Services';
+import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Clients from './pages/Clients';

@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Clients from './pages/Clients';
-import Services from './Services';
+import Services from './pages/Services';
 import BPO from './sub_pages/BPO';
 import RH from './sub_pages/RH';
 import Scanning from './sub_pages/Scanning';
