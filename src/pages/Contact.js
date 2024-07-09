@@ -3,8 +3,8 @@ import './Contact.css';
 import BackToTop from './BackToTop';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
-import Title from './styled-components/Title';
-import Title2 from './styled-components/Title2';
+import Title from '../styled-components/Title';
+import Title2 from '../styled-components/Title2';
 
 function Contact() {
   const [inProp, setInProp] = useState(false);

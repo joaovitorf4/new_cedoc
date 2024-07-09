@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './Services.css';
-import BackToTop from './BackToTop';
-import Title from './styled-components/Title';
+import '../Services.css';
+import BackToTop from '../pages/BackToTop';
+import Title from '../styled-components/Title';
 
-function RH() {
+function Scanning() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function RH() {
   }, []);
 
   return (
-    <div className="RH">
+    <div className="Scanning">
       <CSSTransition
         in={inProp}
         timeout={500}
@@ -22,7 +22,7 @@ function RH() {
         unmountOnExit
       >
         <main>
-          <Title>Sistema RH Digital</Title>
+          <Title>Digitalização de Documentos</Title>
         </main>
       </CSSTransition>
       <BackToTop />
@@ -30,4 +30,4 @@ function RH() {
   );
 }
 
-export default RH;
+export default Scanning;

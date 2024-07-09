@@ -57,20 +57,20 @@ ul {
 }
 
 #location {
-  background-image: url('./imgs/geo-alt-fill.svg');
+  background-image: url('../imgs/geo-alt-fill.svg');
   background-repeat: no-repeat;
   padding-left: 20px;
 }
 
 #email {
-  background-image: url('./imgs/envelope-fill.svg');
+  background-image: url('../imgs/envelope-fill.svg');
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 20px;
 }
 
 #number {
-  background-image: url('./imgs/telephone-fill.svg');
+  background-image: url('../imgs/telephone-fill.svg');
   background-repeat: no-repeat;
   background-position: left center;
   padding-left: 20px;

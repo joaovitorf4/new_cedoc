@@ -22,7 +22,6 @@
     transform: scale(1.1);
 }
 
-/* Show the button when it becomes visible */
 .back-to-top button.show {
     display: block;
 }

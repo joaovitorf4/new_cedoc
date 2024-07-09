@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './Services.css';
-import BackToTop from './BackToTop';
-import Title from './styled-components/Title';
+import '../Services.css';
+import BackToTop from '../pages/BackToTop';
+import Title from '../styled-components/Title';
 
-function Documents() {
+function BPO() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function Documents() {
   }, []);
 
   return (
-    <div className="Documents">
+    <div className="BPO">
       <CSSTransition
         in={inProp}
         timeout={500}
@@ -22,7 +22,7 @@ function Documents() {
         unmountOnExit
       >
         <main>
-          <Title>Gestão de Documentos</Title>
+          <Title>BPO - Terceirização de Processos</Title>
         </main>
       </CSSTransition>
       <BackToTop />
@@ -30,4 +30,4 @@ function Documents() {
   );
 }
 
-export default Documents;
+export default BPO;

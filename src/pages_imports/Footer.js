@@ -1,11 +1,9 @@
 import './Footer.css';
-// import logo from './imgs/logo_cedoc.png'
-// import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import Title2Footer from './styled-components/Title2Footer';
-import Paragraph from './styled-components/Paragraph';
+import Title2Footer from '../styled-components/Title2';
+import Paragraph from '../styled-components/Paragraph';
 
 const linkStyle = {
   textDecoration: 'none',

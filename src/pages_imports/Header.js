@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from './imgs/logo_cedoc.png'
+import logo from '../imgs/logo_cedoc.png'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';

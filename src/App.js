@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './App.css';
 import logo_laptop from './imgs/laptop.png';
-import BackToTop from './BackToTop';
+import BackToTop from './pages/BackToTop';
 import Title from './styled-components/Title';
 import Services from './Services';
-import About from './About';
-import Contact from './Contact';
-import Clients from './Clients';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Clients from './pages/Clients';
 
 function App() {
   const [inProp, setInProp] = useState(false);
@@ -27,7 +27,7 @@ function App() {
         unmountOnExit
       >
         <main>
-          <div id='page1'>
+          <div id='main-app'>
             <img src={logo_laptop} alt="" />
             <div id='title-actions'>
               <div id='titles'>

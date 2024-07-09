@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './Clients.css';
-import logo_acos_alianca from './imgs/logo_acos_alianca.png';
-import logo_belotur from './imgs/logo_belotur.png';
-import logo_bmg from './imgs/logo_bmg.png';
-import logo_cohab from './imgs/logo_cohab.png';
-import logo_cra from './imgs/logo_cra.png';
-import logo_detran_mg from './imgs/logo_detran_mg.png';
-import logo_fiocruz from './imgs/logo_fiocruz.png';
-import logo_magnesita from './imgs/logo_magnesita.png';
-import logo_odilon from './imgs/logo_odilon.png';
-import logo_paul_wurth from './imgs/logo_paul_wurth.png';
-import logo_spda from './imgs/logo_spda.png';
-import logo_unimed from './imgs/logo_unimed.png';
+import logo_acos_alianca from '../imgs/logo_acos_alianca.png';
+import logo_belotur from '../imgs/logo_belotur.png';
+import logo_bmg from '../imgs/logo_bmg.png';
+import logo_cohab from '../imgs/logo_cohab.png';
+import logo_cra from '../imgs/logo_cra.png';
+import logo_detran_mg from '../imgs/logo_detran_mg.png';
+import logo_fiocruz from '../imgs/logo_fiocruz.png';
+import logo_magnesita from '../imgs/logo_magnesita.png';
+import logo_odilon from '../imgs/logo_odilon.png';
+import logo_paul_wurth from '../imgs/logo_paul_wurth.png';
+import logo_spda from '../imgs/logo_spda.png';
+import logo_unimed from '../imgs/logo_unimed.png';
 import BackToTop from './BackToTop';
-import Title from './styled-components/Title';
+import Title from '../styled-components/Title';
 
 function Clients() {
   const [inProp, setInProp] = useState(false);

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @font-face {
   font-family: "Euclid";
-  src: url('./fonts/Euclid_Circular_B_Light.ttf');
+  src: url('../fonts/Euclid_Circular_B_Light.ttf');
 }
 
 * {
