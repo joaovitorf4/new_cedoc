@@ -34,7 +34,7 @@ main {
   display: flex;
   height: 100%;
   background-color: var(--grey2);
-  padding: 2vw 2vw;
+  padding: 2vw 0vw;
   flex-direction: column;
 }
 

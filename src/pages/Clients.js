@@ -104,7 +104,6 @@ function Clients() {
             </div>
           </main>
         </CSSTransition>
-
       <BackToTop />
     </div>
   );
