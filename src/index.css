@@ -32,7 +32,7 @@ body, #root {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1vw;
   background-color: var(--scrollbar-track-color);
 }
 
