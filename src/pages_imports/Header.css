@@ -27,6 +27,7 @@ img {
 
 ul {
   min-width: 100%;
+  z-index: 999;
 }
 
 header a, header button, header li {
