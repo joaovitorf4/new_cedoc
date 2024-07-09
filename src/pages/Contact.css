@@ -71,17 +71,6 @@ main {
   color: black;
 }
 
-#page2 {
-  display: flex;
-  flex-direction: column;
-  gap: 4em;
-}
-
-#page1 img {
-  width: 40vw;
-  object-fit: contain;
-}
-
 .logos-carousel {
   display: flex;
   flex-direction: row;

@@ -37,7 +37,7 @@ function Clients() {
           unmountOnExit
         >
           <main>
-            <div id='page2'>
+            <div id='main-clients'>
               <Title>Alguns dos nossos clientes</Title>
               <div className='logos-carousel'>
                 <div className='logo-item'>
