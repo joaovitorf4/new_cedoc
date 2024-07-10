@@ -51,7 +51,7 @@ a, button, li {
   transition: transform 0.2s ease;
 }
 
-h3 {
+h2 {
   font-family: 'Courier Prime', Courier, monospace;
   font-weight: 100;
   font-size: 1.5vw;
@@ -226,7 +226,7 @@ main p:hover {
     gap: 4vw;
   }
 
-  h3 {
+  h2 {
     font-size: 1.2em;
     text-align: justify;
     min-width: 80vw;

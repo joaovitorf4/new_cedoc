@@ -32,7 +32,7 @@ function App() {
             <div id='title-actions'>
               <div id='titles'>
                 <Title>Inove a gestão da informação da sua empresa</Title>
-                <h3>Armazenamento de Documentos Físicos, Desenvolvimento de Softwares, Digitalização, consultoria em processos</h3>
+                <h2>Armazenamento de Documentos Físicos, Desenvolvimento de Softwares, Digitalização, consultoria em processos</h2>
               </div>
               <div id='button-actions'>
                 <button id='demo'>Solicite uma demonstração</button>
