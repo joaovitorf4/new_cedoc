@@ -54,11 +54,11 @@ function App() {
             </svg>
           </div>
           <ul className={`menu ${menuOpen ? 'active' : ''}`}>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/"} onClick={closeMenu}>Home</Link></li>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/services"} onClick={closeMenu}>Serviços e Soluções</Link></li>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/clients"} onClick={closeMenu}>Clientes</Link></li>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/about"} onClick={closeMenu}>Sobre nós</Link></li>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"} onClick={closeMenu}>Suporte e Contato</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/"} onClick={closeMenu}>Home</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/services"} onClick={closeMenu}>Serviços e Soluções</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/clients"} onClick={closeMenu}>Clientes</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/about"} onClick={closeMenu}>Sobre nós</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/contact"} onClick={closeMenu}>Suporte e Contato</Link></li>
             <li><button id="demo">Solicite uma demonstração</button></li>
             <li><button id="client"><a href="tel:553136562040" target='_blank' rel='noreferrer'>Área do cliente</a></button></li>
           </ul>

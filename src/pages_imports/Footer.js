@@ -36,7 +36,7 @@ function App() {
       <footer>
         <div id='footer-content'>
           <section id='first-sec'>
-          <Link style={linkStyle} activeStyle={hoverStyle} to={"/contact"}><Title2Footer>Contato</Title2Footer></Link>
+          <Link style={linkStyle} activestyle={hoverStyle} to={"/contact"}><Title2Footer>Contato</Title2Footer></Link>
             <ul>
               <li id='location'><a href="https://maps.app.goo.gl/GARdsWj9x7AW2UZt6" target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
               <li id='email'><a href="mailto:comercial@cedoc.net.br" target='_blank' rel='noreferrer'>comercial@cedoc.net.br</a></li>
@@ -46,9 +46,9 @@ function App() {
           <section id='second-sec'>
             <Title2Footer>Páginas</Title2Footer>
             <ul>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/services"}>Serviços e Soluções</Link></li>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/clients"}>Clientes</Link></li>
-            <li><Link style={linkStyle} activeStyle={hoverStyle} to={"/about"}>Sobre nós</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/services"}>Serviços e Soluções</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/clients"}>Clientes</Link></li>
+            <li><Link style={linkStyle} activestyle={hoverStyle} to={"/about"}>Sobre nós</Link></li>
             </ul>
           </section>
         </div>
