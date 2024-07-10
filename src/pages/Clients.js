@@ -28,82 +28,82 @@ function Clients() {
 
   return (
     <div className="Clients">
-        <CSSTransition
-          key="clients"
-          in={inProp}
-          timeout={500}
-          classNames="fade"
-          appear
-          unmountOnExit
-        >
-          <main>
-            <div id='main-clients'>
-              <Title>Alguns dos nossos clientes</Title>
-              <div className='logos-carousel'>
-                <div className='logo-item'>
-                  <a href="http://www.acosalianca.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_acos_alianca} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://prefeitura.pbh.gov.br/belotur" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_belotur} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://www.bancobmg.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_bmg} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="http://www.cohab.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_cohab} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://www.cramg.org.br/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_cra} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://transito.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_detran_mg} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://portal.fiocruz.br/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_fiocruz} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://www.rhimagnesita.com/pt/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_magnesita} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://prefeitura.pbh.gov.br/index.php/hospital-metropolitano-odilon-behrens" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_odilon} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://www.paulwurth.com/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_paul_wurth} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/spda/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_spda} alt="" />
-                  </a>
-                </div>
-                <div className='logo-item'>
-                  <a href="https://www.unimed.coop.br/site/" target='_blank' rel='noreferrer' className='logo-link'>
-                    <img src={logo_unimed} alt="" />
-                  </a>
-                </div>
+      <CSSTransition
+        key="clients"
+        in={inProp}
+        timeout={500}
+        classNames="fade"
+        appear
+        unmountOnExit
+      >
+        <main>
+          <div id='main-clients'>
+            <Title>Alguns dos nossos clientes</Title>
+            <div className='logos-carousel'>
+              <div className='logo-item'>
+                <a aria-label='Aços Aliança' href="http://www.acosalianca.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_acos_alianca} alt="Aços Aliança" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='Belotur' href="https://prefeitura.pbh.gov.br/belotur" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_belotur} alt="Belotur" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='BMG' href="https://www.bancobmg.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_bmg} alt="BMG" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='COHAB' href="http://www.cohab.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_cohab} alt="COHAB" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='CRA' href="https://www.cramg.org.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_cra} alt="CRA" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='DETRAN MG' href="https://transito.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_detran_mg} alt="DETRAN MG" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='Fiocruz' href="https://portal.fiocruz.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_fiocruz} alt="Fiocruz" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='Magnesita' href="https://www.rhimagnesita.com/pt/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_magnesita} alt="Magnesita" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='Hospital Odilon' href="https://prefeitura.pbh.gov.br/index.php/hospital-metropolitano-odilon-behrens" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_odilon} alt="Hospital Odilon" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='Paul Wurth' href="https://www.paulwurth.com/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_paul_wurth} alt="Paul Wurth" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='SPDA' href="https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/spda/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_spda} alt="SPDA" />
+                </a>
+              </div>
+              <div className='logo-item'>
+                <a aria-label='UNIMED' href="https://www.unimed.coop.br/site/" target='_blank' rel='noreferrer' className='logo-link'>
+                  <img src={logo_unimed} alt="UNIMED" />
+                </a>
               </div>
             </div>
-          </main>
-        </CSSTransition>
+          </div>
+        </main>
+      </CSSTransition>
       <BackToTop />
     </div>
   );
