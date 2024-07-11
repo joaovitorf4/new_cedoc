@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/* .Header {
+  min-height: 10vh;
+} */
+
 header {
     display: flex;
     flex-direction: row;
@@ -7,6 +11,16 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 10vh;
+    position: fixed;
+    width: 99vw;
+    z-index: 99999;
+    background-color: transparent;
+    transition: all 200ms;
+
+}
+
+.show {
+  background-color: var(--white);
 }
 
 header ul {
@@ -15,7 +29,7 @@ header ul {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 20px 20px -25px black;
+    box-shadow: 0px 20px 20px -25px var(--black);
 }
 
 nav {
@@ -88,7 +102,7 @@ ul li {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--grey2);  
+    background-color: var(--white);  
     display: none;
   }
   
@@ -107,4 +121,10 @@ ul li {
     width: auto;
   }
 }
+
+/* @media (max-aspect-ratio: 1.25 / 1) {
+  .Header {
+    margin-bottom: 2em;
+  }
+} */
   

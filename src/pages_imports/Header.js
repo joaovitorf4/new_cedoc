@@ -12,28 +12,44 @@ const linkStyle = {
 };
 
 const hoverStyle = {
-  transform: 'scale(1.1)', // Corrected usage
+  transform: 'scale(1.1)',
 };
 
 function App() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
-    // Set inProp to true after a short delay to trigger the transition
     setTimeout(() => {
       setInProp(true);
     }, 100);
   }, []);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    setIsVisible(true);
   };
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
+    const toggleVisibility = () => {
+        if (window.scrollY > 10) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => {
+        window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
 
   return (
     <div className="Header">
@@ -43,7 +59,7 @@ function App() {
         classNames="fade"
         unmountOnExit
       >
-      <header>
+      <header className={isVisible ? 'show' : ''}>
         <Link to={"/"} onClick={closeMenu}>
           <img src={logo} alt="Logo" />
         </Link>
