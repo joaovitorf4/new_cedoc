@@ -159,7 +159,7 @@ main p:hover {
   main {
     gap: 2em;
     padding-bottom: 2em;
-    padding-top: 6em;
+    /* padding-top: 6em; */
   }
   
   #main-app {
