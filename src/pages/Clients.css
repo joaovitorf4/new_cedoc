@@ -13,13 +13,12 @@
 main {
   display: flex;
   height: 100%;
-  background-color: var(--grey2);
   flex-direction: column;
   min-height: 66vh;
 }
 
 .Clients > main {
-  background-color: #dfdfdfdf;
+  background-color: var(--grey2);
 }
 
 p {
