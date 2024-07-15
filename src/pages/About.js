@@ -3,8 +3,8 @@ import './About.css';
 import BackToTop from './BackToTop';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
-import img1 from '../imgs/IMG_8518.jpg'
-import img2 from '../imgs/IMG_8509.jpg'
+import img1 from '../imgs/IMG_8518.png'
+import img2 from '../imgs/IMG_8509.png'
 import Title from '../styled-components/Title';
 
 function About() {

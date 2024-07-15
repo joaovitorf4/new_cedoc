@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom fo
 import './Services.css';
 import BackToTop from './BackToTop';
 import Title from '../styled-components/Title';
-import fundo_cedoc from '../imgs/IMG_8539.jpg';
-import fundo_cedoc2 from '../imgs/IMG_8540.jpg';
+import fundo_cedoc from '../imgs/IMG_8539.png';
+import fundo_cedoc2 from '../imgs/IMG_8540.png';
 import Paragraph from '../styled-components/Paragraph';
 
 function Services() {
