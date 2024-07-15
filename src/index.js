@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Clients from './pages/Clients';
 import Services from './pages/Services';
+import Auth from './pages/Auth';
 import BPO from './sub_pages/BPO';
 import RH from './sub_pages/RH';
 import Scanning from './sub_pages/Scanning';
@@ -32,6 +33,7 @@ root.render(
         <Route path="/scanning" element={<Scanning />} />
         <Route path="/signature" element={<Signature />} />
         <Route path="/documents" element={<Documents />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
       <Footer />
     </Router>

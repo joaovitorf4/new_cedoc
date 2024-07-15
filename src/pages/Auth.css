@@ -1,0 +1,144 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: "Euclid";
+  src: url('../fonts/Euclid_Circular_B_Light.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  height: 100%;
+  background-color: var(--grey2);
+  flex-direction: column;
+  gap: 5em;
+  padding-bottom: 5em;
+  align-items: center;
+  width: 99vw;
+}
+
+.Auth {
+  min-height: 66vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Auth > main {
+  background-color: #dfdfdf;
+}
+
+#main-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+  gap: 4em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+#main-auth p, #main-auth li, #main-auth strong {
+  font-size: 1.5em;
+  font-family: "Arvo";
+  color: var(--blacks);
+  list-style: disc;
+}
+
+#main-auth p {
+  min-width: 80vw;
+  text-align: justify;
+}
+
+#main-auth strong {
+  text-align: center;
+}
+
+#main-auth li {
+  font-weight: 100;
+  list-style-position: inside;
+}
+
+#main-auth li:hover {
+  transform: none;
+  cursor: auto;
+}
+
+@media (max-aspect-ratio: 1.25/1) {
+  #main-auth p {
+    font-size: 1.5em;
+  }
+}
+
+#box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+  margin: 4vh 0;
+}
+
+#box img {
+  width: 8em;
+}
+
+#loginpane #header {
+  border: 1px solid #39f;
+}
+
+#loginpane {
+  padding: 2em;
+  border: 1px solid #39f;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+}
+
+#error {
+  display: none;
+}
+
+.button {
+  background: #39f;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 25px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer-small p {
+  color: var(--blacks);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  gap: .5em;
+}
+
+.form-group #password {
+  width: 100%;
+} */
