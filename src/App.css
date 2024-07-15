@@ -59,6 +59,10 @@ h2 {
 
 }
 
+#demo a {
+  color: white;
+}
+
 #titles {
   display: flex;
   flex-direction: column;
