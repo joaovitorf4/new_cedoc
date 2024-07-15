@@ -3,6 +3,8 @@ import './About.css';
 import BackToTop from './BackToTop';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
+import img1 from '../imgs/IMG_8518.jpg'
+import img2 from '../imgs/IMG_8509.jpg'
 import Title from '../styled-components/Title';
 
 function About() {
@@ -34,6 +36,10 @@ function About() {
             <li>Mais de 25.000.000 de documentos físicos arquivados e indexados.</li>
             <li>Mais de 1500 clientes atendidos nos estados de Minas Gerais, São Paulo e Rio de Janeiro.</li>
           </ul>
+        </div>
+        <div className="div-imgs">
+          <img src={img1} alt="" />
+          <img src={img2} alt="" />
         </div>
       </main>
       </CSSTransition>

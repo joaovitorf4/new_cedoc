@@ -16,11 +16,35 @@ body, #root {
   height: 100vh;
 }
 
+.div-imgs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4em;
+  margin-top: 2em;
+}
+
+.div-imgs img {
+  object-fit: cover;
+  width: 35vw;
+  border-radius: 1em;
+  border: solid var(--white) 1px;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .div-imgs img {
+    width: 80vw;
+  }
+}
+
 :root {
   --white: #fff;
   --black: #000;
   --grey: #808080;
   --grey2: #CACACA;
+  --grey3: #dfdfdf;
   --darkBlue: #001F75;
   --lightBlue: #4ea8ed;
   --orange: #ff5000d6;
