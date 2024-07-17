@@ -1,0 +1,208 @@
+.Form form {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  gap: 1.5em;
+  padding: 1em;
+}
+
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-header h1 {
+  display: inline;
+  font-size: 2.2em;
+  text-align: center;
+}
+
+.form-header img {
+  width: 40%;
+}
+
+hr {
+  height: 2px;
+  background-color: #ccc;
+  border: none;
+}
+
+label {
+  font-size: 1.5em;
+}
+
+.bold-it {
+  font-weight: bold;
+}
+
+.Form .form1 .form-group input {
+  font-size: 1.2em;
+  padding-left: .5em;
+  border: 1px solid;
+}
+
+.form1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.form1 .form-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5em;
+  flex-grow: 3;
+  display: flex;
+  min-width: 95%;
+}
+
+.form1 .form-group input {
+  flex: 2;
+}
+
+.form3 .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: center;
+  align-items: center;
+}
+
+.form3 .form-group input {
+  display: block;
+  max-width: 22.6%;
+}
+
+.form3 {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.form3 strong {
+  text-align: justify;
+}
+
+#observacao {
+  background-color: white;
+  max-width: 45vw;
+  width: 100%;
+  min-height: 20vw;
+  font-size: 1.5em;
+  text-align: left;
+  border: 1px solid;
+  padding: .5em;
+}
+
+.form-group-sign {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.model-signature {
+  display: flex;
+  flex-direction: column;
+}
+
+.model-signature p {
+  color: var(--black);
+}
+
+#signature {
+  border: none;
+  border-bottom: 1px solid black;
+  min-width: 15vw;
+}
+
+
+.adjust-aside {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.adjust-aside .form-group {
+  min-width: 0;
+}
+
+#accept {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+}
+
+#accept input {
+  transform: scale(1.3);
+}
+
+input[type="submit"] {
+  font-family: sans-serif;
+  padding: 1em;
+  background-color: #39f;
+  color: #fff;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  transform: scale(1.25);
+}
+
+.div-options {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+
+.form2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form-options {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.form2 .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .5em;
+  max-width: fit-content;
+}
+
+.div-options > div {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+@media (orientation: portrait) {
+  form {
+      width: 100vw;
+  }
+}
