@@ -74,8 +74,8 @@ function App() {
             <li><Link style={linkStyle} activestyle={hoverStyle} to={"/clients"} onClick={closeMenu}>Clientes</Link></li>
             <li><Link style={linkStyle} activestyle={hoverStyle} to={"/about"} onClick={closeMenu}>Sobre nós</Link></li>
             <li><Link style={linkStyle} activestyle={hoverStyle} to={"/contact"} onClick={closeMenu}>Suporte e Contato</Link></li>
-            <li><button id="demo"><Link style={linkStyle} activestyle={hoverStyle} to={"/auth"} onClick={closeMenu}>Solicite uma demonstração</Link></button></li>
-            <li><button id="client"><Link style={linkStyle} activestyle={hoverStyle} to={"/auth"} onClick={closeMenu}>Área do cliente</Link></button></li>
+            <li><Link style={linkStyle} id="demo" activestyle={hoverStyle} to={"/auth"} onClick={closeMenu}>Solicite uma demonstração</Link></li>
+            <li><Link style={linkStyle} id="client" activestyle={hoverStyle} to={"/auth"} onClick={closeMenu}>Área do cliente</Link></li>
           </ul>
         </nav>
       </header>

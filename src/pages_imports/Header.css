@@ -53,13 +53,12 @@ header a, header button, header li {
     transition: transform 0.2s ease;
 }
 
-button {
-    border: none;
-    padding: 1em;
-    border-radius: .5em;
+#demo, #client {
+  padding: 1em;
+  border-radius: .5em;
 }
 
-#demo a {
+#demo {
   color: var(--white);
 }
 
@@ -96,7 +95,7 @@ ul li {
   
 @media (max-aspect-ratio: 1.5 / 1) {
   .menu {
-    height: 30vh;
+    height: 35vh;
     padding: 2vh 0px;
     display: flex;
     flex-direction: column;
@@ -123,11 +122,12 @@ ul li {
   nav {
     width: auto;
   }
-}
-
-/* @media (max-aspect-ratio: 1.25 / 1) {
-  .Header {
-    margin-bottom: 2em;
+  li:has(#demo) {
+    margin: 2vh 0;
   }
-} */
+
+  li:has(#client) {
+    margin: 2vh 0;
+  }
+}
   
