@@ -38,6 +38,12 @@ a, button, li {
   transition: transform 0.2s ease;
 }
 
+button {
+  border: none;
+  padding: 1em;
+  border-radius: .5em;
+}
+
 h2 {
   font-family: 'Courier Prime', Courier, monospace;
   font-weight: 100;
