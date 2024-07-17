@@ -14,7 +14,7 @@ const Form = () => {
     const height = window.innerHeight;
     if (width / height < 1.28) {
       alert('Coloque em tela cheia para que o formulário não fique muito achatado');
-      alert('A requisição deve ser feita apenas em computadores');
+      alert('A requisição deve ser feita apenas em computadores, Formulário Nâo enviado!');
       return;
     }
 
@@ -22,7 +22,7 @@ const Form = () => {
     if (form.checkValidity()) {
       downloadPDF();
     } else {
-      alert('Please fill out all required fields.');
+      alert('Preencha todos os campos obrigatórios');
       form.reportValidity();
     }
   };
