@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 
 const linkStyle = {
   textDecoration: 'none',
-  color: '#333',
   transition: 'transform 0.2s ease-in-out',
 };
 
@@ -75,8 +74,8 @@ function App() {
             <li><Link style={linkStyle} activestyle={hoverStyle} to={"/clients"} onClick={closeMenu}>Clientes</Link></li>
             <li><Link style={linkStyle} activestyle={hoverStyle} to={"/about"} onClick={closeMenu}>Sobre nós</Link></li>
             <li><Link style={linkStyle} activestyle={hoverStyle} to={"/contact"} onClick={closeMenu}>Suporte e Contato</Link></li>
-            <li><button id="demo">Solicite uma demonstração</button></li>
-            <li><button id="client"><a href="tel:553136562040" target='_blank' rel='noreferrer'>Área do cliente</a></button></li>
+            <li><button id="demo"><Link style={linkStyle} activestyle={hoverStyle} to={"/auth"} onClick={closeMenu}>Solicite uma demonstração</Link></button></li>
+            <li><button id="client"><Link style={linkStyle} activestyle={hoverStyle} to={"/auth"} onClick={closeMenu}>Área do cliente</Link></button></li>
           </ul>
         </nav>
       </header>

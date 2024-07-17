@@ -59,6 +59,10 @@ button {
     border-radius: .5em;
 }
 
+#demo a {
+  color: var(--white);
+}
+
 li:hover {
     transform: scale(1.05);
 }
