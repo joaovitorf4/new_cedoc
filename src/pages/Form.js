@@ -2,57 +2,70 @@ import React from 'react';
 import './Form.css'; // Import your CSS file
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import logo from '../imgs/logo_cedoc.png'
+import logo from '../imgs/logo_cedoc.png';
 
 const Form = () => {
+  const elementRef = React.useRef();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
 
-  const elementRef = React.useRef();
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    if (width / height < 1.28) {
+      alert('Coloque em tela cheia para que o formulário não fique muito achatado');
+      alert('A requisição deve ser feita apenas em computadores');
+      return;
+    }
+
+    const form = event.target;
+    if (form.checkValidity()) {
+      downloadPDF();
+    } else {
+      alert('Please fill out all required fields.');
+      form.reportValidity();
+    }
+  };
 
   const downloadPDF = async () => {
     const element = elementRef.current;
-  
+
     const canvas = await html2canvas(element, {
       useCORS: true,
       scale: 2,
     });
     const imgData = canvas.toDataURL('image/png');
-  
+
     const pdf = new jsPDF('p', 'pt', 'a4');
-  
+
     const imgWidth = pdf.internal.pageSize.getWidth();
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  
+
     const scaledWidth = imgWidth * 0.85;
     const scaledHeight = imgHeight * 0.85;
-  
+
     const marginX = (imgWidth - scaledWidth) / 2;
     const marginY = (pdf.internal.pageSize.getHeight() - scaledHeight) / 2;
-  
+
     if (scaledHeight > pdf.internal.pageSize.getHeight()) {
       const scaleRatio = pdf.internal.pageSize.getHeight() / scaledHeight;
       const adjustedWidth = scaledWidth * scaleRatio;
       const adjustedHeight = scaledHeight * scaleRatio;
-  
+
       pdf.addImage(imgData, 'PNG', (imgWidth - adjustedWidth) / 2, (pdf.internal.pageSize.getHeight() - adjustedHeight) / 2, adjustedWidth, adjustedHeight);
     } else {
       pdf.addImage(imgData, 'PNG', marginX, marginY, scaledWidth, scaledHeight);
     }
-  
+
     pdf.save('download.pdf');
+    alert("Formulário enviado!")
   };
-  
 
   return (
     <div className="Form">
-      <form onSubmit={handleSubmit}  ref={elementRef} style={{ padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }} id="myForm">
+      <form onSubmit={handleSubmit} ref={elementRef} style={{ padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }} id="myForm">
         <div className="form-header">
-          <img
-            src={logo}
-            alt="logo cedoc"
-          />
+          <img src={logo} alt="logo cedoc" />
           <h1>Formulário de Requisição</h1>
         </div>
         <div>
@@ -143,7 +156,7 @@ const Form = () => {
             <hr />
           </div>
           <div className="form-group">
-            <input onClick={downloadPDF} type="submit" name="file" value="Enviar" />
+            <input type="submit" name="file" value="Enviar" />
           </div>
         </div>
       </form>
