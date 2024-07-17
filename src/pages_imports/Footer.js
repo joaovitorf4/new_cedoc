@@ -12,14 +12,13 @@ const linkStyle = {
 };
 
 const hoverStyle = {
-  transform: 'scale(1.1)', // Corrected usage
+  transform: 'scale(1.1)',
 };
 
 function App() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
-    // Set inProp to true after a short delay to trigger the transition
     setTimeout(() => {
       setInProp(true);
     }, 100);
@@ -29,7 +28,7 @@ function App() {
     <div className="Footer">
       <CSSTransition
         in={inProp}
-        timeout={500} // Duration of the transition in milliseconds
+        timeout={500}
         classNames="fade"
         unmountOnExit
       >

@@ -54,7 +54,7 @@ function App() {
     <div className="Header">
       <CSSTransition
         in={inProp}
-        timeout={500} // Duration of the transition in milliseconds
+        timeout={500}
         classNames="fade"
         unmountOnExit
       >

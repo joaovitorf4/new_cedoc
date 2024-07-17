@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
+import { Link } from 'react-router-dom';
 import './Services.css';
 import BackToTop from './BackToTop';
 import Title from '../styled-components/Title';
@@ -12,7 +12,6 @@ function Services() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
-    // Set inProp to true after a short delay to trigger the transition
     setTimeout(() => {
       setInProp(true);
     }, 100);
@@ -22,7 +21,7 @@ function Services() {
     <div className="Services">
       <CSSTransition
         in={inProp}
-        timeout={500} // Duration of the transition in milliseconds
+        timeout={500}
         classNames="fade"
         unmountOnExit
       >

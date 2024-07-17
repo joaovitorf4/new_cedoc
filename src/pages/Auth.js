@@ -6,7 +6,7 @@ import { useUser } from './UserContext';
 
 function Auth() {
   const navigate = useNavigate();
-  const { setUser } = useUser(); // Get setUser from context
+  const { setUser } = useUser();
   const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
 
   useEffect(() => {
@@ -39,8 +39,8 @@ function Auth() {
 
         if (response.status === 200) {
           const json = await response.json();
-          setUser(true); // Set user state to true on successful login
-          navigate('/form'); // Redirect to home or desired route
+          setUser(true);
+          navigate('/form');
         } else {
           TratarErro();
         }

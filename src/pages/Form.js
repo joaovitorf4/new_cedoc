@@ -1,5 +1,5 @@
 import React from 'react';
-import './Form.css'; // Import your CSS file
+import './Form.css';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import logo from '../imgs/logo_cedoc.png';

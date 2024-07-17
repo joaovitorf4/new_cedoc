@@ -11,7 +11,6 @@ function About() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
-    // Set inProp to true after a short delay to trigger the transition
     setTimeout(() => {
       setInProp(true);
     }, 100);
@@ -21,7 +20,7 @@ function About() {
     <div className="About">
       <CSSTransition
         in={inProp}
-        timeout={500} // Duration of the transition in milliseconds
+        timeout={500}
         classNames="fade"
         unmountOnExit
       >

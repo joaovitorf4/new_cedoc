@@ -21,7 +21,6 @@ function Clients() {
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
-    // Set inProp to true after a short delay to trigger the transition
     setTimeout(() => {
       setInProp(true);
     }, 100);
