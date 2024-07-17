@@ -13,7 +13,7 @@ import logo_odilon from '../imgs/logo_odilon.png';
 import logo_paul_wurth from '../imgs/logo_paul_wurth.png';
 import logo_spda from '../imgs/logo_spda.png';
 import logo_unimed from '../imgs/logo_unimed.png';
-import fundo_cedoc from '../imgs/IMG_8541.png';
+import fundo_cedoc from '../imgs/IMG_8541.webp';
 import BackToTop from './BackToTop';
 import Title from '../styled-components/Title';
 
@@ -103,7 +103,7 @@ function Clients() {
             </div>
           </div>
           <div className="div-imgs">
-            <img src={fundo_cedoc} alt="" />
+            <img rel='preload' src={fundo_cedoc} alt="" />
           </div>
         </main>
       </CSSTransition>

@@ -3,8 +3,8 @@ import './About.css';
 import BackToTop from './BackToTop';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
-import img1 from '../imgs/IMG_8518.png'
-import img2 from '../imgs/IMG_8509.png'
+import img1 from '../imgs/IMG_8518.webp'
+import img2 from '../imgs/IMG_8509.webp'
 import Title from '../styled-components/Title';
 
 function About() {
@@ -37,7 +37,7 @@ function About() {
           </ul>
         </div>
         <div className="div-imgs">
-          <img src={img1} alt="" />
+          <img rel='preload' src={img1} alt="" />
           <img src={img2} alt="" />
         </div>
       </main>
