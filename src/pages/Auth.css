@@ -1,4 +1,4 @@
-/*
+
 main {
   display: flex;
   height: 100%;
@@ -85,11 +85,13 @@ ul {
 #loginpane {
   padding: 2em;
   border: 1px solid #39f;
+  width: 20vw;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1em;
 }
 
@@ -98,8 +100,20 @@ form h2 {
   font-size: 2em;
 }
 
-#error {
+.Auth input {
+  background-color: var(--white);
+  border: var(--grey2) solid 1px;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.error {
   display: none;
+}
+
+.error-show {
+  display: block;
+  color: red;
 }
 
 .button {
@@ -130,4 +144,16 @@ form h2 {
 
 .form-group #password {
   width: 100%;
-} */
+}
+
+@media (max-aspect-ratio: 0.9/1) {
+  #loginpane {
+    width: 50vw;
+  }
+}
+
+@media (max-aspect-ratio: 0.8/1) {
+  #loginpane {
+    width: 80vw;
+  }
+}

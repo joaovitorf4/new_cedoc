@@ -1,85 +1,105 @@
-// import React from 'react';
-// import './Auth.css';
-// import logo from '../imgs/efalia_logo.png'
+import React, { useEffect } from 'react';
+import './Auth.css';
+import { useNavigate } from 'react-router-dom';
+import logo from '../imgs/efalia_logo.png';
+import { useUser } from './UserContext';
 
-// function Auth() {
-//   function TratarErro(){
-//       document.querySelector("#error").classList.remove("error");
-//   }
+function Auth() {
+  const navigate = useNavigate();
+  const { setUser } = useUser(); // Get setUser from context
+  const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
 
-//   function ValidateCredentials(username, password){
-//       let response = fetch(url, {
-//           method: 'POST',
-//           body: JSON.stringify({
-//               NameOrMail: username,
-//               Password: password,
-//               RememberMe: true
-//           }),
-//           headers: {
-//               'Content-Type': 'application/json; charset=utf-8'
-//           }
-//       }).then(response => {
-//           if (response.status === 200){
-//               response.json()
-//                   .then((json) => window.location.href = "php/form.php?Token=" + json["Token"]);
-//           }
-//           else{
-//               TratarErro();
-//           }
-//       })
-//   }
+  useEffect(() => {
+    const LoginForm = document.getElementById("frmLogin");
 
-//   let LoginForm = document.getElementById("frmLogin");
-//   //let url = "http://192.168.0.87:9000/filedirector/rest/v1/login";
-//   let url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
-//   LoginForm.addEventListener('submit', function(e) {
-//       e.preventDefault();
-//       let username = document.getElementById('txtUsername').value;
-//       let password = document.getElementById('txtPassword').value;
-//       ValidateCredentials(username, password);
-//   });
-//   return (
-//     <div className="Auth">
-//       <div id="frame">
-//             <div id="box" className="corner">
-//                 <div id="logo">
-//                     <img src={logo} alt="Company Logo" className="logo-img" />
-//                 </div>
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const username = document.getElementById('txtUsername').value;
+      const password = document.getElementById('txtPassword').value;
+      ValidateCredentials(username, password);
+    };
 
-//                 <div id="loginpane">
-//                     <form id="frmLogin" method="post" action="">
-//                         <input type="hidden" name="txtReturnUrl" value="/fileDirector/web" />
-//                         <input type="hidden" name="txtIsGuest" value="false" />
+    const TratarErro = () => {
+      document.querySelector("#error").classList.add("error-show");
+    };
 
-//                         <h2>Login</h2>
+    const ValidateCredentials = async (username, password) => {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          body: JSON.stringify({
+            NameOrMail: username,
+            Password: password,
+            RememberMe: true
+          }),
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+        });
 
-//                         <div className="form-group">
-//                             <label htmlFor="txtUsername">User name</label>
-//                             <input type="text" id="txtUsername" name="txtUsername" required className="form-input" />
-//                         </div>
+        if (response.status === 200) {
+          const json = await response.json();
+          setUser(true); // Set user state to true on successful login
+          navigate('/form'); // Redirect to home or desired route
+        } else {
+          TratarErro();
+        }
+      } catch (error) {
+        console.error('Error during fetch:', error);
+      }
+    };
 
-//                         <div className="form-group">
-//                             <label htmlFor="txtPassword">Password</label>
-//                             <input type="password" id="txtPassword" name="txtPassword" required className="form-input" />
-//                         </div>
+    if (LoginForm) {
+      LoginForm.addEventListener('submit', handleSubmit);
+    }
 
-//                         <div id="error" className="error" aria-live="polite">
-//                             Wrong username or password
-//                         </div>
+    return () => {
+      if (LoginForm) {
+        LoginForm.removeEventListener('submit', handleSubmit);
+      }
+    };
+  }, [url, setUser, navigate]);
 
-//                         <div className="buttons">
-//                             <input name="btnLogin" className="button" type="submit" value="Login" />
-//                         </div>
-//                     </form>
-//                 </div>
+  return (
+    <div className="Auth">
+      <div id="frame">
+        <div id="box" className="corner">
+          <div id="logo">
+            <img src={logo} alt="Company Logo" className="logo-img" />
+          </div>
 
-//                 <div id="footer-small">
-//                     <p>© Copyright 2006-2024 Efalia GmbH - All rights reserved.</p>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//   );
-// }
+          <div id="loginpane">
+            <form id="frmLogin" method="post" action="">
+              <input type="hidden" name="txtReturnUrl" value="/fileDirector/web" />
+              <input type="hidden" name="txtIsGuest" value="false" />
 
-// export default Auth;
+              <h2>Login</h2>
+
+              <div className="form-group">
+                <input type="text" id="txtUsername" name="txtUsername" placeholder='Usuário' required className="form-input" />
+              </div>
+
+              <div className="form-group">
+                <input type="password" id="txtPassword" name="txtPassword" placeholder='Senha' required className="form-input" />
+              </div>
+
+              <div id="error" className='error' aria-live="polite">
+                Wrong username or password
+              </div>
+
+              <div className="buttons">
+                <input name="btnLogin" className="button" type="submit" value="Login" />
+              </div>
+            </form>
+          </div>
+
+          <div id="footer-small">
+            <p>© Copyright 2006-2024 Efalia GmbH - All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Auth;

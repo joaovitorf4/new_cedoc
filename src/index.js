@@ -11,15 +11,20 @@ import About from './pages/About';
 import Clients from './pages/Clients';
 import Services from './pages/Services';
 import Auth from './pages/Auth';
+import Form from './pages/Form';
 import BPO from './sub_pages/BPO';
 import RH from './sub_pages/RH';
 import Scanning from './sub_pages/Scanning';
 import Signature from './sub_pages/Signature';
 import Documents from './sub_pages/Documents';
+import ProtectedRoute from './pages/ProtectedRoute';
+import { UserProvider } from './pages/UserContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
+    <UserProvider>
     <Router>
       <Header />
       <Routes>
@@ -34,9 +39,13 @@ root.render(
         <Route path="/signature" element={<Signature />} />
         <Route path="/documents" element={<Documents />} />
         <Route path="/auth" element={<Auth />} />
+        <Route element={<ProtectedRoute/>}>
+          <Route path="/form" element={<Form />} />
+        </Route>
       </Routes>
       <Footer />
     </Router>
+    </UserProvider>
   </React.StrictMode>
 );
 
