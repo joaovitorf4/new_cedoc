@@ -38,7 +38,7 @@ function Auth() {
         });
 
         if (response.status === 200) {
-          const json = await response.json();
+          // const json = await response.json();
           setUser(true);
           navigate('/form');
         } else {
