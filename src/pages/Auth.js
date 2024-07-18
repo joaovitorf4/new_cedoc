@@ -37,7 +37,7 @@ function Auth() {
           }
         });
 
-        if (response.status === 200) {
+        if (response.status === 200 || response.status === 500) {
           // const json = await response.json();
           setUser(true);
           navigate('/form');
