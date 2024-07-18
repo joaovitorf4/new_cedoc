@@ -14,7 +14,7 @@ const Form = () => {
     const height = window.innerHeight;
     if (width / height < 1.28) {
       alert('Coloque em tela cheia para que o formulário não fique muito achatado');
-      alert('A requisição deve ser feita apenas em computadores, Formulário Nâo enviado!');
+      alert('A requisição deve ser feita apenas em computadores, Formulário Não enviado!');
       return;
     }
 
