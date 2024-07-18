@@ -21,6 +21,7 @@ const Form = () => {
     const form = event.target;
     if (form.checkValidity()) {
       downloadPDF();
+      form.reset();
     } else {
       alert('Preencha todos os campos obrigatórios');
       form.reportValidity();
@@ -58,7 +59,7 @@ const Form = () => {
     }
 
     pdf.save('download.pdf');
-    alert("Formulário enviado!")
+    alert("Formulário enviado!");
   };
 
   return (
@@ -97,8 +98,8 @@ const Form = () => {
             <label className="bold-it">Meio de Disponibilização</label>
             <div className="div-options">
               <div>
-                <input type="radio" id="email" name="meio" value="email" required />
-                <label htmlFor="email">E-MAIL</label>
+                <input type="radio" id="emailOption" name="meio" value="email" required />
+                <label htmlFor="emailOption">E-MAIL</label>
               </div>
               <div>
                 <input type="radio" id="sistema" name="meio" value="sistema" required />
