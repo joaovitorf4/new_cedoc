@@ -1,9 +1,7 @@
 import React from 'react';
 import './Form.css';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 import logo from '../imgs/logo_cedoc.png';
-
+import { generatePDF } from './GeneratePDF';
 const Form = () => {
   const elementRef = React.useRef();
 
@@ -20,46 +18,12 @@ const Form = () => {
 
     const form = event.target;
     if (form.checkValidity()) {
-      downloadPDF();
+      generatePDF(elementRef);
       form.reset();
     } else {
       alert('Preencha todos os campos obrigatórios');
       form.reportValidity();
     }
-  };
-
-  const downloadPDF = async () => {
-    const element = elementRef.current;
-
-    const canvas = await html2canvas(element, {
-      useCORS: true,
-      scale: 2,
-    });
-    const imgData = canvas.toDataURL('image/png');
-
-    const pdf = new jsPDF('p', 'pt', 'a4');
-
-    const imgWidth = pdf.internal.pageSize.getWidth();
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-    const scaledWidth = imgWidth * 0.85;
-    const scaledHeight = imgHeight * 0.85;
-
-    const marginX = (imgWidth - scaledWidth) / 2;
-    const marginY = (pdf.internal.pageSize.getHeight() - scaledHeight) / 2;
-
-    if (scaledHeight > pdf.internal.pageSize.getHeight()) {
-      const scaleRatio = pdf.internal.pageSize.getHeight() / scaledHeight;
-      const adjustedWidth = scaledWidth * scaleRatio;
-      const adjustedHeight = scaledHeight * scaleRatio;
-
-      pdf.addImage(imgData, 'PNG', (imgWidth - adjustedWidth) / 2, (pdf.internal.pageSize.getHeight() - adjustedHeight) / 2, adjustedWidth, adjustedHeight);
-    } else {
-      pdf.addImage(imgData, 'PNG', marginX, marginY, scaledWidth, scaledHeight);
-    }
-
-    pdf.save('download.pdf');
-    alert("Formulário enviado!");
   };
 
   return (
