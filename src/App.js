@@ -36,7 +36,7 @@ function App() {
                 <h2>Armazenamento de Documentos Físicos, Desenvolvimento de Softwares, Digitalização, consultoria em processos</h2>
               </div>
               <div id='button-actions'>
-                <button id='demo'><Link to={"/auth"}>Solicite uma demonstração</Link></button>
+                <button id='demo'><Link to={"/formdemo"}>Solicite uma demonstração</Link></button>
                 <button id='cliente'><a href="https://wa.me/553195704986" target='_blank' rel='noreferrer'>Área do cliente</a></button>
               </div>
             </div>
