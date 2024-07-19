@@ -19,6 +19,7 @@ import Signature from './sub_pages/Signature';
 import Documents from './sub_pages/Documents';
 import ProtectedRoute from './pages/ProtectedRoute';
 import { UserProvider } from './pages/UserContext';
+import FormDemo from './pages/FormDemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -38,6 +39,7 @@ root.render(
         <Route path="/scanning" element={<Scanning />} />
         <Route path="/signature" element={<Signature />} />
         <Route path="/documents" element={<Documents />} />
+        <Route path="/formdemo" element={<FormDemo />} />
         <Route path="/auth" element={<Auth />} />
         <Route element={<ProtectedRoute/>}>
           <Route path="/form" element={<Form />} />

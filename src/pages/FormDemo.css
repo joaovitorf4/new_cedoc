@@ -1,0 +1,86 @@
+/* .FormDemo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.FormDemo form {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--grey3);
+  padding: 2em 4em;
+  border-radius: 2em;
+  width: 50vw;
+  height: 120vh;
+}
+
+.div-radio-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  width: 40vw;
+}
+
+.div-text-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  width: 40vw;
+}
+
+.div-text-inputs input {
+  width: 100%;
+  padding: 1em;
+  font-size: 1em;
+}
+
+.radio-inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--white);
+  padding: 1em 1em;
+  gap: .5em;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.radio-inputs svg, .radio-inputs p {
+  color: var(--black);
+}
+
+.radio-inputs:hover svg {
+  fill: var(--white);
+}
+
+.radio-inputs:hover p {
+  color: var(--white);
+}
+
+.radio-inputs:hover {
+  background-color: var(--darkBlue);
+}
+
+.radio-inputs.selected {
+  border: 5px solid var(--grey);
+  background-color: var(--darkBlue);
+}
+
+.radio-inputs.selected p {
+  color: var(--white); 
+}
+
+.radio-inputs.selected svg {
+  fill: var(--white);
+}
+
+
+main svg {
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+#div-radio-inputs :hover svg {
+  transform: translateY(-12px) scale(1.05);
+}
