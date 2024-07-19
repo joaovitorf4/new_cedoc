@@ -10,7 +10,11 @@ const LabelTitle = styled.h1`
 
     @media (max-aspect-ratio: 1.25/1){
         text-align: center;
-        font-size: 7vh;
+        font-size: 6vh;
+    }
+
+    @media (max-aspect-ratio: 1/1){
+        font-size: 4vh;
     }
 `;
 

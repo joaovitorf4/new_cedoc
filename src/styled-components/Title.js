@@ -12,6 +12,16 @@ const Title = styled.h1`
         text-align: center;
         font-size: 7vh;
     }
+
+    @media (max-aspect-ratio: 1/1){
+        text-align: center;
+        font-size: 6vh;
+    }
+
+    @media (max-aspect-ratio: .4/1){
+        text-align: center;
+        font-size: 5vh;
+    }
 `;
 
 export default Title;
