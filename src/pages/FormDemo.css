@@ -50,6 +50,11 @@
   color: var(--black);
 }
 
+.radio-inputs svg {
+  min-width: 48px;
+  min-height: 48px;
+}
+
 .radio-inputs:hover svg {
   fill: var(--white);
 }
@@ -83,4 +88,32 @@ main svg {
 
 #div-radio-inputs :hover svg {
   transform: translateY(-12px) scale(1.05);
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .FormDemo form {
+    width: 90vw;
+    height: 140vh;
+  }
+
+  .div-text-inputs, .div-radio-inputs {
+    width: 80vw;
+  }
+
+  label {
+    font-size: 4vh;
+  }
+
+  h1 {
+    font-size: 5vh;
+  }
+
+  .radio-inputs svg {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  p {
+    max-width: 50%;
+  }
 }
