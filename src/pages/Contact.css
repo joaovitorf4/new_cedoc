@@ -104,7 +104,7 @@ main {
 }
 
 @media (max-aspect-ratio: 1.25/1) {
-  main p {
+  .Contact main p {
     font-size: 1em;
     min-width: 100%;
   }
