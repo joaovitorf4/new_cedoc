@@ -37,6 +37,21 @@ function FormDemo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.match(emailRegex)) {
+      alert("Por favor, insira um endereço de email válido.");
+      return;
+    }
+  
+    const phoneRegex = /(\b\(\d{2}\)\s?[9]?\s?\d{4}([- ])?\d{4})|(\b\d{2}\s?[9]?\s?\d{4}([- ])?\d{4})|(\b([9]|[9]\s)?\d{4}([- ])?\d{4})|(\b\d{4}([- ])?\d{4})/;
+
+    
+    if (!formData.telefone.match(phoneRegex)) {
+      alert("Por favor, insira um número de telefone válido.");
+      return;
+    }
+  
     const templateParams = {
       from_name: formData.nome,
       service: formData.tipoServico,
@@ -44,18 +59,26 @@ function FormDemo() {
       phone: formData.telefone,
       email: formData.email,
     };
-
-    emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAILJS_USER_ID)
-      .then((response) => {
-        console.log("Email enviado", response.status, response.text);
-        alert("Formulário Enviado!");
-      }, (err) => {
-        console.log("ERRO ao enviar o email: ", err);
-        alert("Erro ao enviar o email. Tente novamente mais tarde.");
-      });
-
-    // console.log('Form Data:', formData);
+  
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      .then(
+        (response) => {
+          console.log("Email enviado", response.status, response.text);
+          alert("Formulário Enviado!");
+        },
+        (err) => {
+          console.log("ERRO ao enviar o email: ", err);
+          alert("Erro ao enviar o email. Tente novamente mais tarde.");
+        }
+      );
   };
+  
 
   return (
     <div className="FormDemo">
