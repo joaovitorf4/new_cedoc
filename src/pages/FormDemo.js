@@ -5,7 +5,8 @@ import BackToTop from './BackToTop';
 import Title from '../styled-components/Title';
 import Paragraph from '../styled-components/Paragraph';
 import LabelTitle from '../styled-components/LabelTitle';
-import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser';
+import { scrollToTop } from './BackToTop';
 
 function FormDemo() {
   const [inProp, setInProp] = useState(false);
@@ -24,6 +25,10 @@ function FormDemo() {
     }, 100);
   }, []);
 
+  // function scrollToTop() {
+  //   window.scrollTo({top: 0, behavior: "smooth"})
+  // }
+
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     const fullServiceName = document.getElementById(`${option}-paragraph`).textContent;
@@ -40,14 +45,16 @@ function FormDemo() {
   
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.match(emailRegex)) {
+      scrollToTop();
       alert("Por favor, insira um endereço de email válido.");
       return;
     }
   
-    const phoneRegex = /(\b\(\d{2}\)\s?[9]?\s?\d{4}([- ])?\d{4})|(\b\d{2}\s?[9]?\s?\d{4}([- ])?\d{4})|(\b([9]|[9]\s)?\d{4}([- ])?\d{4})|(\b\d{4}([- ])?\d{4})/;
+    const phoneRegex = /^(\(?[0-9]{2}\)?)? ?([0-9]{4,5})-?([0-9]{4})$/;
 
     
     if (!formData.telefone.match(phoneRegex)) {
+      scrollToTop();
       alert("Por favor, insira um número de telefone válido.");
       return;
     }
@@ -69,11 +76,11 @@ function FormDemo() {
       )
       .then(
         (response) => {
-          console.log("Email enviado", response.status, response.text);
+          // console.log("Email enviado", response.status, response.text);
           alert("Formulário Enviado!");
         },
         (err) => {
-          console.log("ERRO ao enviar o email: ", err);
+          // console.log("ERRO ao enviar o email: ", err);
           alert("Erro ao enviar o email. Tente novamente mais tarde.");
         }
       );
