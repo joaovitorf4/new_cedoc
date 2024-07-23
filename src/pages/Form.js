@@ -5,6 +5,30 @@ import { generatePDF } from './GeneratePDF';
 const Form = () => {
   const elementRef = React.useRef();
 
+  const handleDownloadSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const fileInput = form.querySelector('input[type=file]');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Por favor, selecione um arquivo para download.');
+        return;
+    }
+    // console.log(file)
+    // console.log(typeof file)
+    const downloadUrl = URL.createObjectURL(file);
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = file.name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(downloadUrl);
+    form.reset();
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -125,6 +149,14 @@ const Form = () => {
           </div>
         </div>
       </form>
+      <form onSubmit={handleDownloadSubmit} style={{ marginTop: '20px', padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }}>
+                <h2>Download Formulário</h2>
+                <div className="form-group">
+                    <label htmlFor="fileInput">Escolha um arquivo:</label>
+                    <input type="file" id="fileInput" name="fileInput" accept=".pdf,.doc,.docx" required />
+                </div>
+                <button type="submit">Baixar Arquivo</button>
+        </form>
     </div>
   );
 };
