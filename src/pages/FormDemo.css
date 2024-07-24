@@ -113,7 +113,7 @@ main svg {
     min-height: 32px;
   }
 
-  p {
+  .FormDemo p {
     max-width: 50%;
   }
 }

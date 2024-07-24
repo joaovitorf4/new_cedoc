@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
     font-size: 8vh;
-    max-width: 100vw;
+    max-width: 90vw;
     font-family: "Chakra Petch", sans-serif;
     font-weight: 600;
 

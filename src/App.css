@@ -48,7 +48,7 @@ h2 {
   font-family: 'Courier Prime', Courier, monospace;
   font-weight: 100;
   font-size: 1.5vw;
-  max-width: 50vw;
+  max-width: 75vw;
 
 }
 
@@ -225,7 +225,7 @@ main p:hover {
   }
 
   h2 {
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: justify;
   }
 }

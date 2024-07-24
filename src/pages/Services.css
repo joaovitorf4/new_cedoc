@@ -33,6 +33,7 @@
 
 #main-div-services p {
   text-align: center;
+  color: var(--whites);
 }
 
 main svg {

@@ -1,4 +1,4 @@
-footer h2, p, li {
+footer h2, footer p, footer li {
   color: var(--white);
 }
 
