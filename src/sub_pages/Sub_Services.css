@@ -1,0 +1,13 @@
+h1 + p {
+    max-width: 75vw;
+    text-align: justify;
+    font-size: 2em;
+    font-family: "Arvo";
+}
+
+@media (max-aspect-ratio: 1/1) {
+    h1 + p {
+      font-size: 1.25em;
+        max-width: 85vw;
+    }
+  }
