@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import '../pages/Services';
+import './Sub_Services.css'
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 
@@ -23,6 +24,7 @@ function Documents() {
       >
         <main>
           <Title>Gestão de Documentos</Title>
+          <p>A Cedoc é especializada em guarda de documentos oferece uma infraestrutura completa e segura para armazenamento, incluindo tecnologias de última geração para garantir a integridade e confidencialidade das informações.</p>
         </main>
       </CSSTransition>
       <BackToTop />
