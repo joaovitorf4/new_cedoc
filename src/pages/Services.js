@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Services.css';
 import BackToTop from './BackToTop';
 import Title from '../styled-components/Title';
-import fundo_cedoc from '../imgs/IMG_8539.webp';
+// import fundo_cedoc from '../imgs/IMG_8539.webp';
 // import fundo_cedoc2 from '../imgs/IMG_8540.webp';
 import Paragraph from '../styled-components/Paragraph';
 
@@ -71,7 +71,7 @@ function Services() {
             </div>
           </div>
           <div className="div-imgs">
-            <img rel='preload' src={fundo_cedoc} alt="" />
+            {/* <img rel='preload' src={fundo_cedoc} alt="" /> */}
             {/* <img rel='preload' src={fundo_cedoc2} alt="" /> */}
           </div>
         </main>
