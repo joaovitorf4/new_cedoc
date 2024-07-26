@@ -40,7 +40,8 @@ function Auth() {
         if (response.status === 200 || response.status === 500) {
           // const json = await response.json();
           setUser(true);
-          navigate('/form');
+          // navigate('/form');
+          window.location.href = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
         } else {
           TratarErro();
         }
