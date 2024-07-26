@@ -1,7 +1,7 @@
 .back-to-top {
     position: fixed;
     bottom: 20px;
-    right: 30px;
+    right: 100px;
     z-index: 99;
 }
 
@@ -16,6 +16,8 @@
     border-radius: 10px;
     transition: transform 0.2s ease-in;
     border: 1px solid white;
+    height: 5.5vh;
+    width: 5.5vh;
 }
 
 .back-to-top button:hover {

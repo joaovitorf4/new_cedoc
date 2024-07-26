@@ -1,0 +1,20 @@
+.button-zap {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    padding: .75em;
+    background-color: green;
+    border-radius: .5em;
+    border: 1px white solid;
+    transition: transform 0.2s ease-in;
+    height: 5.5vh;
+    width: 5.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-zap:hover {
+    transform: scale(1.1);
+}
