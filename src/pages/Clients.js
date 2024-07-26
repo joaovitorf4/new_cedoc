@@ -16,6 +16,7 @@ import logo_unimed from '../imgs/logo_unimed.png';
 // import fundo_cedoc from '../imgs/IMG_8541.webp';
 import BackToTop from './BackToTop';
 import Title from '../styled-components/Title';
+import { acosAliancaSite, beloturSite, bmgSite, cohabSite, craSite, detraSite, fiocruzSite, odilonSite, paulwurthSite, rhMagnesiteSite, spdaSite, unimedSite } from '../imports/Links';
 
 function Clients() {
   const [inProp, setInProp] = useState(false);
@@ -41,62 +42,62 @@ function Clients() {
             <Title>Alguns dos nossos clientes</Title>
             <div className='logos-carousel'>
               <div className='logo-item'>
-                <a aria-label='Aços Aliança' href="http://www.acosalianca.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='Aços Aliança' href={acosAliancaSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_acos_alianca} alt="Aços Aliança" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='Belotur' href="https://prefeitura.pbh.gov.br/belotur" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='Belotur' href={beloturSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_belotur} alt="Belotur" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='BMG' href="https://www.bancobmg.com.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='BMG' href={bmgSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_bmg} alt="BMG" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='COHAB' href="http://www.cohab.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='COHAB' href={cohabSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_cohab} alt="COHAB" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='CRA' href="https://www.cramg.org.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='CRA' href={craSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_cra} alt="CRA" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='DETRAN MG' href="https://transito.mg.gov.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='DETRAN MG' href={detraSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_detran_mg} alt="DETRAN MG" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='Fiocruz' href="https://portal.fiocruz.br/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='Fiocruz' href={fiocruzSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_fiocruz} alt="Fiocruz" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='Magnesita' href="https://www.rhimagnesita.com/pt/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='Magnesita' href={rhMagnesiteSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_magnesita} alt="Magnesita" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='Hospital Odilon' href="https://prefeitura.pbh.gov.br/index.php/hospital-metropolitano-odilon-behrens" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='Hospital Odilon' href={odilonSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_odilon} alt="Hospital Odilon" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='Paul Wurth' href="https://www.paulwurth.com/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='Paul Wurth' href={paulwurthSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_paul_wurth} alt="Paul Wurth" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='SPDA' href="https://www.prefeitura.sp.gov.br/cidade/secretarias/fazenda/spda/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='SPDA' href={spdaSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_spda} alt="SPDA" />
                 </a>
               </div>
               <div className='logo-item'>
-                <a aria-label='UNIMED' href="https://www.unimed.coop.br/site/" target='_blank' rel='noreferrer' className='logo-link'>
+                <a aria-label='UNIMED' href={unimedSite} target='_blank' rel='noreferrer' className='logo-link'>
                   <img src={logo_unimed} alt="UNIMED" />
                 </a>
               </div>

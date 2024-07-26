@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';
 import Title2 from '../styled-components/Title2';
+import { administrativoEmail, administrativoZap, atendimentoEmail, atendimentoZap, comercialEmail, comercialZap, financeiroEmail, financeiroZap, geralTel, cedocLocation } from '../imports/Links'
 
 function Contact() {
   const [inProp, setInProp] = useState(false);
@@ -33,9 +34,9 @@ function Contact() {
               </svg>
               <Title2>Localização</Title2>
             </div>       
-            <p><a  target='_blank' rel='noreferrer' href="https://maps.app.goo.gl/F2m81kVqD6RnrCzYA">Avenida Portugal, 399 Jardim Atlântico</a></p>
-            <p><a  target='_blank' rel='noreferrer' href="https://maps.app.goo.gl/F2m81kVqD6RnrCzYA">Belo Horizonte - MG</a></p>
-            <p><a  target='_blank' rel='noreferrer' href="https://maps.app.goo.gl/F2m81kVqD6RnrCzYA">CEP 31550-000</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocation}>Avenida Portugal, 399 Jardim Atlântico</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocation}>Belo Horizonte - MG</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocation}>CEP 31550-000</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -44,8 +45,8 @@ function Contact() {
               </svg>
               <Title2>Atendimento</Title2>
             </div>
-            <p><a  target='_blank' rel='noreferrer' href="mailto:atendimento@cedoc.net.br">atendimento@cedoc.net.br</a></p>
-            <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531971716237">(31) 97171-6237</a></p>
+            <p><a target='_blank' rel='noreferrer' href={atendimentoEmail}>atendimento@cedoc.net.br</a></p>
+            <p><a target='_blank' rel='noreferrer' href={atendimentoZap}>(31) 7171-6237</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -54,7 +55,7 @@ function Contact() {
               </svg>
               <Title2>Geral</Title2>
             </div>
-            <p><a  target='_blank' rel='noreferrer' href="tel:553136562040">(31) 3656-2040</a></p>
+            <p><a target='_blank' rel='noreferrer' href={geralTel}>(31) 3656-2040</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -63,8 +64,8 @@ function Contact() {
             </svg>
               <Title2>Administrativo</Title2>
             </div>
-            <p><a  target='_blank' rel='noreferrer' href="mailto:administrativo@cedoc.net.br">administrativo@cedoc.net.br</a></p>
-            <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531995704986">(31) 99570-4986</a></p>
+            <p><a target='_blank' rel='noreferrer' href={administrativoEmail}>administrativo@cedoc.net.br</a></p>
+            <p><a target='_blank' rel='noreferrer' href={administrativoZap}>(31) 9570-4986</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -73,8 +74,8 @@ function Contact() {
             </svg>
               <Title2>Financeiro</Title2>
             </div>
-            <p><a  target='_blank' rel='noreferrer' href="mailto:financeiro@cedoc.net.br">financeiro@cedoc.net.br</a></p>
-            <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531971714838">(31) 97171-4838</a></p>
+            <p><a target='_blank' rel='noreferrer' href={financeiroEmail}>financeiro@cedoc.net.br</a></p>
+            <p><a target='_blank' rel='noreferrer' href={financeiroZap}>(31) 7208-9557</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -83,8 +84,8 @@ function Contact() {
             </svg>
               <Title2>Comercial</Title2>
             </div>
-            <p><a  target='_blank' rel='noreferrer' href="mailto:comercial@cedoc.net.br">comercial@cedoc.net.br</a></p>
-            <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531971714838">(31) 97171-4838</a></p>
+            <p><a target='_blank' rel='noreferrer' href={comercialEmail}>comercial@cedoc.net.br</a></p>
+            <p><a target='_blank' rel='noreferrer' href={comercialZap}>(31) 7171-4838</a></p>
           </div>
         </div>
       </main>
