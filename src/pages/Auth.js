@@ -3,6 +3,7 @@ import './Auth.css';
 import { useNavigate } from 'react-router-dom';
 import logo from '../imgs/efalia_logo.png';
 import { useUser } from './UserContext';
+import { linkFormFile } from '../imports/Links';
 
 function Auth() {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ function Auth() {
           // const json = await response.json();
           setUser(true);
           // navigate('/form');
-          window.location.href = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
+          window.location.href = linkFormFile;
         } else {
           TratarErro();
         }
