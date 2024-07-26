@@ -31,6 +31,8 @@ export const generatePDF = async (elementRef) => {
       pdf.addImage(imgData, 'PNG', marginX, marginY, scaledWidth, scaledHeight);
     }
 
-    pdf.save('generated.pdf');
-    alert("Formulário enviado!");
+    // alert("Formulário enviado!");
+    return pdf;
+    // pdf.save('generated.pdf');
+
   };

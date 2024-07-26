@@ -1,164 +1,157 @@
 import React from 'react';
 import './Form.css';
 import logo from '../imgs/logo_cedoc.png';
-import { generatePDF } from './GeneratePDF';
+import emailjs from '@emailjs/browser';
+
 const Form = () => {
-  const elementRef = React.useRef();
+    const elementRef = React.useRef();
 
-  const handleDownloadSubmit = (event) => {
-    event.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-    const form = event.target;
-    const fileInput = form.querySelector('input[type=file]');
-    const file = fileInput.files[0];
+        const form = event.target;
 
-    if (!file) {
-        alert('Por favor, selecione um arquivo para download.');
-        return;
-    }
-    // console.log(file)
-    // console.log(typeof file)
-    const downloadUrl = URL.createObjectURL(file);
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = file.name;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(downloadUrl);
-    form.reset();
+        const formData = new FormData(form);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        const params = {
+            from_name: 'Your Name',
+            to_email: 'joaovitorfod5@gmail.com',
+            message: formatFormContent(formDataObject),
+        };
+
+        try {
+            await emailjs.send(
+              process.env.REACT_APP_EMAILJS_SERVICE_ID,
+              'template_ddwux4r',
+              params,
+              process.env.REACT_APP_EMAILJS_USER_ID
+            );
+            alert("Formulário enviado com sucesso!");
+            form.reset();
+        } catch (error) {
+            console.error('Erro ao enviar formulário:', error);
+            alert("Erro ao enviar formulário. Por favor, tente novamente mais tarde.");
+        }
+    };
+    const capitalizeFirstLetter = (str) => {
+      if (typeof str !== 'string' || str.length === 0) {
+          return str;
+      }
+  
+      const firstChar = str.charAt(0);
+      if (firstChar !== firstChar.toUpperCase()) {
+          return firstChar.toUpperCase() + str.slice(1);
+      } else {
+          return str;
+      }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    const formatFormContent = (formData) => {
+        let message = 'Formulário de Requisição:\n\n';
+        for (const key in formData) {
+            message += `${capitalizeFirstLetter(key)}: ${formData[key]}\n`;
+        }
+        return message;
+    };
 
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    if (width / height < 1.28) {
-      alert('Coloque em tela cheia para que o formulário não fique muito achatado');
-      alert('A requisição deve ser feita apenas em computadores, Formulário Não enviado!');
-      return;
-    }
-
-    const form = event.target;
-    if (form.checkValidity()) {
-      generatePDF(elementRef);
-      form.reset();
-    } else {
-      alert('Preencha todos os campos obrigatórios');
-      form.reportValidity();
-    }
-  };
-
-  return (
-    <div className="Form">
-      <form onSubmit={handleSubmit} ref={elementRef} style={{ padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }} id="myForm">
-        <div className="form-header">
-          <img src={logo} alt="logo cedoc" />
-          <h1>Formulário de Requisição</h1>
-        </div>
-        <div>
-          <hr />
-        </div>
-        <div className="form1">
-          <div className="form-group">
-            <label htmlFor="empresa" className="bold-it">Empresa</label>
-            <input type="text" id="empresa" name="empresa" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="requisitante" className="bold-it">Nome do Requisitante</label>
-            <input type="text" id="requisitante" name="requisitante" required />
-          </div>
-          <div className="adjust-aside">
-            <div className="form-group">
-              <label htmlFor="telefone" className="bold-it">Telefone</label>
-              <input type="text" id="telefone" name="telefone" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email" className="bold-it">Email do Requisitante</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-          </div>
-        </div>
-
-        <div className="form2">
-          <div className="form-group">
-            <label className="bold-it">Meio de Disponibilização</label>
-            <div className="div-options">
-              <div>
-                <input type="radio" id="emailOption" name="meio" value="email" required />
-                <label htmlFor="emailOption">E-MAIL</label>
-              </div>
-              <div>
-                <input type="radio" id="sistema" name="meio" value="sistema" required />
-                <label htmlFor="sistema">NO SISTEMA</label>
-              </div>
-              <div>
-                <input type="radio" id="cedoc" name="meio" value="cedoc" required />
-                <label htmlFor="cedoc">TRANSPORTE VIA CEDOC</label>
-              </div>
-              <div>
-                <input type="radio" id="cliente" name="meio" value="cliente" required />
-                <label htmlFor="cliente">TRANSPORTE VIA CLIENTE</label>
-              </div>
-            </div>
-          </div>
-          <div className="form-group">
-            <label className="bold-it">Grau da Solicitação</label>
-            <div className="div-options">
-              <div>
-                <input type="radio" name="grau" id="normal" value="Normal" required />
-                <label htmlFor="normal">Normal</label>
-              </div>
-              <div>
-                <input type="radio" name="grau" id="emergencial" value="Emergencial" required />
-                <label htmlFor="emergencial">Emergencial</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="form3">
-          <div className="form-group">
-            <label htmlFor="observacao" className="bold-it">Observação do Pedido</label>
-            <div contentEditable="true" id="observacao" name="observacao"></div>
-          </div>
-          <div className="form-group">
-            <strong>
-              <label htmlFor="politica">
-                Comprometemo-nos a proteger seus dados pessoais, incluindo nome, e-mail e telefone, conforme as diretrizes da Lei Geral de Proteção de Dados (LGPD). Seus dados serão utilizados exclusivamente para os fins previstos neste formulário e não serão compartilhados com terceiros sem sua autorização. Para mais informações sobre como seus dados são tratados, consulte nossa política de privacidade.
-              </label>
-            </strong>
-            <div id="accept">
-              <input type="radio" name="accept" required />
-              <label>De Acordo</label>
-            </div>
-          </div>
-          <div>
-            <hr />
-          </div>
-          <div className="form-group-sign">
-            <div className="model-signature"><div id="signature"></div><p>CEDOC</p></div>
-            <div className="model-signature"><div id="signature"></div><p>Cliente</p></div>
-          </div>
-          <div>
-            <hr />
-          </div>
-          <div className="form-group">
-            <input type="submit" name="file" value="Enviar" />
-          </div>
-        </div>
-      </form>
-      <form onSubmit={handleDownloadSubmit} style={{ marginTop: '20px', padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }}>
-                <h2>Download Formulário</h2>
-                <div className="form-group">
-                    <label htmlFor="fileInput">Escolha um arquivo:</label>
-                    <input type="file" id="fileInput" name="fileInput" accept=".pdf,.doc,.docx" required />
+    return (
+        <div className="Form">
+            <form onSubmit={handleSubmit} ref={elementRef} style={{ padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }} id="myForm">
+                <div className="form-header">
+                    <img src={logo} alt="logo cedoc" />
+                    <h1>Formulário de Requisição</h1>
                 </div>
-                <button type="submit">Baixar Arquivo</button>
-        </form>
-    </div>
-  );
+                <div>
+                    <hr />
+                </div>
+                <div className="form1">
+                    <div className="form-group">
+                        <label htmlFor="empresa" className="bold-it">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="requisitante" className="bold-it">Nome do Requisitante</label>
+                        <input type="text" id="requisitante" name="requisitante" required />
+                    </div>
+                    <div className="adjust-aside">
+                        <div className="form-group">
+                            <label htmlFor="telefone" className="bold-it">Telefone</label>
+                            <input type="text" id="telefone" name="telefone" required />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email" className="bold-it">Email do Requisitante</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="form2">
+                    <div className="form-group">
+                        <label className="bold-it">Meio de Disponibilização</label>
+                        <div className="div-options">
+                            <div>
+                                <input type="radio" id="emailOption" name="meio" value="email" required />
+                                <label htmlFor="emailOption">E-MAIL</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="sistema" name="meio" value="sistema" required />
+                                <label htmlFor="sistema">NO SISTEMA</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="cedoc" name="meio" value="cedoc" required />
+                                <label htmlFor="cedoc">TRANSPORTE VIA CEDOC</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="cliente" name="meio" value="cliente" required />
+                                <label htmlFor="cliente">TRANSPORTE VIA CLIENTE</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="bold-it">Grau da Solicitação</label>
+                        <div className="div-options">
+                            <div>
+                                <input type="radio" name="grau" id="normal" value="Normal" required />
+                                <label htmlFor="normal">Normal</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="grau" id="emergencial" value="Emergencial" required />
+                                <label htmlFor="emergencial">Emergencial</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="form3">
+                    <div className="form-group">
+                        <label htmlFor="observacao" className="bold-it">Observação do Pedido</label>
+                        <textarea id="observacao" name="observacao" required></textarea>
+                    </div>
+                    <div className="form-group">
+                        <strong>
+                            <label htmlFor="politica">
+                                Comprometemo-nos a proteger seus dados pessoais, incluindo nome, e-mail e telefone, conforme as diretrizes da Lei Geral de Proteção de Dados (LGPD). Seus dados serão utilizados exclusivamente para os fins previstos neste formulário e não serão compartilhados com terceiros sem sua autorização. Para mais informações sobre como seus dados são tratados, consulte nossa política de privacidade.
+                            </label>
+                        </strong>
+                        <div id="accept">
+                            <input type="checkbox" id="accept" name="accept" required />
+                            <label htmlFor="accept">De Acordo</label>
+                        </div>
+                    </div>
+                    <div>
+                        <hr />
+                    </div>
+                    <div className="form-group">
+                        <input type="submit" value="Enviar" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    );
 };
 
 export default Form;
