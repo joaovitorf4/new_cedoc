@@ -63,6 +63,7 @@ function Contact() {
             </svg>
               <Title2>Administrativo</Title2>
             </div>
+            <p><a  target='_blank' rel='noreferrer' href="mailto:administrativo@cedoc.net.br">administrativo@cedoc.net.br</a></p>
             <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531995704986">(31) 99570-4986</a></p>
           </div>
           <div className="div-contacts">
@@ -72,6 +73,7 @@ function Contact() {
             </svg>
               <Title2>Financeiro</Title2>
             </div>
+            <p><a  target='_blank' rel='noreferrer' href="mailto:financeiro@cedoc.net.br">financeiro@cedoc.net.br</a></p>
             <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531971714838">(31) 97171-4838</a></p>
           </div>
           <div className="div-contacts">
@@ -81,6 +83,7 @@ function Contact() {
             </svg>
               <Title2>Comercial</Title2>
             </div>
+            <p><a  target='_blank' rel='noreferrer' href="mailto:comercial@cedoc.net.br">comercial@cedoc.net.br</a></p>
             <p><a  target='_blank' rel='noreferrer' href="https://wa.me/5531971714838">(31) 97171-4838</a></p>
           </div>
         </div>
