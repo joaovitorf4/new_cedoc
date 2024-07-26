@@ -1,7 +1,7 @@
 import React from 'react';
 import './ButtonZap.css';
 import { Link } from 'react-router-dom';
-import { comercialZap } from '../pages_imports/Links'
+import { comercialZap } from '../imports/Links'
 
 const BackToTop = () => {
     return (
