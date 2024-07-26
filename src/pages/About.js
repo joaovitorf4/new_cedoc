@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import BackToTop from './BackToTop';
+import ButtonZap from './ButtonZap';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
 // import img1 from '../imgs/IMG_8518.webp'
@@ -43,6 +44,7 @@ function About() {
       </main>
       </CSSTransition>
       <BackToTop />
+      <ButtonZap />
     </div>
   );
 }

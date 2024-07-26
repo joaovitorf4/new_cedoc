@@ -1,6 +1,7 @@
 import React from 'react';
 import './Contact.css';
 import BackToTop from './BackToTop';
+import ButtonZap from './ButtonZap';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';
@@ -91,6 +92,7 @@ function Contact() {
       </main>
       </CSSTransition>
       <BackToTop />
+      <ButtonZap />
     </div>
   );
 }
