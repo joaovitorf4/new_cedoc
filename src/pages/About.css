@@ -45,6 +45,10 @@ ul {
 #main-about li {
   font-weight: 100;
   list-style-position: inside;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
 }
 
 #main-about li:hover {
@@ -55,5 +59,9 @@ ul {
 @media (max-aspect-ratio: 1.25/1) {
   #main-about p {
     font-size: 1.5em;
+  }
+
+  #main-about li {
+    flex-direction: column;
   }
 }

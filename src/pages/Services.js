@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import './Services.css';
 import BackToTop from './BackToTop';
-import ButtonZap from './ButtonZap';
+import ButtonZap from '../components/ButtonZap';
 import Title from '../styled-components/Title';
 // import fundo_cedoc from '../imgs/IMG_8539.webp';
 // import fundo_cedoc2 from '../imgs/IMG_8540.webp';

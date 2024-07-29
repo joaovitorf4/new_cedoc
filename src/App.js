@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import logo_laptop from './imgs/laptop.png';
 import BackToTop from './pages/BackToTop';
-import ButtonZap from './pages/ButtonZap';
+import ButtonZap from './components/ButtonZap';
 import Title from './styled-components/Title';
 import Services from './pages/Services';
 import About from './pages/About';

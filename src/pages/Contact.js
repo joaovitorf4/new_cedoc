@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.css';
 import BackToTop from './BackToTop';
-import ButtonZap from './ButtonZap';
+import ButtonZap from '../components/ButtonZap';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';

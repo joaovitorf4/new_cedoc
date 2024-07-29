@@ -15,7 +15,7 @@ import logo_spda from '../imgs/logo_spda.png';
 import logo_unimed from '../imgs/logo_unimed.png';
 // import fundo_cedoc from '../imgs/IMG_8541.webp';
 import BackToTop from './BackToTop';
-import ButtonZap from './ButtonZap';
+import ButtonZap from '../components/ButtonZap';
 import Title from '../styled-components/Title';
 import { acosAliancaSite, beloturSite, bmgSite, cohabSite, craSite, detraSite, fiocruzSite, odilonSite, paulwurthSite, rhMagnesiteSite, spdaSite, unimedSite } from '../imports/Links';
 
