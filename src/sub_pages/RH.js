@@ -22,7 +22,7 @@ function RH() {
         classNames="fade"
         unmountOnExit
       >
-        <main>
+        <main className='Subpages'>
           <Title>Sistema RH Digital</Title>
           <p>Nosso sistema de RH digital foi projetado para revolucionar a gestão de recursos humanos da sua empresa. Com tecnologia avançada e uma interface intuitiva, oferecemos uma solução abrangente que simplifica desde a administração de folhas de pagamento até o gerenciamento de desempenho e desenvolvimento de talentos. Capacitando sua equipe de RH a focar no que realmente importa - o crescimento e a satisfação dos colaboradores - nossa plataforma proporciona eficiência, transparência e conformidade em cada etapa do processo.</p>
         </main>
