@@ -39,7 +39,7 @@ header img {
     width: 26vh;
 }
 
-ul {
+header ul {
   min-width: 100%;
   z-index: 999;
 }
