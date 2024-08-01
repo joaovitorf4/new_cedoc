@@ -16,9 +16,15 @@ main {
 #main-about {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: row;
+}
+
+#main-about div {
+  width: 40vw;
+  display: flex;
   flex-direction: column;
-  width: 80vw;
+  justify-content: space-between;
+  /* min-height: 50vh; */
   gap: 4em;
 }
 
@@ -34,12 +40,19 @@ ul {
 }
 
 #main-about p {
-  min-width: 80vw;
+  /* min-width: 80vw; */
   text-align: justify;
 }
 
 #main-about strong {
   text-align: center;
+}
+
+#main-about ul {
+  display: flex;
+  align-items: center;
+  min-width: none;
+  width: 50vw;
 }
 
 #main-about li {
@@ -49,6 +62,14 @@ ul {
   align-items: center;
   justify-content: center;
   gap: .5em;
+  padding: 3em;
+  background-color: white;
+  border-radius: 1.5em;
+  width: 35vw;
+}
+
+.count-up {
+  min-width: 4vw;
 }
 
 #main-about li:hover {
@@ -57,11 +78,33 @@ ul {
 }
 
 @media (max-aspect-ratio: 1.25/1) {
+
+  #main-about {
+    flex-direction: column;
+    gap: 10vh;
+  }
+
   #main-about p {
     font-size: 1.5em;
+    width: 80%;
   }
 
   #main-about li {
     flex-direction: column;
+    width: 75vw;
+    text-align: center;
+  }
+
+  #main-about div {
+    width: 90vw;
+    align-items: center;
+    gap: 2em;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  #main-about p {
+    font-size: .75em;
+    width: 80%;
   }
 }

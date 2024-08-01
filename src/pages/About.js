@@ -27,9 +27,7 @@ function About() {
       <main>
         <Title>Sobre Nós</Title>
         <div id="main-about">
-          <p>A Cedoc é uma empresa destacada no mercado de gestão de documentos, prestando um excelente serviço e mantendo um alto índice de satisfação de todos os clientes atendidos. </p>
-          <p>Este resultado se dá há mais de 10 anos de experiência no mercado e a busca inconstante de evolução e tecnologia para atender as novas demandas.</p>
-          <strong>10 anos de experiência no mercado de gestão de documentos</strong>
+          
           <ul>
             <li key="item1">
               <CountUp endNumber={400} duration={2000} /> Milhões de imagens de documentos digitalizados e indexados.
@@ -41,6 +39,11 @@ function About() {
               <CountUp endNumber={1500} duration={2000} /> Clientes atendidos nos estados de Minas Gerais, São Paulo e Rio de Janeiro.
             </li>
           </ul>
+          <div>
+            <p>A Cedoc é uma empresa destacada no mercado de gestão de documentos, prestando um excelente serviço e mantendo um alto índice de satisfação de todos os clientes atendidos. </p>
+            <p>Este resultado se dá há mais de 10 anos de experiência no mercado e a busca inconstante de evolução e tecnologia para atender as novas demandas.</p>
+            <strong>10 anos de experiência no mercado de gestão de documentos</strong>
+          </div>
         </div>
         <div className="div-imgs">
           {/* <img rel='preload' src={img1} alt="" />
