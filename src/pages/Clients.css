@@ -100,7 +100,7 @@ main p:hover {
 
 @media (max-aspect-ratio: 1.25/1) {
 
-  main {
+  .Clients main {
     gap: 2em;
     padding-bottom: 2em;
   }
