@@ -47,7 +47,7 @@ function Contact() {
               <Title2>Atendimento</Title2>
             </div>
             <p><a target='_blank' rel='noreferrer' href={atendimentoEmail}>atendimento@cedoc.net.br</a></p>
-            <p><a target='_blank' rel='noreferrer' href={atendimentoZap}>(31) 7171-6237</a></p>
+            <p><a target='_blank' rel='noreferrer' href={atendimentoZap}>(31) 97171-6237</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -56,7 +56,7 @@ function Contact() {
               </svg>
               <Title2>Geral</Title2>
             </div>
-            <p><a target='_blank' rel='noreferrer' href={geralTel}>(31) 3656-2040</a></p>
+            <p><a target='_blank' rel='noreferrer' href={geralTel}>(31) 93656-2040</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -66,7 +66,7 @@ function Contact() {
               <Title2>Administrativo</Title2>
             </div>
             <p><a target='_blank' rel='noreferrer' href={administrativoEmail}>administrativo@cedoc.net.br</a></p>
-            <p><a target='_blank' rel='noreferrer' href={administrativoZap}>(31) 9570-4986</a></p>
+            <p><a target='_blank' rel='noreferrer' href={administrativoZap}>(31) 99570-4986</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -76,7 +76,7 @@ function Contact() {
               <Title2>Financeiro</Title2>
             </div>
             <p><a target='_blank' rel='noreferrer' href={financeiroEmail}>financeiro@cedoc.net.br</a></p>
-            <p><a target='_blank' rel='noreferrer' href={financeiroZap}>(31) 7208-9557</a></p>
+            <p><a target='_blank' rel='noreferrer' href={financeiroZap}>(31) 97208-9557</a></p>
           </div>
           <div className="div-contacts">
             <div>
@@ -86,7 +86,7 @@ function Contact() {
               <Title2>Comercial</Title2>
             </div>
             <p><a target='_blank' rel='noreferrer' href={comercialEmail}>comercial@cedoc.net.br</a></p>
-            <p><a target='_blank' rel='noreferrer' href={comercialZap}>(31) 7171-4838</a></p>
+            <p><a target='_blank' rel='noreferrer' href={comercialZap}>(31) 97171-4838</a></p>
           </div>
         </div>
       </main>

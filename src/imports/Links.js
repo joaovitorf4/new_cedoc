@@ -8,7 +8,7 @@ export const financeiroEmail = "mailto:financeiro@cedoc.net.br"
 export const atendimentoEmail = "mailto:atendimento@cedoc.net.br"
 export const administrativoEmail = "mailto:administrativo@cedoc.net.br"
 
-export const geralTel = "tel:553136562040"
+export const geralTel = "tel:5531936562040"
 export const geralTel2 = "tel:55319999000722"
 export const cedocLocation = "https://maps.app.goo.gl/F2m81kVqD6RnrCzYA"
 
