@@ -46,6 +46,14 @@ body, #root {
   border: solid var(--white) 1px;
 }
 
+main {
+  min-height: 100vh;
+}
+
+main h1 {
+  padding-top: 10vh;
+}
+
 @media (max-aspect-ratio: 1/1) {
   .div-imgs img {
     width: 80vw;

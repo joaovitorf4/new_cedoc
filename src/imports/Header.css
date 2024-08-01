@@ -1,6 +1,8 @@
 .Header {
   min-height: 10vh;
-  background-color: var(--grey2);
+  background-color: transparent;
+  position: absolute;
+  padding-bottom: 1em;
 }
 
 header {
@@ -33,6 +35,10 @@ header ul {
 
 nav {
   width: 70vw;
+}
+
+nav * {
+  white-space: nowrap;
 }
 
 header img {
@@ -93,7 +99,7 @@ ul li {
   height: 5vh;
 }
   
-@media (max-aspect-ratio: 1.5 / 1) {
+@media (max-aspect-ratio: 1.65 / 1) {
   .menu {
     height: 35vh;
     padding: 2vh 0px;
