@@ -1,5 +1,5 @@
 
-main {
+.Auth main {
   display: flex;
   height: 100%;
   background-color: var(--grey2);
@@ -11,7 +11,7 @@ main {
 }
 
 .Auth {
-  min-height: 66vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
