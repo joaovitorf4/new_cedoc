@@ -44,7 +44,7 @@ function App() {
           </div>
           <Services />
           <Clients />
-          <About />
+          <About/>
           <Contact />
         </main>
       </CSSTransition>
