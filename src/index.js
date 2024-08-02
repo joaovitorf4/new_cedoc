@@ -30,16 +30,16 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/clients" element={<Clients />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/BPO" element={<BPO />} />
-        <Route path="/RH" element={<RH />} />
-        <Route path="/scanning" element={<Scanning />} />
-        <Route path="/signature" element={<Signature />} />
-        <Route path="/documents" element={<Documents />} />
-        <Route path="/formdemo" element={<FormDemo />} />
+        <Route path="/contact" element={<Contact bgColor='#CACACA'/>} />
+        <Route path="/about" element={<About bgColor='#CACACA'/>} />
+        <Route path="/clients" element={<Clients bgColor='#CACACA'/>} />
+        <Route path="/services" element={<Services bgColor='#CACACA'/>} />
+        <Route path="/BPO" element={<BPO bgColor='#CACACA'/>} />
+        <Route path="/RH" element={<RH bgColor='#CACACA'/>} />
+        <Route path="/scanning" element={<Scanning bgColor='#CACACA'/>} />
+        <Route path="/signature" element={<Signature bgColor='#CACACA'/>} />
+        <Route path="/documents" element={<Documents bgColor='#CACACA'/>} />
+        <Route path="/formdemo" element={<FormDemo bgColor='#CACACA'/>} />
         <Route path="/auth" element={<Auth />} />
         <Route element={<ProtectedRoute/>}>
           <Route path="/form" element={<Form />} />
