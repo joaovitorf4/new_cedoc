@@ -23,24 +23,8 @@
 #titles p {
   color: black;
 }
-
-#button-actions {
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
-}
-
 #cliente {
   background-color: var(--orange);
-}
-
-#button-actions button {
-  width: 40%;
-  height: 8vh;
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #main-clients {
@@ -131,12 +115,6 @@ main p:hover {
     align-items: center;
   }
 
-  #button-actions {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
   .logo-item {
     display: flex;
     align-items: center;
@@ -148,15 +126,6 @@ main p:hover {
     width: 40vw;
     transition: transform 0.2s ease;
     cursor: pointer;
-  }
-
-  #button-actions button {
-    width: 75%;
-    height: 8vh;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .logos-carousel {
