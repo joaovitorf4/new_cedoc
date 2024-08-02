@@ -9,10 +9,6 @@
   width: 99vw;
 }
 
-.About > main {
-  /* background-color: #dfdfdf; */
-}
-
 #main-about {
   display: flex;
   align-items: center;
