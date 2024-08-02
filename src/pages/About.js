@@ -7,7 +7,10 @@ import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';
 import CountUp from '../components/CountUp';
 
-function About() {
+function About({bgColor = 'none'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -24,7 +27,7 @@ function About() {
         classNames="fade"
         unmountOnExit
       >
-      <main>
+      <main style={style}>
         <Title>Sobre Nós</Title>
         <div id="main-about">
           

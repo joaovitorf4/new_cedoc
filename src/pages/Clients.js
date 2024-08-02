@@ -19,7 +19,10 @@ import ButtonZap from '../components/ButtonZap';
 import Title from '../styled-components/Title';
 import { acosAliancaSite, beloturSite, bmgSite, cohabSite, craSite, detraSite, fiocruzSite, odilonSite, paulwurthSite, rhMagnesiteSite, spdaSite, unimedSite } from '../imports/Links';
 
-function Clients() {
+function Clients({bgColor = 'none'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -38,7 +41,7 @@ function Clients() {
         appear
         unmountOnExit
       >
-        <main>
+        <main style={style}>
           <div id='main-clients'>
             <Title>Alguns dos nossos clientes</Title>
             <div className='logos-carousel'>

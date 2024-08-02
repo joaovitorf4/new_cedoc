@@ -5,7 +5,10 @@ import './Sub_Services.css'
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 
-function Signature() {
+function Signature({bgColor = 'white'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ function Signature() {
         classNames="fade"
         unmountOnExit
       >
-        <main className='Subpages'>
+        <main className='Subpages' style={style}>
           <Title>Assinatura Digital</Title>
           <h3 className='advantages'>Benefícios da Assinatura Digital</h3>
           <p>A assinatura digital é uma solução moderna e segura para autenticar documentos eletrônicos, trazendo uma série de vantagens para sua empresa.</p>

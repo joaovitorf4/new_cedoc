@@ -8,7 +8,10 @@ import LabelTitle from '../styled-components/LabelTitle';
 import emailjs from '@emailjs/browser';
 import { scrollToTop } from './BackToTop';
 
-function FormDemo() {
+function FormDemo({bgColor = 'white'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [formData, setFormData] = useState({
@@ -95,7 +98,7 @@ function FormDemo() {
         classNames="fade"
         unmountOnExit
       >
-        <main>
+        <main style={style}>
           <Title>Solicite uma Demonstração</Title>
           <form onSubmit={handleSubmit}>
             <LabelTitle>Informações do Cliente</LabelTitle>

@@ -5,7 +5,10 @@ import './Sub_Services.css'
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 
-function Scanning() {
+function Scanning({bgColor = 'white'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ function Scanning() {
         classNames="fade"
         unmountOnExit
       >
-        <main className='Subpages'>
+        <main className='Subpages' style={style}>
           <Title>Digitalização de Documentos</Title>
           <h3 className='advantages'>Benefícios da Digitalização de Documentos</h3>
           <p>A digitalização de documentos é uma solução moderna e eficiente para a gestão e proteção das informações da sua empresa.</p>

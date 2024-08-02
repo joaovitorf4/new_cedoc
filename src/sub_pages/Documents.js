@@ -5,7 +5,10 @@ import './Sub_Services.css'
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 
-function Documents() {
+function Documents({bgColor = 'white'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ function Documents() {
         classNames="fade"
         unmountOnExit
       >
-        <main className='Subpages'>
+        <main className='Subpages' style={style}>
           <Title>Gestão de Documentos</Title>
           <h3 className='advantages'>Benefícios da Guarda de Documentos</h3>
           <p>A guarda de documentos é essencial para a gestão eficiente e segura das informações da sua empresa.</p>

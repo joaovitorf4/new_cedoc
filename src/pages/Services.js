@@ -9,7 +9,11 @@ import Title from '../styled-components/Title';
 // import fundo_cedoc2 from '../imgs/IMG_8540.webp';
 import Paragraph from '../styled-components/Paragraph';
 
-function Services() {
+function Services({bgColor = 'none'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
+
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -26,7 +30,7 @@ function Services() {
         classNames="fade"
         unmountOnExit
       >
-        <main>
+        <main style={style}>
           <Title>Serviços e Soluções</Title>
           <div id="main-div-services">
             <div>

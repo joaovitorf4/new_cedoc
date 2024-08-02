@@ -5,7 +5,10 @@ import './Sub_Services.css'
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 
-function BPO() {
+function BPO({bgColor = 'white'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ function BPO() {
         classNames="fade"
         unmountOnExit
       >
-        <main className='Subpages'>
+        <main className='Subpages' style={style}>
           <Title>BPO - Terceirização de Processos</Title>
           <h3 className='advantages'>Benefícios da Terceirização de Serviços (BPO)</h3>
           <p>A terceirização de serviços, ou BPO (Business Process Outsourcing), é uma estratégia eficaz para otimizar operações e melhorar o desempenho das empresas.</p>

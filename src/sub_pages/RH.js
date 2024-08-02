@@ -5,7 +5,10 @@ import './Sub_Services.css'
 import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 
-function RH() {
+function RH({bgColor = 'white'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ function RH() {
         classNames="fade"
         unmountOnExit
       >
-        <main className='Subpages'>
+        <main className='Subpages' style={style}>
           <Title>Sistema RH Digital</Title>
           <h3 className='advantages'>Vantagens do Sistema RH Digital</h3>
           <p>O Sistema RH Digital é uma solução moderna e eficiente para gerenciar todos os aspectos relacionados a recursos humanos. Ele integra tecnologia para facilitar e otimizar as funções de RH, desde o recrutamento até a gestão de desempenho.</p>

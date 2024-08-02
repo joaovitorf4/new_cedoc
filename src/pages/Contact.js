@@ -8,7 +8,10 @@ import Title from '../styled-components/Title';
 import Title2 from '../styled-components/Title2';
 import { administrativoEmail, administrativoZap, atendimentoEmail, atendimentoZap, comercialEmail, comercialZap, financeiroEmail, financeiroZap, geralTel, cedocLocation } from '../imports/Links'
 
-function Contact() {
+function Contact({bgColor = 'none'}) {
+  const style = {
+    backgroundColor: bgColor,
+  };
   const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ function Contact() {
         classNames="fade"
         unmountOnExit
       >
-      <main>
+      <main style={style}>
         <Title>Suporte e Contato</Title>
         <div id="main-div-contacts">
           <div className="div-contacts">
