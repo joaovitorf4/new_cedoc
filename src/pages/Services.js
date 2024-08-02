@@ -9,9 +9,9 @@ import Title from '../styled-components/Title';
 // import fundo_cedoc2 from '../imgs/IMG_8540.webp';
 import Paragraph from '../styled-components/Paragraph';
 
-function Services({bgColor = 'none'}) {
+function Services({bgImg = 'url("https://static.vecteezy.com/ti/vetor-gratis/p1/19938741-premio-fundo-projeto-com-onda-padronizar-dentro-cinzento-cor-vetor.jpg")'}) {
   const style = {
-    backgroundColor: bgColor,
+    backgroundImage: bgImg,
   };
 
   const [inProp, setInProp] = useState(false);

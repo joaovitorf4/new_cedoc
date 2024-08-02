@@ -7,9 +7,9 @@ import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';
 import CountUp from '../components/CountUp';
 
-function About({bgColor = 'none'}) {
+function About({bgImg = 'url("https://static.vecteezy.com/ti/vetor-gratis/p1/19938741-premio-fundo-projeto-com-onda-padronizar-dentro-cinzento-cor-vetor.jpg")'}) {
   const style = {
-    backgroundColor: bgColor,
+    backgroundImage: bgImg,
   };
   const [inProp, setInProp] = useState(false);
 

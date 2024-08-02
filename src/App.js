@@ -42,10 +42,10 @@ function App() {
               </div>
             </div>
           </div>
-          <Services />
-          <Clients />
-          <About/>
-          <Contact />
+          <Services bgImg='none'/>
+          <Clients  bgImg='none'/>
+          <About  bgImg='none'/>
+          <Contact  bgImg='none'/>
         </main>
       </CSSTransition>
       <BackToTop />
