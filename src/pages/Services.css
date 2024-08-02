@@ -1,7 +1,7 @@
 .Services main {
   display: flex;
   height: 100%;
-  background-color: var(--grey3);
+  /* background-color: var(--grey3); */
   flex-direction: column;
   gap: 5em;
   padding-bottom: 5em;

@@ -1,7 +1,7 @@
 .About main {
   display: flex;
   height: 100%;
-  background-color: var(--grey2);
+  /* background-color: var(--grey2); */
   flex-direction: column;
   gap: 5em;
   padding-bottom: 5em;
@@ -10,7 +10,7 @@
 }
 
 .About > main {
-  background-color: #dfdfdf;
+  /* background-color: #dfdfdf; */
 }
 
 #main-about {
