@@ -107,6 +107,9 @@ label {
   padding: .5em;
 }
 
+#loginpane {
+  background-color: var(--white);
+}
 .form-group-sign {
   display: flex;
   flex-direction: row;
