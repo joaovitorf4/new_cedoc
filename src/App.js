@@ -37,8 +37,8 @@ function App() {
                 <h2>Armazenamento de Documentos Físicos, Desenvolvimento de Softwares, Digitalização, consultoria em processos</h2>
               </div>
               <div id='button-actions'>
-                <button id='demo'><Link to={"/formdemo"}>Solicite uma demonstração</Link></button>
-                <button id='cliente'><Link to={"/auth"}>Área do cliente</Link></button>
+                <Link id='demo' to={"/formdemo"}>Solicite uma demonstração</Link>
+                <Link id='client' to={"/auth"}>Área do cliente</Link>
               </div>
             </div>
           </div>
