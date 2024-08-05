@@ -15,6 +15,11 @@
   margin: 8em 0;
 }
 
+.FormDemo form h1 {
+  padding-top: 0;
+  text-align: center;
+}
+
 .FormDemo main {
   display: flex;
   align-items: center;
