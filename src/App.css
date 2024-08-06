@@ -35,7 +35,7 @@ main {
   min-height: 100vh;
 }
 
-a, button, li {
+.App a, button, li {
   text-decoration: none;
   color: var(--black);
   font-family: "Arvo", serif;
