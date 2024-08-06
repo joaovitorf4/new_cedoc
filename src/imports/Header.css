@@ -31,9 +31,6 @@ header ul {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 20px 20px -25px var(--black);
-    min-width: 100%;
-    z-index: 999;
-    gap: 1vw;
 }
 
 nav {
@@ -46,6 +43,11 @@ nav * {
 
 header img {
     width: 26vh;
+}
+
+header ul {
+  min-width: 100%;
+  z-index: 999;
 }
 
 header a, header button, header li {
@@ -98,29 +100,9 @@ ul li {
   height: 5vh;
 }
 
-/* @media (max-width: 1366px) {
-  header a {
-    font-size: .8em;
-  }
+.active a {
+  font-size: 1.5vh;
 }
-
-@media (max-width: 1200px) {
-  header a {
-    font-size: .7em;
-  }
-}
-
-@media (max-width: 1000px) {
-  header a {
-    font-size: .5em;
-  }
-}
-
-@media (max-width: 750px) {
-  header a {
-    font-size: .4em;
-  }
-} */
   
 @media (max-aspect-ratio: 1.65 / 1) {
   .menu {
