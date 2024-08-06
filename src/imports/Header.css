@@ -31,6 +31,9 @@ header ul {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 20px 20px -25px var(--black);
+    min-width: 100%;
+    z-index: 999;
+    gap: 1vw;
 }
 
 nav {
@@ -45,11 +48,6 @@ header img {
     width: 26vh;
 }
 
-header ul {
-  min-width: 100%;
-  z-index: 999;
-}
-
 header a, header button, header li {
     text-decoration: none;
     color: var(--black);
@@ -57,6 +55,7 @@ header a, header button, header li {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.2s ease;
+    font-size: 1vw;
 }
 
 #demo, #client {
@@ -98,6 +97,30 @@ ul li {
   width: 5vh;
   height: 5vh;
 }
+
+/* @media (max-width: 1366px) {
+  header a {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 1200px) {
+  header a {
+    font-size: .7em;
+  }
+}
+
+@media (max-width: 1000px) {
+  header a {
+    font-size: .5em;
+  }
+}
+
+@media (max-width: 750px) {
+  header a {
+    font-size: .4em;
+  }
+} */
   
 @media (max-aspect-ratio: 1.65 / 1) {
   .menu {

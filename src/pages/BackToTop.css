@@ -1,29 +1,43 @@
 .back-to-top {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 100px;
     z-index: 999;
-}
-
-.back-to-top button {
-    display: none;
-    border: none;
-    outline: none;
+    min-height: 40px;
+    min-width: 40px;
     background-color: rgb(0, 31, 117);
-    color: white;
-    cursor: pointer;
-    padding: 15px;
     border-radius: 10px;
-    transition: transform 0.2s ease-in;
     border: 1px solid white;
-    height: 5.5vh;
-    width: 5.5vh;
 }
 
-.back-to-top button:hover {
+.back-to-top-show img {
+    outline: none;
+    transition: transform 0.2s ease-in;
+    height: 4vh;
+    width: 4vh;
+    padding: .5em;
+}
+
+.back-to-top-show:hover {
     transform: scale(1.1);
 }
 
-.back-to-top button.show {
-    display: block;
+.back-to-top-show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    z-index: 999;
+    min-height: 40px;
+    min-width: 40px;
+    background-color: rgb(0, 31, 117);
+    border-radius: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+    height: 5.5vh;
+    width: 5.5vh;
+    transition: all .2s ease-in;
 }

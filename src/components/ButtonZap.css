@@ -10,9 +10,15 @@
     transition: transform 0.2s ease-in;
     height: 5.5vh;
     width: 5.5vh;
+    min-height: 40px;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+a:hover {
+    transform: none;
 }
 
 .button-zap a {
