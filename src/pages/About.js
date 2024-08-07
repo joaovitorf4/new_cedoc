@@ -41,7 +41,7 @@ function About({bgImg = 'url("https://static.vecteezy.com/ti/vetor-gratis/p1/199
               <CountUp endNumber={25} duration={2000} /> Milhões de documentos físicos arquivados e indexados.
             </li>
             <li key="item3">
-              <CountUp endNumber={1500} duration={2000} /> Clientes atendidos nos estados de Minas Gerais, São Paulo e Rio de Janeiro.
+              <CountUp endNumber={1500} duration={2000} /> Clientes atendidos nos Estados de Minas Gerais, São Paulo e Rio de Janeiro.
             </li>
           </ul>
           <div>
