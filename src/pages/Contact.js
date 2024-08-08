@@ -7,8 +7,9 @@ import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';
 import Title2 from '../styled-components/Title2';
 import { administrativoEmail, administrativoZap, atendimentoEmail, atendimentoZap, comercialEmail, comercialZap, financeiroEmail, financeiroZap, geralTel, cedocLocation } from '../imports/Links'
+import background from '../imgs/bg-cedoc.jpg';
 
-function Contact({bgImg = 'url("https://static.vecteezy.com/ti/vetor-gratis/p1/19938741-premio-fundo-projeto-com-onda-padronizar-dentro-cinzento-cor-vetor.jpg")'}) {
+function Contact({bgImg = `url(${background})`}) {
   const style = {
     backgroundImage: bgImg,
     backgroundRepeat: 'no-repeat',
