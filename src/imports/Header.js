@@ -27,16 +27,14 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       if (menuOpen) {
-        // Keep header visible when menu is open
         setIsVisible(true);
       } else {
-        // Set visibility based on scroll position when menu is closed
         setIsVisible(window.scrollY > 10);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Update visibility on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -46,7 +44,6 @@ function App() {
   const toggleMenu = () => {
     setMenuOpen(prevMenuOpen => {
       const newMenuOpen = !prevMenuOpen;
-      // Set visibility to true when the menu is opened
       if (newMenuOpen) {
         setIsVisible(true);
       }
