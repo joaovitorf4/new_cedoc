@@ -60,7 +60,7 @@ header a, header button, header li {
     font-size: 1vw;
 }
 
-#demo, #client {
+header #demo, header #client {
   padding: 1em;
   border-radius: .5em;
 }
