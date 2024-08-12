@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 const Title2 = styled.h2`
-    font-size: 2.2em;
+    font-size: 1.8em;
     font-family: "Euclid";
     color: white;
 

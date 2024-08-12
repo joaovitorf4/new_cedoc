@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import { useState, useEffect } from 'react';
 import Title from '../styled-components/Title';
 import Title2 from '../styled-components/Title2';
-import { administrativoEmail, administrativoZap, atendimentoEmail, atendimentoZap, comercialEmail, comercialZap, financeiroEmail, financeiroZap, geralTel, cedocLocation } from '../imports/Links'
+import { administrativoEmail, administrativoZap, atendimentoEmail, atendimentoZap, comercialEmail, comercialZap, financeiroEmail, financeiroZap, geralTel, cedocLocationArm, cedocLocationAdm } from '../imports/Links'
 import background from '../imgs/bg-cedoc.jpg';
 
 function Contact({bgImg = `url(${background})`}) {
@@ -39,11 +39,22 @@ function Contact({bgImg = `url(${background})`}) {
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
               </svg>
-              <Title2>Localização</Title2>
+              <Title2>Localização Administrativo</Title2>
             </div>       
-            <p><a target='_blank' rel='noreferrer' href={cedocLocation}>Avenida Portugal, 399 Jardim Atlântico</a></p>
-            <p><a target='_blank' rel='noreferrer' href={cedocLocation}>Belo Horizonte - MG</a></p>
-            <p><a target='_blank' rel='noreferrer' href={cedocLocation}>CEP 31550-000</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationAdm}>Avenida Portugal, 399 Jardim Atlântico</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationAdm}>Belo Horizonte - MG</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationAdm}>CEP 31550-000</a></p>
+          </div>
+          <div className="div-contacts">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+              </svg>
+              <Title2>Localização Armazenamento</Title2>
+            </div>       
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>Rua Alcobaça, 831 São Francisco</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>Belo Horizonte - MG</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>CEP 31550-000</a></p>
           </div>
           <div className="div-contacts">
             <div>
