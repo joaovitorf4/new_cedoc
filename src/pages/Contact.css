@@ -47,6 +47,11 @@
   gap: .5em;
 }
 
+.div-contacts a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
 #titles {
   display: flex;
   flex-direction: column;

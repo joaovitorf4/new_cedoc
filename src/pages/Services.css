@@ -29,6 +29,7 @@
   width: 200px;
   border-radius: 1em;
   cursor: pointer;
+  text-decoration: none;
 }
 
 #main-div-services p {
