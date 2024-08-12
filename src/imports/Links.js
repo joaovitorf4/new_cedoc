@@ -10,7 +10,8 @@ export const administrativoEmail = "mailto:administrativo@cedoc.net.br"
 
 export const geralTel = "tel:5531936562040"
 export const geralTel2 = "tel:55319999000722"
-export const cedocLocation = "https://maps.app.goo.gl/F2m81kVqD6RnrCzYA"
+export const cedocLocationAdm = "https://maps.app.goo.gl/F2m81kVqD6RnrCzYA"
+export const cedocLocationArm = "https://maps.app.goo.gl/5zDct9Vp1EKDkVPZA"
 
 export const linkFormFile = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d"
 
