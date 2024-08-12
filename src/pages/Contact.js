@@ -62,7 +62,7 @@ function Contact({bgImg = `url(${background})`}) {
               </svg>
               <Title2>Geral</Title2>
             </div>
-            <p><a target='_blank' rel='noreferrer' href={geralTel}>(31) 93656-2040</a></p>
+            <p><a target='_blank' rel='noreferrer' href={geralTel}>(31) 3656-2040</a></p>
           </div>
           <div className="div-contacts">
             <div>
