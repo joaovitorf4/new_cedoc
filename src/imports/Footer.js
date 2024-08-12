@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Title2Footer from '../styled-components/Title2';
 import Paragraph from '../styled-components/Paragraph';
-import { cedocLocation, comercialEmail, geralTel2 } from './Links';
+import { cedocLocationAdm, cedocLocationArm, comercialEmail, geralTel2 } from './Links';
 
 const linkStyle = {
   textDecoration: 'none',
@@ -38,7 +38,8 @@ function App() {
           <section id='first-sec'>
           <Link style={linkStyle} activestyle={hoverStyle} to={"/contact"}><Title2Footer>Contato</Title2Footer></Link>
             <ul>
-              <li id='location'><a href={cedocLocation} target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
+              <li className='location'><p>Unidade de Administrativa</p><a href={cedocLocationAdm} target='_blank' rel='noreferrer'>Avenida Portugal, 399 Jardim Atlântico - Belo Horizonte - MG</a></li>
+              <li className='location'><p>Unidade de Armazenamento</p><a href={cedocLocationArm} target='_blank' rel='noreferrer'>Rua Alcobaça, 831 São Francisco - Belo Horizonte - MG</a></li>
               <li id='email-contact'><a href={comercialEmail} target='_blank' rel='noreferrer'>comercial@cedoc.net.br</a></li>
               <li id='number'><a href={geralTel2} target='_blank' rel='noreferrer'>(31) 99990-00722</a></li>
             </ul>

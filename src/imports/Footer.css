@@ -44,6 +44,11 @@ footer li a {
   color: var(--lightBlue);
 }
 
+footer li p {
+  font-weight: 100;
+  margin-bottom: .25em;
+}
+
 li a:hover {
   transform: none;
 }
@@ -55,7 +60,7 @@ ul {
   max-width: 75%;
 }
 
-#location {
+.location {
   background-image: url('../imgs/geo-alt-fill.svg');
   background-repeat: no-repeat;
   padding-left: 20px;
