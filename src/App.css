@@ -34,6 +34,10 @@ main {
   min-height: 100vh;
 }
 
+.App img {
+  align-self: center;
+}
+
 .App a, button, li {
   text-decoration: none;
   color: var(--black);
