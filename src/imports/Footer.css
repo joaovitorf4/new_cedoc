@@ -25,7 +25,6 @@ section {
 
 #first-sec ul li {
   transform: none;
-  max-width: 80vw;
 }
 
 #copyright {
@@ -57,7 +56,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: .5em;
-  max-width: 75%;
 }
 
 .location {
@@ -124,6 +122,10 @@ footer #second-sec li {
   }
 
   #second-sec {
+    text-align: center;
+  }
+
+  #second-sec * {
     text-align: center;
   }
 }
