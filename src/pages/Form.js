@@ -2,8 +2,15 @@ import React from 'react';
 import './Form.css';
 import logo from '../imgs/logo_cedoc.png';
 import emailjs from '@emailjs/browser';
+import background from '../imgs/bg-cedoc.jpg';
 
-const Form = () => {
+const Form = ({bgImg = `url(${background})`}) => {
+    const style = {
+        backgroundImage: bgImg,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% 100%',
+      };
+
     const elementRef = React.useRef();
 
     const handleSubmit = async (event) => {
@@ -59,7 +66,7 @@ const Form = () => {
     };
 
     return (
-        <div className="Form">
+        <div className="Form" style={style}>
             <form onSubmit={handleSubmit} ref={elementRef} style={{ padding: '20px', background: '#f5f5f5', whiteSpace: 'pre-wrap' }} id="myForm">
                 <div className="form-header">
                     <img src={logo} alt="logo cedoc" />
