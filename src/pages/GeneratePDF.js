@@ -32,7 +32,20 @@ export const generatePDF = async (elementRef) => {
     }
 
     // alert("Formulário enviado!");
-    return pdf;
+    let file = pdf.output('dataurlstring', { filename: 'form.pdf' });
+    //console.log(file);
+    // let raw = '';
+    // raw = await fetchText(file);
+    return file;
     // pdf.save('generated.pdf');
 
   };
+async function fetchText(file) {
+    let stringBlob;
+    try {
+        stringBlob = await file.text();
+        return stringBlob;
+    } catch (error) {
+        console.error('Error during fetch:', error);
+    }
+}

@@ -6,6 +6,8 @@ import { useUser } from './UserContext';
 import { linkFormFile } from '../imports/Links';
 import background from '../imgs/bg-cedoc.jpg';
 
+let token = '';
+
 function Auth({bgImg = `url(${background})`}) {
   const style = {
     backgroundImage: bgImg,
@@ -43,10 +45,12 @@ function Auth({bgImg = `url(${background})`}) {
         });
 
         if (response.status === 200 || response.status === 500) {
+          token = await response.json();
+          token = token['Token'];
           // const json = await response.json();
           setUser(true);
-          // navigate('/form');
-          window.location.href = linkFormFile;
+          navigate('/form');
+          //window.location.href = linkFormFile;
         } else {
           TratarErro();
         }
@@ -109,3 +113,4 @@ function Auth({bgImg = `url(${background})`}) {
 }
 
 export default Auth;
+export { token };

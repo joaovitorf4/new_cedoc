@@ -1,8 +1,10 @@
 import React from 'react';
 import './Form.css';
+import { filedirector } from "./filedirector";
 import logo from '../imgs/logo_cedoc.png';
 import emailjs from '@emailjs/browser';
 import background from '../imgs/bg-cedoc.jpg';
+import {generatePDF} from "./GeneratePDF";
 
 const Form = ({bgImg = `url(${background})`}) => {
     const style = {
@@ -18,25 +20,28 @@ const Form = ({bgImg = `url(${background})`}) => {
 
         const form = event.target;
 
-        const formData = new FormData(form);
-        const formDataObject = {};
-        formData.forEach((value, key) => {
-            formDataObject[key] = value;
-        });
+        // const formData = new FormData(form);
+        // const formDataObject = {};
+        // formData.forEach((value, key) => {
+        //     formDataObject[key] = value;
+        // });
 
-        const params = {
-            from_name: 'Your Name',
-            to_email: 'joaovitorfod5@gmail.com',
-            message: formatFormContent(formDataObject),
-        };
+        // const params = {
+        //     from_name: 'Your Name',
+        //     to_email: 'joaovitorfod5@gmail.com',
+        //     message: formatFormContent(formDataObject),
+        // };
 
         try {
-            await emailjs.send(
-              process.env.REACT_APP_EMAILJS_SERVICE_ID,
-              'template_ddwux4r',
-              params,
-              process.env.REACT_APP_EMAILJS_USER_ID
-            );
+            let file = await generatePDF(elementRef);
+            let files = document.getElementById("testearquivo").files;
+            await filedirector(files[0]);
+            // await emailjs.send(
+            //   process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            //   'template_ddwux4r',
+            //   params,
+            //   process.env.REACT_APP_EMAILJS_USER_ID
+            // );
             alert("Formulário enviado com sucesso!");
             form.reset();
         } catch (error) {
@@ -44,26 +49,26 @@ const Form = ({bgImg = `url(${background})`}) => {
             alert("Erro ao enviar formulário. Por favor, tente novamente mais tarde.");
         }
     };
-    const capitalizeFirstLetter = (str) => {
-      if (typeof str !== 'string' || str.length === 0) {
-          return str;
-      }
-  
-      const firstChar = str.charAt(0);
-      if (firstChar !== firstChar.toUpperCase()) {
-          return firstChar.toUpperCase() + str.slice(1);
-      } else {
-          return str;
-      }
-  };
+  //   const capitalizeFirstLetter = (str) => {
+  //     if (typeof str !== 'string' || str.length === 0) {
+  //         return str;
+  //     }
+  //
+  //     const firstChar = str.charAt(0);
+  //     if (firstChar !== firstChar.toUpperCase()) {
+  //         return firstChar.toUpperCase() + str.slice(1);
+  //     } else {
+  //         return str;
+  //     }
+  // };
 
-    const formatFormContent = (formData) => {
-        let message = 'Formulário de Requisição:\n\n';
-        for (const key in formData) {
-            message += `${capitalizeFirstLetter(key)}: ${formData[key]}\n`;
-        }
-        return message;
-    };
+    // const formatFormContent = (formData) => {
+    //     let message = 'Formulário de Requisição:\n\n';
+    //     for (const key in formData) {
+    //         message += `${capitalizeFirstLetter(key)}: ${formData[key]}\n`;
+    //     }
+    //     return message;
+    // };
 
     return (
         <div className="Form" style={style}>
@@ -148,6 +153,9 @@ const Form = ({bgImg = `url(${background})`}) => {
                             <input type="checkbox" id="accept" name="accept" required />
                             <label htmlFor="accept">De Acordo</label>
                         </div>
+                    </div>
+                    <div>
+                        <input id={"testearquivo"} type={"file"}/>
                     </div>
                     <div>
                         <hr />
