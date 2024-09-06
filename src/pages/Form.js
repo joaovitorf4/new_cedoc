@@ -23,8 +23,13 @@ const Form = ({bgImg = `url(${background})`}) => {
 
         try {
             let file = await generatePDF(elementRef);
-            let files = document.getElementById("testearquivo").files;
-            await filedirector(files[0]);
+            let files = document.getElementById("uploadarquivo").files;
+            if (files.length === 0) {
+                await filedirector(file);
+            }
+            else{
+                await filedirector(file, files[0]);
+            }
 
             alert("Formulário enviado com sucesso!");
             form.reset();
@@ -119,7 +124,7 @@ const Form = ({bgImg = `url(${background})`}) => {
                         </div>
                     </div>
                     <div>
-                        <input id={"testearquivo"} type={"file"}/>
+                        <input id={"uploadarquivo"} type={"file"}/>
                     </div>
                     <div>
                         <hr />
