@@ -1,6 +1,5 @@
-import { token } from "./Auth";
+import { token } from "../pages/Auth";
 import {md5} from "js-md5";
-import header from "../imports/Header";
 let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
 
 let params = {

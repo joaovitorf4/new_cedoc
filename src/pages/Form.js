@@ -1,11 +1,9 @@
 import React from 'react';
 import './Form.css';
-import { filedirector } from "./filedirector";
+import { filedirector } from "../components/filedirector";
 import logo from '../imgs/logo_cedoc.png';
-import emailjs from '@emailjs/browser';
 import background from '../imgs/bg-cedoc.jpg';
 import {generatePDF} from "./GeneratePDF";
-import {md5} from "js-md5";
 
 const Form = ({bgImg = `url(${background})`}) => {
     const style = {
