@@ -14,6 +14,7 @@ let params = {
 }
 let guid = '';
 export const filedirector = async (file) => {
+    const hash = await getFileHash(file);
     let headers = {
         'content-type': 'application/json',
         'Authorization': 'Bearer ' + token
@@ -29,12 +30,11 @@ export const filedirector = async (file) => {
         .catch((error) => {
             return ('Error:' + error);
         });
-    const hash = md5ArrayBuffer(file);
     let size = file.size;
     let data = {
         "DocTypeId": "1982f657",
         "HashType": "MD5",
-        "Hash": "xX/a88Dl+IeSnY8DMa2QXA==", //HASH FILHA DA PUTA COMO Q CALCULA ESSA MERDA
+        "Hash": hash,
         "Offset": 0,
         "TotalLength": size,
         "Position": 0,
@@ -56,7 +56,6 @@ function md5ArrayBuffer(arrayBuffer) {
 
 async function addFile(formdata) {
     let headers = {
-        //'content-type': 'multipart/form-data',
         'Authorization': 'Bearer ' + token
     }
     await fetch(baseurl + "4AB65F16/" + guid + "/addFile", {
@@ -88,3 +87,18 @@ async function checkIn(headers) {
             return ('Error:' + error);
         });
 }
+
+const getFileHash = async (file) => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const arrayBuffer = event.target.result;
+            const hash = md5ArrayBuffer(arrayBuffer);
+            resolve(hash);
+        };
+        reader.onerror = (error) => {
+            reject(error);
+        };
+        reader.readAsArrayBuffer(file);
+    });
+};
