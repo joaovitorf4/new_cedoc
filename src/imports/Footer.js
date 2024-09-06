@@ -39,7 +39,7 @@ function App() {
             <Title2Footer>Contato</Title2Footer>
             <ul>
             <li id='email-contact'><a href={comercialEmail} target='_blank' rel='noreferrer'>comercial@cedoc.net.br</a></li>
-            <li id='number'><a href={geralTel2} target='_blank' rel='noreferrer'>(31) 99990-00722</a></li>
+            <li id='number'><a href={geralTel2} target='_blank' rel='noreferrer'>(31) 99990-0722</a></li>
             </ul>
           </section>
           <section id='first-sec'>
