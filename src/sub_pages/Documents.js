@@ -31,9 +31,11 @@ function Documents({bgImg = `url(${background})`}) {
       >
         <main className='Subpages' style={style}>
           <Title>Gestão de Documentos</Title>
-          <h2 className='advantages'>Benefícios da Guarda de Documentos</h2>
-          <p>A guarda de documentos é essencial para a gestão eficiente e segura das informações da sua empresa.</p>
-          <p>Aqui estão os principais benefícios:</p>
+          <div id='sub-text'>
+            <h2 className='advantages'>Benefícios da Guarda de Documentos</h2>
+            <p>A guarda de documentos é essencial para a gestão eficiente e segura das informações da sua empresa.</p>
+            <p>Aqui estão os principais benefícios:</p>
+          </div>
           <div>
             <H3Round>Segurança</H3Round>
             <p>Ambientes controlados e protegidos garantem a segurança dos seus documentos contra perdas, danos e acessos não autorizados.</p>

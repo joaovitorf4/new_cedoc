@@ -31,9 +31,11 @@ function Scanning({bgImg = `url(${background})`}) {
       >
         <main className='Subpages' style={style}>
           <Title>Digitalização de Documentos</Title>
-          <h3 className='advantages'>Benefícios da Digitalização de Documentos</h3>
-          <p>A digitalização de documentos é uma solução moderna e eficiente para a gestão e proteção das informações da sua empresa.</p>
-          <p> Confira os principais benefícios:</p>
+          <div id='sub-text'>
+            <h3 className='advantages'>Benefícios da Digitalização de Documentos</h3>
+            <p>A digitalização de documentos é uma solução moderna e eficiente para a gestão e proteção das informações da sua empresa.</p>
+            <p> Confira os principais benefícios:</p>
+          </div>
           <div>
             <H3Round>Segurança Avançada</H3Round>
             <p>A digitalização permite que documentos físicos sejam transformados em arquivos digitais, que podem ser protegidos por sistemas avançados de criptografia e backups automáticos. Isso reduz o risco de perda e acesso não autorizado.</p>

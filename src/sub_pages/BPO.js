@@ -32,9 +32,11 @@ function BPO({bgImg = `url(${background})`}) {
       >
         <main className='Subpages' style={style}>
           <Title>BPO - Terceirização de Processos</Title>
-          <h2 className='advantages'>Benefícios da Terceirização de Serviços (BPO)</h2>
-          <p>A terceirização de serviços, ou BPO (Business Process Outsourcing), é uma estratégia eficaz para otimizar operações e melhorar o desempenho das empresas.</p>
-          <p>Veja os principais benefícios dessa abordagem:</p>
+          <div id='sub-text'>
+            <h2 className='advantages'>Benefícios da Terceirização de Serviços (BPO)</h2>
+            <p>A terceirização de serviços, ou BPO (Business Process Outsourcing), é uma estratégia eficaz para otimizar operações e melhorar o desempenho das empresas.</p>
+            <p>Veja os principais benefícios dessa abordagem:</p>
+          </div>
           <div>
             <H3Round>Foco no Core Business</H3Round>
             <p>Ao terceirizar processos não essenciais, sua empresa pode concentrar seus recursos e esforços nas atividades principais que realmente impulsionam o crescimento e a inovação. Isso permite um foco maior no que você faz melhor.</p>

@@ -31,9 +31,11 @@ function RH({bgImg = `url(${background})`}) {
       >
         <main className='Subpages' style={style}>
           <Title>Sistema RH Digital</Title>
-          <h3 className='advantages'>Vantagens do Sistema RH Digital</h3>
-          <p>O Sistema RH Digital é uma solução moderna e eficiente para gerenciar todos os aspectos relacionados a recursos humanos. Ele integra tecnologia para facilitar e otimizar as funções de RH, desde o recrutamento até a gestão de desempenho.</p>
-          <p>Veja as principais vantagens de adotar um Sistema RH Digital:</p>
+          <div id='sub-text'>
+            <h3 className='advantages'>Vantagens do Sistema RH Digital</h3>
+            <p>O Sistema RH Digital é uma solução moderna e eficiente para gerenciar todos os aspectos relacionados a recursos humanos. Ele integra tecnologia para facilitar e otimizar as funções de RH, desde o recrutamento até a gestão de desempenho.</p>
+            <p>Veja as principais vantagens de adotar um Sistema RH Digital:</p>
+          </div>
           <div>
             <H3Round>Automatização de Processos</H3Round>
             <p>O Sistema RH Digital automatiza tarefas administrativas, como processamento de folha de pagamento, controle de ponto e gestão de benefícios. Isso reduz o tempo gasto em tarefas manuais e minimiza erros.</p>

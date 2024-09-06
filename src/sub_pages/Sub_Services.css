@@ -14,10 +14,11 @@
 
 }
 
-#sub-text * {
+#sub-text {
   display: flex;
   align-items: center;
   text-align: center;
+  padding-top: 3em;
 }
 
 .Subpages div h3 {
