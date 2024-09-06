@@ -1,6 +1,5 @@
-import { token } from "./Auth";
+import { token } from "../pages/Auth";
 import {md5} from "js-md5";
-import header from "../imports/Header";
 let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
 
 let params = {
@@ -13,8 +12,7 @@ let params = {
     ]
 }
 let guid = '';
-export const filedirector = async (file) => {
-    const hash = await getFileHash(file);
+export const filedirector = async (pdf, ...uploadfile) =>{
     let headers = {
         'content-type': 'application/json',
         'Authorization': 'Bearer ' + token
@@ -30,7 +28,36 @@ export const filedirector = async (file) => {
         .catch((error) => {
             return ('Error:' + error);
         });
-    let size = file.size;
+    const hash = md5ArrayBuffer(pdf);
+    let pdfFile = await arrayBufferToFile(pdf, "form.pdf", "application/pdf");
+    let size = pdfFile.size;
+    try {
+        await addFile(hash, size, pdfFile);
+    }
+    catch (error) {
+        await Delete(guid);
+        return ('Error:' + error);
+    }
+    try{
+        if (uploadfile.length !== 0) {
+            const hash2 = await getFileHash(uploadfile[0]);
+            let size2 = uploadfile[0].size;
+            await addFile(hash2, size2, uploadfile[0]);
+        }
+    }
+    catch (error) {
+        await Delete(guid);
+        return ('Error:' + error);
+    }
+    await checkIn(headers);
+}
+
+function md5ArrayBuffer(arrayBuffer) {
+    const wordArray = new Uint8Array(arrayBuffer);
+    return md5.base64(wordArray);
+}
+
+async function addFile(hash, size, file) {
     let data = {
         "DocTypeId": "1982f657",
         "HashType": "MD5",
@@ -40,24 +67,12 @@ export const filedirector = async (file) => {
         "Position": 0,
         "InsertOrReplacePosition": 0
     }
-    const formdata = new FormData();
-    formdata.append('AddFileParams', JSON.stringify(data));
-    formdata.append('FileData', file);
-    console.log(guid);
-    console.log(file);
-    await addFile(formdata);
-    await checkIn(headers);
-}
-
-function md5ArrayBuffer(arrayBuffer) {
-    const wordArray = new Uint8Array(arrayBuffer);
-    return md5.base64(wordArray);
-}
-
-async function addFile(formdata) {
     let headers = {
         'Authorization': 'Bearer ' + token
     }
+    const formdata = new FormData();
+    formdata.append('AddFileParams', JSON.stringify(data));
+    formdata.append('FileData', file);
     await fetch(baseurl + "4AB65F16/" + guid + "/addFile", {
         method: 'POST',
         headers: headers,
@@ -66,7 +81,6 @@ async function addFile(formdata) {
         .then(data => {console.log(data)})
         .catch((error) => {
             return ('Error:' + error);
-            //call delete function to guid created
         });
 }
 
@@ -102,3 +116,25 @@ const getFileHash = async (file) => {
         reader.readAsArrayBuffer(file);
     });
 };
+
+function arrayBufferToFile(arraybuffer, fileName, mimeType){
+    const blob = new Blob([arraybuffer], {type: mimeType});
+    const file = new File([blob], fileName, {type: mimeType});
+    return file;
+}
+
+async function Delete (guid) {
+    let headers = {
+        'Authorization': 'Bearer ' + token
+    }
+    await fetch (baseurl + "4AB65F16/" + guid, {
+        method: 'DELETE',
+        headers: headers,
+    }).then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch((error) => {
+            return ('Error:' + error);
+        });
+}
