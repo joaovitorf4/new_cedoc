@@ -3,7 +3,6 @@ import './Auth.css';
 import { useNavigate } from 'react-router-dom';
 import logo from '../imgs/efalia_logo.png';
 import { useUser } from './UserContext';
-import { linkFormFile } from '../imports/Links';
 import background from '../imgs/bg-cedoc.jpg';
 
 let token = '';
