@@ -210,6 +210,20 @@ input[type="radio"] {
   gap: .5em;
 }
 
+.loading {
+  position: fixed;
+  top: 40%;
+  display: block;
+  z-index: 999;
+  text-align: center;
+  background-color: var(--darkBlue);
+  color: white;
+  border-radius: 1em;
+  padding: 2em;
+  border: 2px var(--white) solid;
+  width: 20vw;
+}
+
 @media (max-aspect-ratio: 1/1) {
   .Form form {
     width: 90vw;
