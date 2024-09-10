@@ -2,22 +2,25 @@ import { token } from "../pages/Auth";
 import {md5} from "js-md5";
 let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
 
-let params = {
-    "DocTypeId": "1982f657",
-    "IndexFields": [
-        {
-            "Id": "6B66C946",
-            "Value": "00.000.000.000-0"
-        }
-    ]
-}
 let guid = '';
-export const filedirector = async (pdf, ...uploadfile) =>{
+export const filedirector = async (empresa, requisitante, telefone, email, meio, grau, observacao, pdf, ...uploadfile) =>{
+    let params = {
+        "DocTypeId": "505b59e9",
+        "IndexFields": [
+            {"Id": "1B172FF6", "Value": empresa},
+            {"Id": "8D1782FD", "Value": requisitante},
+            {"Id": "4BF72E9C", "Value": telefone},
+            {"Id": "42959748", "Value": email},
+            {"Id": "F6D55B57", "Value": meio},
+            {"Id": "B455A072", "Value": grau},
+            {"Id": "BD3D362E", "Value": observacao}
+        ]
+    }
     let headers = {
         'content-type': 'application/json',
         'Authorization': 'Bearer ' + token
     }
-    await fetch(baseurl + "4AB65F16/createDocument", {
+    await fetch(baseurl + "DF65779E/createDocument", {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(params)
@@ -59,7 +62,7 @@ function md5ArrayBuffer(arrayBuffer) {
 
 async function addFile(hash, size, file) {
     let data = {
-        "DocTypeId": "1982f657",
+        "DocTypeId": "505b59e9",
         "HashType": "MD5",
         "Hash": hash,
         "Offset": 0,
@@ -73,7 +76,7 @@ async function addFile(hash, size, file) {
     const formdata = new FormData();
     formdata.append('AddFileParams', JSON.stringify(data));
     formdata.append('FileData', file);
-    await fetch(baseurl + "4AB65F16/" + guid + "/addFile", {
+    await fetch(baseurl + "DF65779E/" + guid + "/addFile", {
         method: 'POST',
         headers: headers,
         body: formdata})
@@ -85,11 +88,11 @@ async function addFile(hash, size, file) {
 }
 
 async function checkIn(headers) {
-    await fetch (baseurl + "4AB65F16/" + guid + "/checkIn", {
+    await fetch (baseurl + "DF65779E/" + guid + "/checkIn", {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
-            "DocTypeId": '1982f657',
+            "DocTypeId": '505b59e9',
             "AutoactionConfirmed": true
         })
     })
@@ -127,7 +130,7 @@ async function Delete (guid) {
     let headers = {
         'Authorization': 'Bearer ' + token
     }
-    await fetch (baseurl + "4AB65F16/" + guid, {
+    await fetch (baseurl + "DF65779E/" + guid, {
         method: 'DELETE',
         headers: headers,
     }).then(response => response.json())

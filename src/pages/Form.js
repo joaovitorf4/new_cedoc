@@ -24,13 +24,21 @@ const Form = ({ bgImg = `url(${background})` }) => {
         const form = event.target;
         setLoading(true);
 
+        let empresa = document.querySelector("#empresa").value;
+        let requisitante = document.querySelector("#requisitante").value;
+        let telefone = document.querySelector("#telefone").value;
+        let email = document.querySelector("#email").value;
+        let meio = document.querySelector('input[name="meio"]:checked').value; //maiuscula, nao ta pegando
+        let grau = document.querySelector('input[name="grau"]:checked').value; //maiuscula
+        let observacao = document.querySelector("#observacao").innerText;
+
         try {
             let file = await generatePDF(elementRef);
             let files = document.getElementById("uploadarquivo").files;
             if (files.length === 0) {
-                await filedirector(file);
+                await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file);
             } else {
-                await filedirector(file, files[0]);
+                await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file, files[0]);
             }
             
             setLoading(false);

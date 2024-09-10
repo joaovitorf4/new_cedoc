@@ -47,10 +47,9 @@ function Auth({bgImg = `url(${background})`}) {
         if (response.status === 200 || response.status === 500) {
           token = await response.json();
           token = token['Token'];
-          // const json = await response.json();
           setUser(true);
-          // navigate('/form');
-          window.location.href = linkFormFile;
+          navigate('/form');
+          //window.location.href = linkFormFile;
         } else {
           TratarErro();
         }
