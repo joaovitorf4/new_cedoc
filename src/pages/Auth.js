@@ -14,7 +14,8 @@ function Auth({bgImg = `url(${background})`}) {
   const navigate = useNavigate();
   const { setUser } = useUser();
   const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
-
+  const linkFormFile = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
+  
   useEffect(() => {
     const LoginForm = document.getElementById("frmLogin");
 
@@ -48,8 +49,8 @@ function Auth({bgImg = `url(${background})`}) {
           token = token['Token'];
           // const json = await response.json();
           setUser(true);
-          navigate('/form');
-          //window.location.href = linkFormFile;
+          // navigate('/form');
+          window.location.href = linkFormFile;
         } else {
           TratarErro();
         }
