@@ -54,7 +54,7 @@ function Contact({bgImg = `url(${background})`}) {
             </div>       
             <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>Rua Alcobaça, 831 São Francisco</a></p>
             <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>Belo Horizonte - MG</a></p>
-            <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>CEP 31550-000</a></p>
+            <p><a target='_blank' rel='noreferrer' href={cedocLocationArm}>CEP 31255-210</a></p>
           </div>
           <div className="div-contacts">
             <div>
