@@ -128,7 +128,9 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         </div>
                     </div>
                     <div className="form-group">
-                        <input id={"uploadarquivo"} type={"file"} />
+                        
+                        <label for="uploadarquivo">Você pode anexar arquivos logo abaixo:</label>
+                        <input id={"uploadarquivo"} name='uploadarquivo' type={"file"} />
                     </div>
                     <div>
                         <hr />

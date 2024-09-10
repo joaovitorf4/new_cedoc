@@ -84,7 +84,7 @@ label {
 
 .form3 .form-group input {
   display: block;
-  max-width: 22.6%;
+  /* max-width: 22.6%; */
 }
 
 .form3 {
@@ -164,7 +164,7 @@ label {
 input[type="submit"] {
   font-family: sans-serif;
   padding: 1em;
-  background-color: #39f;
+  background-color: var(--lightBlue);
   color: #fff;
   border-radius: 0.5em;
   border: none;
@@ -223,6 +223,17 @@ input[type="radio"] {
   border: 2px var(--white) solid;
   width: 20vw;
 }
+
+input::file-selector-button {
+  cursor: pointer;
+  background-color: var(--lightBlue);
+  border-radius: 1em;
+  color: white;
+  border: none;
+  font-size: 1.25em;
+  padding: 1em;
+}
+
 
 @media (max-aspect-ratio: 1/1) {
   .Form form {
