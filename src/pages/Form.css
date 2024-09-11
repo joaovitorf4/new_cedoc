@@ -175,6 +175,10 @@ input[type="radio"] {
   transform: scale(1.25);
 }
 
+input[type="radio"], input[type="checkbox"] {
+  cursor: pointer;
+}
+
 .div-options {
   display: flex;
   flex-direction: column;
