@@ -6,7 +6,6 @@ import background from '../imgs/bg-cedoc.jpg';
 import { generatePDF } from "./GeneratePDF";
 import PulseLoader from "react-spinners/PulseLoader";
 
-
 const Form = ({ bgImg = `url(${background})` }) => {
     const style = {
         backgroundImage: bgImg,
@@ -15,22 +14,23 @@ const Form = ({ bgImg = `url(${background})` }) => {
     };
 
     const elementRef = useRef();
+    const contentRef = useRef();
     const [loading, setLoading] = useState(false);
-    let [color] = useState("white");
+    const [color] = useState("white");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
-        const form = event.target;
         setLoading(true);
+
+        const form = event.target;
 
         let empresa = document.querySelector("#empresa").value;
         let requisitante = document.querySelector("#requisitante").value;
         let telefone = document.querySelector("#telefone").value;
         let email = document.querySelector("#email").value;
-        let meio = document.querySelector('input[name="meio"]:checked').value; //maiuscula, nao ta pegando
-        let grau = document.querySelector('input[name="grau"]:checked').value; //maiuscula
-        let observacao = document.querySelector("#observacao").innerText;
+        let meio = document.querySelector('input[name="meio"]:checked').value.toUpperCase();
+        let grau = document.querySelector('input[name="grau"]:checked').value.toUpperCase();
+        let observacao = contentRef.current.innerText;
 
         try {
             let file = await generatePDF(elementRef);
@@ -40,10 +40,11 @@ const Form = ({ bgImg = `url(${background})` }) => {
             } else {
                 await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file, files[0]);
             }
-            
+
             setLoading(false);
             alert("Formulário enviado com sucesso!");
             form.reset();
+            contentRef.current.innerText = '';
         } catch (error) {
             console.error('Erro ao enviar formulário:', error);
             alert("Erro ao enviar formulário. Por favor, tente novamente mais tarde.");
@@ -87,19 +88,19 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         <label className="bold-it">Meio de Disponibilização</label>
                         <div className="div-options">
                             <div>
-                                <input type="radio" id="emailOption" name="meio" value="email" required />
+                                <input type="radio" id="emailOption" name="meio" value="E-MAIL" required />
                                 <label htmlFor="emailOption">E-MAIL</label>
                             </div>
                             <div>
-                                <input type="radio" id="sistema" name="meio" value="sistema" required />
+                                <input type="radio" id="sistema" name="meio" value="NO SISTEMA" required />
                                 <label htmlFor="sistema">NO SISTEMA</label>
                             </div>
                             <div>
-                                <input type="radio" id="cedoc" name="meio" value="cedoc" required />
+                                <input type="radio" id="cedoc" name="meio" value="TRANSPORTE VIA CEDOC" required />
                                 <label htmlFor="cedoc">TRANSPORTE VIA CEDOC</label>
                             </div>
                             <div>
-                                <input type="radio" id="cliente" name="meio" value="cliente" required />
+                                <input type="radio" id="cliente" name="meio" value="TRANSPORTE VIA CLIENTE" required />
                                 <label htmlFor="cliente">TRANSPORTE VIA CLIENTE</label>
                             </div>
                         </div>
@@ -122,7 +123,14 @@ const Form = ({ bgImg = `url(${background})` }) => {
                 <div className="form3">
                     <div className="form-group">
                         <label htmlFor="observacao" className="bold-it">Observação do Pedido</label>
-                        <div id="observacao" name="observacao" contentEditable="true" required></div>
+                        <div
+                            id="observacao"
+                            name="observacao"
+                            contentEditable="true"
+                            required
+                            ref={contentRef} // Use ref to access contentEditable div
+                            style={{ direction: 'ltr', textAlign: 'left' }} // Ensure text direction is correct
+                        />
                     </div>
                     <div className="form-group">
                         <strong>
@@ -136,21 +144,26 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         </div>
                     </div>
                     <div className="form-group">
-                        
-                        <label for="uploadarquivo">Você pode anexar arquivos logo abaixo:</label>
-                        <input id={"uploadarquivo"} name='uploadarquivo' type={"file"} />
+                        <label htmlFor="uploadarquivo">Você pode anexar arquivos logo abaixo:</label>
+                        <input id="uploadarquivo" name='uploadarquivo' type="file" />
                     </div>
                     <div>
                         <hr />
                     </div>
                     <div className="form-group">
-                        {loading ? <h2 className='loading'>{<PulseLoader
-                            color={color}
-                            loading2={loading}
-                            size={25}
-                            aria-label="Loading Spinner"
-                            data-testid="loader"
-                        />}</h2> : <input type="submit" value="Enviar" />}
+                        {loading ? (
+                            <h2 className='loading'>
+                                <PulseLoader
+                                    color={color}
+                                    loading={loading}
+                                    size={25}
+                                    aria-label="Loading Spinner"
+                                    data-testid="loader"
+                                />
+                            </h2>
+                        ) : (
+                            <input type="submit" value="Enviar" />
+                        )}
                     </div>
                 </div>
             </form>
