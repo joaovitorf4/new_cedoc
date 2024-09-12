@@ -179,6 +179,10 @@ input[type="radio"], input[type="checkbox"] {
   cursor: pointer;
 }
 
+input[type="checkbox"] {
+  transform: scale(2);
+}
+
 .div-options {
   display: flex;
   flex-direction: column;
@@ -197,7 +201,53 @@ input[type="radio"], input[type="checkbox"] {
 .form-options {
   display: flex;
   flex-direction: row;
+}
 
+.form4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-checkbox input[type="number"]{
+  max-width: 10vw;
+}
+
+.form4 section {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+  column-gap: 5em;
+  justify-items: flex-start;
+  align-items: center;
+  padding: 1em 0;
+}
+
+.div-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+  height: 64px;
+}
+
+.form4 h2 {
+  font-weight: bold;
+}
+
+.form4 * {
+  text-align: center;
+}
+
+.form4 input {
+  padding: 1em;
+}
+
+.form-group4 {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  align-items: center;
 }
 
 .form2 .form-group {

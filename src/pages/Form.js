@@ -18,6 +18,13 @@ const Form = ({ bgImg = `url(${background})` }) => {
     const [loading, setLoading] = useState(false);
     const [color] = useState("white");
 
+    const [enabledInputs, setEnabledInputs] = useState({
+        etiquetas: false,
+        caixas: false,
+        lacres: false,
+        fitas: false,
+    });
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
@@ -52,6 +59,21 @@ const Form = ({ bgImg = `url(${background})` }) => {
         }
     };
 
+    const handleNumberChange = (event) => {
+        const value = event.target.value;
+        if (value < 0 || value.includes('.')) {
+            event.target.value = '';
+        }
+    };
+
+    const handleCheckboxChange = (event) => {
+        const { id, checked } = event.target;
+        setEnabledInputs(prevState => ({
+            ...prevState,
+            [id]: checked
+        }));
+    };
+
     return (
         <div className="Form" style={style}>
             <form onSubmit={handleSubmit} ref={elementRef} style={{ padding: '20px', background: '#ffffff', whiteSpace: 'pre-wrap' }} id="myForm">
@@ -64,10 +86,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
                 </div>
                 <div className="form1">
                     <div className="form-group">
-                        <label htmlFor="empresa" className="bold-it">Empresa</label>
-                        <input type="text" id="empresa" name="empresa" required />
-                    </div>
-                    <div className="form-group">
                         <label htmlFor="requisitante" className="bold-it">Nome do Requisitante</label>
                         <input type="text" id="requisitante" name="requisitante" required />
                     </div>
@@ -75,10 +93,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         <div className="form-group">
                             <label htmlFor="telefone" className="bold-it">Telefone</label>
                             <input type="text" id="telefone" name="telefone" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email" className="bold-it">Email do Requisitante</label>
-                            <input type="email" id="email" name="email" required />
                         </div>
                     </div>
                 </div>
@@ -120,6 +134,97 @@ const Form = ({ bgImg = `url(${background})` }) => {
                     </div>
                 </div>
 
+                <div className="form4">
+                    <h2>Materiais</h2>
+                    <section>
+                        <div className="form-group4"> 
+                            <div className='div-checkbox'>
+                                <input
+                                    type="checkbox"
+                                    id="caixas"
+                                    checked={enabledInputs.caixas}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="caixas" className="bold-it">Caixas Vazias</label>
+                                <input
+                                    type="number"
+                                    id="caixas"
+                                    name="caixas"
+                                    placeholder="Quantidade"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.caixas}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group4"> 
+                            <div className='div-checkbox'>
+                                <input
+                                    type="checkbox"
+                                    id="etiquetas"
+                                    checked={enabledInputs.etiquetas}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="etiquetas" className="bold-it">Etiquetas</label>
+                                <input
+                                    type="number"
+                                    id="etiquetas"
+                                    name="etiquetas"
+                                    placeholder="Quantidade"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.etiquetas}
+                                />
+                            </div>
+                        </div>
+                        
+                        <div className="form-group4"> 
+                            <div className='div-checkbox'>
+                                <input
+                                    type="checkbox"
+                                    id="lacres"
+                                    checked={enabledInputs.lacres}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="lacres" className="bold-it">Lacres</label>
+                                <input
+                                    type="number"
+                                    id="lacres"
+                                    name="lacres"
+                                    placeholder="Quantidade"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.lacres}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group4"> 
+                            <div className='div-checkbox'>
+                                <input
+                                    type="checkbox"
+                                    id="fitas"
+                                    checked={enabledInputs.fitas}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="fitas" className="bold-it">Fitas</label>
+                                <input
+                                    type="number"
+                                    id="fitas"
+                                    name="fitas"
+                                    placeholder="Quantidade"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.fitas}
+                                />
+                            </div>
+                        </div>    
+                    </section>
+                </div>
+
                 <div className="form3">
                     <div className="form-group">
                         <label htmlFor="observacao" className="bold-it">Observação do Pedido</label>
@@ -128,8 +233,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
                             name="observacao"
                             contentEditable="true"
                             required
-                            ref={contentRef} // Use ref to access contentEditable div
-                            style={{ direction: 'ltr', textAlign: 'left' }} // Ensure text direction is correct
+                            ref={contentRef}
+                            style={{ direction: 'ltr', textAlign: 'left' }}
                         />
                     </div>
                     <div className="form-group">
