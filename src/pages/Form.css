@@ -210,15 +210,17 @@ input[type="checkbox"] {
 }
 
 .div-checkbox input[type="number"]{
-  max-width: 10vw;
+  width: 5vw;
+  min-width: 64px;
 }
 
 .form4 section {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 2em;
   column-gap: 5em;
-  justify-items: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 1em 0;
 }
@@ -227,8 +229,9 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2em;
+  justify-content: space-between;
   height: 64px;
+  width: 360px;
 }
 
 .form4 h2 {
@@ -288,11 +291,19 @@ input::file-selector-button {
   padding: 1em;
 }
 
-
+@media (max-aspect-ratio: 1.5/1) {
+  .form4 section {
+    
+  } 
+}
 @media (max-aspect-ratio: 1/1) {
   .Form form {
     width: 90vw;
   }
+
+  .form4 section {
+    
+  } 
 
   #observacao {
     max-width: none;

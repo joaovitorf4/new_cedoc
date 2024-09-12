@@ -150,7 +150,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     type="number"
                                     id="caixas"
                                     name="caixas"
-                                    placeholder="Quantidade"
+                                    placeholder="Qtd"
                                     min="0"
                                     step="1"
                                     onChange={handleNumberChange}
@@ -171,7 +171,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     type="number"
                                     id="etiquetas"
                                     name="etiquetas"
-                                    placeholder="Quantidade"
+                                    placeholder="Qtd"
                                     min="0"
                                     step="1"
                                     onChange={handleNumberChange}
@@ -193,7 +193,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     type="number"
                                     id="lacres"
                                     name="lacres"
-                                    placeholder="Quantidade"
+                                    placeholder="Qtd"
                                     min="0"
                                     step="1"
                                     onChange={handleNumberChange}
@@ -214,7 +214,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     type="number"
                                     id="fitas"
                                     name="fitas"
-                                    placeholder="Quantidade"
+                                    placeholder="Qtd"
                                     min="0"
                                     step="1"
                                     onChange={handleNumberChange}
