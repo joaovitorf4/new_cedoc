@@ -43,14 +43,44 @@ const Form = ({ bgImg = `url(${background})` }) => {
         let grau = document.querySelector('input[name="grau"]:checked').value.toUpperCase();
         let observacao = contentRef.current.innerText;
 
+        function redefineInput(id, shouldUpdate) {
+            const inputElement = document.querySelector(`#${id}`);
+            if (inputElement && !enabledInputs[id.replace('Input', '')]) {
+                inputElement.value = 0;  
+            }
+            if (shouldUpdate) {
+                return inputElement.value;
+            }
+            return inputElement.value || 0;
+        }
+
+        let caixasVaziasIn = redefineInput('caixasInput', true);
+        let etiquetasIn = redefineInput('etiquetasInput', true);
+        let lacresIn = redefineInput('lacresInput', true);
+        let fitasIn = redefineInput('fitasInput', true);
+        let requisicoesIn = redefineInput('requisicoesInput', true);
+        let caixasMovIn = redefineInput('caixasMovimentadasInput', true);
+        let coletaIn = redefineInput('coletaInput', true);
+        let entregaIn = redefineInput('entregaInput', true);
+
         try {
             let file = await generatePDF(elementRef);
             let files = document.getElementById("uploadarquivo").files;
+
             if (files.length === 0) {
                 await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file);
             } else {
                 await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file, files[0]);
             }
+
+            // console.log(caixasVaziasIn);
+            // console.log(etiquetasIn);
+            // console.log(lacresIn);
+            // console.log(fitasIn);
+            // console.log(requisicoesIn);
+            // console.log(caixasMovIn);
+            // console.log(coletaIn);
+            // console.log(entregaIn);
 
             setLoading(false);
             alert("Formulário enviado com sucesso!");
