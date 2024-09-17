@@ -130,7 +130,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         </div>
                     </div>
                 </div>
-
                 <div className="form2">
                     <div className="form-group">
                         <label className="bold-it">Meio de Disponibilização</label>
@@ -167,7 +166,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         </div>
                     </div>
                 </div>
-
                 <div className="form4">
                     <h2>Materiais</h2>
                     <section>
@@ -213,7 +211,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                 />
                             </div>
                         </div>
-                        
                         <div className="form-group4"> 
                             <div className='div-checkbox'>
                                 <input
@@ -258,12 +255,10 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         </div>    
                     </section>
                 </div>
-
                 <div className="form5">
-                    <h2>Serviço</h2>
+                    <h2>Serviços</h2>
                     <section>
                         <div className="form-group5">
-                            <h3>Documento</h3>
                             <div className="div-checkbox">
                                 <input
                                     type="checkbox"
@@ -271,7 +266,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     checked={enabledInputs.requisicoes}
                                     onChange={handleCheckboxChange}
                                 />
-                                <label htmlFor="requisicoes" className="bold-it">Requisições</label>
+                                <label htmlFor="requisicoes" className="bold-it">Requisições de Documentos</label>
                                 <input
                                     type="number"
                                     id="requisicoesInput"
@@ -283,29 +278,9 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     disabled={!enabledInputs.requisicoes}
                                 />
                             </div>
-                            <div className="div-checkbox">
-                                <input
-                                    type="checkbox"
-                                    id="caixasMovimentadas"
-                                    checked={enabledInputs.caixasMovimentadas}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="caixasMovimentadas" className="bold-it">Caixas Movidas</label>
-                                <input
-                                    type="number"
-                                    id="caixasMovimentadasInput"
-                                    name="caixasMovimentadasInput"
-                                    placeholder="Qtd"
-                                    min="0"
-                                    step="1"
-                                    onChange={handleNumberChange}
-                                    disabled={!enabledInputs.caixasMovimentadas}
-                                />
-                            </div>
                         </div>
 
                         <div className="form-group5">
-                            <h3>Caixa</h3>
                             <div className="div-checkbox">
                                 <input
                                     type="checkbox"
@@ -313,7 +288,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     checked={enabledInputs.coleta}
                                     onChange={handleCheckboxChange}
                                 />
-                                <label htmlFor="coleta" className="bold-it">Coleta</label>
+                                <label htmlFor="coleta" className="bold-it">Coleta de Caixas</label>
                                 <input
                                     type="number"
                                     id="coletaInput"
@@ -332,7 +307,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     checked={enabledInputs.entrega}
                                     onChange={handleCheckboxChange}
                                 />
-                                <label htmlFor="entrega" className="bold-it">Entrega</label>
+                                <label htmlFor="entrega" className="bold-it">Entrega de Caixas</label>
                                 <input
                                     type="number"
                                     id="entregaInput"

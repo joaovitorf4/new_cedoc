@@ -239,7 +239,7 @@ input[type="checkbox"] {
   gap: 2em;
   column-gap: 5em;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 1em 0;
 }
 
