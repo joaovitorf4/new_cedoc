@@ -23,6 +23,11 @@ const Form = ({ bgImg = `url(${background})` }) => {
         caixas: false,
         lacres: false,
         fitas: false,
+        pesquisas: false,
+        caixasMovimentadas: false,
+        amostragemPDF: false,
+        coleta: false,
+        entrega: false,
     });
 
     const handleSubmit = async (event) => {
@@ -76,7 +81,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
 
     return (
         <div className="Form" style={style}>
-            <form onSubmit={handleSubmit} ref={elementRef} style={{ padding: '20px', background: '#ffffff', whiteSpace: 'pre-wrap' }} id="myForm">
+            <form onSubmit={handleSubmit} ref={elementRef} style={{ background: '#ffffff', whiteSpace: 'pre-wrap' }} id="myForm">
                 <div className="form-header">
                     <img src={logo} alt="logo cedoc" />
                     <h1>Formulário de Requisição</h1>
@@ -148,8 +153,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                 <label htmlFor="caixas" className="bold-it">Caixas Vazias</label>
                                 <input
                                     type="number"
-                                    id="caixas"
-                                    name="caixas"
+                                    id="caixasInput"
+                                    name="caixasInput"
                                     placeholder="Qtd"
                                     min="0"
                                     step="1"
@@ -169,8 +174,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                 <label htmlFor="etiquetas" className="bold-it">Etiquetas</label>
                                 <input
                                     type="number"
-                                    id="etiquetas"
-                                    name="etiquetas"
+                                    id="etiquetasInput"
+                                    name="etiquetasInput"
                                     placeholder="Qtd"
                                     min="0"
                                     step="1"
@@ -191,8 +196,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                 <label htmlFor="lacres" className="bold-it">Lacres</label>
                                 <input
                                     type="number"
-                                    id="lacres"
-                                    name="lacres"
+                                    id="lacresInput"
+                                    name="lacresInput"
                                     placeholder="Qtd"
                                     min="0"
                                     step="1"
@@ -212,8 +217,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                 <label htmlFor="fitas" className="bold-it">Fitas</label>
                                 <input
                                     type="number"
-                                    id="fitas"
-                                    name="fitas"
+                                    id="fitasInput"
+                                    name="fitasInput"
                                     placeholder="Qtd"
                                     min="0"
                                     step="1"
@@ -222,6 +227,114 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                 />
                             </div>
                         </div>    
+                    </section>
+                </div>
+
+                <div className="form5">
+                    <h2>Serviço</h2>
+                    <section>
+                        <div className="form-group5">
+                            <h3>Documento</h3>
+                            <div className="div-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="pesquisas"
+                                    checked={enabledInputs.pesquisas}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="pesquisas" className="bold-it">Pesquisas</label>
+                                <input
+                                    type="number"
+                                    id="pesquisasInput"
+                                    name="pesquisasInput"
+                                    placeholder="Qtd"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.pesquisas}
+                                />
+                            </div>
+                            <div className="div-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="caixasMovimentadas"
+                                    checked={enabledInputs.caixasMovimentadas}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="caixasMovimentadas" className="bold-it">Caixas Movidas</label>
+                                <input
+                                    type="number"
+                                    id="caixasMovimentadasInput"
+                                    name="caixasMovimentadasInput"
+                                    placeholder="Qtd"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.caixasMovimentadas}
+                                />
+                            </div>
+                            <div className="div-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="amostragemPDF"
+                                    checked={enabledInputs.amostragemPDF}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="amostragemPDF" className="bold-it">Amostragem PDF</label>
+                                <input
+                                    type="number"
+                                    id="amostragemPDFInput"
+                                    name="amostragemPDFInput"
+                                    placeholder="Qtd"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.amostragemPDF}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="form-group5">
+                            <h3>Caixa</h3>
+                            <div className="div-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="coleta"
+                                    checked={enabledInputs.coleta}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="coleta" className="bold-it">Coleta</label>
+                                <input
+                                    type="number"
+                                    id="coletaInput"
+                                    name="coletaInput"
+                                    placeholder="Qtd"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.coleta}
+                                />
+                            </div>
+                            <div className="div-checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="entrega"
+                                    checked={enabledInputs.entrega}
+                                    onChange={handleCheckboxChange}
+                                />
+                                <label htmlFor="entrega" className="bold-it">Entrega</label>
+                                <input
+                                    type="number"
+                                    id="entregaInput"
+                                    name="entregaInput"
+                                    placeholder="Qtd"
+                                    min="0"
+                                    step="1"
+                                    onChange={handleNumberChange}
+                                    disabled={!enabledInputs.entrega}
+                                />
+                            </div>
+                        </div>
                     </section>
                 </div>
 
