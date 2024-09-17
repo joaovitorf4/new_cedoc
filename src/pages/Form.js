@@ -23,9 +23,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
         caixas: false,
         lacres: false,
         fitas: false,
-        pesquisas: false,
+        requisicoes: false,
         caixasMovimentadas: false,
-        amostragemPDF: false,
         coleta: false,
         entrega: false,
     });
@@ -238,20 +237,20 @@ const Form = ({ bgImg = `url(${background})` }) => {
                             <div className="div-checkbox">
                                 <input
                                     type="checkbox"
-                                    id="pesquisas"
-                                    checked={enabledInputs.pesquisas}
+                                    id="requisicoes"
+                                    checked={enabledInputs.requisicoes}
                                     onChange={handleCheckboxChange}
                                 />
-                                <label htmlFor="pesquisas" className="bold-it">Pesquisas</label>
+                                <label htmlFor="requisicoes" className="bold-it">Requisições</label>
                                 <input
                                     type="number"
-                                    id="pesquisasInput"
-                                    name="pesquisasInput"
+                                    id="requisicoesInput"
+                                    name="requisicoesInput"
                                     placeholder="Qtd"
                                     min="0"
                                     step="1"
                                     onChange={handleNumberChange}
-                                    disabled={!enabledInputs.pesquisas}
+                                    disabled={!enabledInputs.requisicoes}
                                 />
                             </div>
                             <div className="div-checkbox">
@@ -271,25 +270,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     step="1"
                                     onChange={handleNumberChange}
                                     disabled={!enabledInputs.caixasMovimentadas}
-                                />
-                            </div>
-                            <div className="div-checkbox">
-                                <input
-                                    type="checkbox"
-                                    id="amostragemPDF"
-                                    checked={enabledInputs.amostragemPDF}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="amostragemPDF" className="bold-it">Amostragem PDF</label>
-                                <input
-                                    type="number"
-                                    id="amostragemPDFInput"
-                                    name="amostragemPDFInput"
-                                    placeholder="Qtd"
-                                    min="0"
-                                    step="1"
-                                    onChange={handleNumberChange}
-                                    disabled={!enabledInputs.amostragemPDF}
                                 />
                             </div>
                         </div>
