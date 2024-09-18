@@ -58,7 +58,6 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 1.5em;
   width: 100%;
 }
@@ -67,9 +66,38 @@ label {
   display: flex;
   justify-content: flex-start;
   gap: 0.5em;
+  flex-direction: column;
+}
+
+.form2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1.5em;
+}
+
+.form2 .form-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5em;
   flex-grow: 3;
   flex-direction: column;
 }
+
+#nomeReq, #meioDisp {
+  width: 60%;
+}
+
+#numTel, #grauSoli {
+  width: 40%;
+}
+#grausoli {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1em;
+}
+
 
 .form3 .form-group {
   display: flex;
@@ -81,7 +109,6 @@ label {
 
 .form3 .form-group input {
   display: block;
-  /* max-width: 22.6%; */
 }
 
 .form3 {
@@ -134,15 +161,6 @@ label {
   min-width: 15vw;
 }
 
-
-.adjust-aside {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 1em;
-}
-
 .adjust-aside .form-group {
   min-width: 0;
 }
@@ -185,15 +203,6 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   margin-left: 1em;
-}
-
-.form2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 2em;
 }
 
 .form2 label, .form4 label, .form5 label {
@@ -292,14 +301,6 @@ input[type="checkbox"] {
   margin: 0 .5em;
 }
 
-.form2 .form-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: .5em;
-  max-width: fit-content;
-}
-
 .div-options > div {
   display: flex;
   align-items: center;
@@ -331,6 +332,15 @@ input::file-selector-button {
 }
 
 @media (max-aspect-ratio: 1/1) {
+  .form1, .form2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #nomeReq, #meioDisp, #numTel, #grauSoli {
+    width: 100%;
+  }
+
   .Form form {
     width: 90vw;
   }

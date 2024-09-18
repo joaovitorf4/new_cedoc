@@ -119,11 +119,11 @@ const Form = ({ bgImg = `url(${background})` }) => {
                     <hr />
                 </div>
                 <div className="form1">
-                    <div className="form-group">
+                    <div className="form-group" id='nomeReq'>
                         <label htmlFor="requisitante" className="bold-it">Nome do Requisitante</label>
                         <input type="text" id="requisitante" name="requisitante" required />
                     </div>
-                    <div className="adjust-aside">
+                    <div className="adjust-aside" id='numTel'>
                         <div className="form-group">
                             <label htmlFor="telefone" className="bold-it">Telefone</label>
                             <input type="text" id="telefone" name="telefone" required />
@@ -131,7 +131,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                     </div>
                 </div>
                 <div className="form2">
-                    <div className="form-group">
+                    <div className="form-group" id='meioDisp'>
                         <label className="bold-it">Meio de Disponibilização</label>
                         <div className="div-options">
                             <div>
@@ -152,7 +152,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group" id='grauSoli'>
                         <label className="bold-it">Grau da Solicitação</label>
                         <div className="div-options">
                             <div>
