@@ -332,6 +332,13 @@ input::file-selector-button {
 }
 
 @media (max-aspect-ratio: 1/1) {
+  .div-checkbox {
+    width: 110%;
+    justify-content: center;
+    height: 110%;
+    gap: 2em;
+  }
+
   .form1, .form2 {
     flex-wrap: wrap;
     justify-content: center;
