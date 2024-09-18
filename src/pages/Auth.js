@@ -14,6 +14,7 @@ function Auth({bgImg = `url(${background})`}) {
   const navigate = useNavigate();
   const { setUser } = useUser();
   const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
+  // const url = "http://192.168.0.87:9000/filedirector/rest/v1/login";
   const linkFormFile = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
   
   useEffect(() => {
