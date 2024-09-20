@@ -195,6 +195,23 @@ input[type="radio"], input[type="checkbox"] {
   cursor: pointer;
 }
 
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.15em solid #747474;
+  border-radius: 50%;
+  transition: 120ms transform ease-in-out;
+}
+
+
+input[type="radio"]:checked {
+  background-color: #047cfc;
+  transform: scale(1.5);
+}
+
 input[type="checkbox"] {
   transform: scale(2);
 }
