@@ -23,9 +23,6 @@
 #titles p {
   color: black;
 }
-#cliente {
-  background-color: var(--orange);
-}
 
 #main-clients {
   display: flex;

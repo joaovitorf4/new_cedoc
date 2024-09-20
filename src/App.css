@@ -89,10 +89,6 @@ main #button-actions a {
   gap: 2em;
 }
 
-#cliente {
-  background-color: var(--orange);
-}
-
 #button-actions a {
   transition: transform .2s ease-in;
 }
