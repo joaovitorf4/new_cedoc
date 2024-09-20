@@ -356,6 +356,10 @@ input::file-selector-button {
     gap: 2em;
   }
 
+  .Form label {
+    font-size: 2vh;
+  }
+
   .form1, .form2 {
     flex-wrap: wrap;
     justify-content: center;
