@@ -111,7 +111,7 @@ main svg {
     width: 80vw;
   }
 
-  label {
+  .FormDemo label {
     font-size: 4vh;
   }
 
