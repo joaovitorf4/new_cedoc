@@ -134,6 +134,7 @@ form h2 {
 
 #footer-small p {
   color: var(--blacks);
+  text-align: center;
 }
 
 .form-group {
