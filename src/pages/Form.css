@@ -123,7 +123,6 @@ label {
 
 #observacao {
   background-color: white;
-  max-width: 45vw;
   width: 100%;
   min-height: 20vw;
   font-size: 1.5em;
@@ -338,6 +337,17 @@ input::file-selector-button {
 }
 
 @media (max-aspect-ratio: 1/1) {
+  .form-header {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .form-header h1 {
+    display: inline;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
   .div-checkbox {
     width: 50vw;
     justify-content: space-between;
