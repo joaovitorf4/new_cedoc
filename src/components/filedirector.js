@@ -3,14 +3,12 @@ import {md5} from "js-md5";
 let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
 
 let guid = '';
-export const filedirector = async (empresa, requisitante, telefone, email, meio, grau, observacao, pdf, ...uploadfile) =>{
+export const filedirector = async ( requisitante, telefone, meio, grau, observacao, pdf, ...uploadfile) =>{
     let params = {
         "DocTypeId": "505b59e9",
         "IndexFields": [
-            {"Id": "1B172FF6", "Value": empresa},
             {"Id": "8D1782FD", "Value": requisitante},
             {"Id": "4BF72E9C", "Value": telefone},
-            {"Id": "42959748", "Value": email},
             {"Id": "F6D55B57", "Value": meio},
             {"Id": "B455A072", "Value": grau},
             {"Id": "BD3D362E", "Value": observacao}

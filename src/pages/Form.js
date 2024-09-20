@@ -35,10 +35,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
 
         const form = event.target;
 
-        let empresa = document.querySelector("#empresa").value;
         let requisitante = document.querySelector("#requisitante").value;
         let telefone = document.querySelector("#telefone").value;
-        let email = document.querySelector("#email").value;
         let meio = document.querySelector('input[name="meio"]:checked').value.toUpperCase();
         let grau = document.querySelector('input[name="grau"]:checked').value.toUpperCase();
         let observacao = contentRef.current.innerText;
@@ -59,7 +57,6 @@ const Form = ({ bgImg = `url(${background})` }) => {
         let lacresIn = redefineInput('lacresInput', true);
         let fitasIn = redefineInput('fitasInput', true);
         let requisicoesIn = redefineInput('requisicoesInput', true);
-        let caixasMovIn = redefineInput('caixasMovimentadasInput', true);
         let coletaIn = redefineInput('coletaInput', true);
         let entregaIn = redefineInput('entregaInput', true);
 
@@ -68,22 +65,28 @@ const Form = ({ bgImg = `url(${background})` }) => {
             let files = document.getElementById("uploadarquivo").files;
 
             if (files.length === 0) {
-                await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file);
+                await filedirector(requisitante, telefone, meio, grau, observacao, file);
             } else {
-                await filedirector(empresa, requisitante, telefone, email, meio, grau, observacao, file, files[0]);
+                await filedirector(requisitante, telefone, meio, grau, observacao, file, files[0]);
             }
 
-            // console.log(caixasVaziasIn);
-            // console.log(etiquetasIn);
-            // console.log(lacresIn);
-            // console.log(fitasIn);
-            // console.log(requisicoesIn);
-            // console.log(caixasMovIn);
-            // console.log(coletaIn);
-            // console.log(entregaIn);
+            console.log(caixasVaziasIn);
+            console.log(etiquetasIn);
+            console.log(lacresIn);
+            console.log(fitasIn);
+            console.log(requisicoesIn);
+            console.log(coletaIn);
+            console.log(entregaIn);
 
             setLoading(false);
             alert("Formulário enviado com sucesso!");
+            setEnabledInputs(prevState => {
+                const updatedState = { ...prevState };
+                Object.keys(updatedState).forEach(key => {
+                    updatedState[key] = false;
+                });
+                return updatedState;
+            });
             form.reset();
             contentRef.current.innerText = '';
         } catch (error) {
