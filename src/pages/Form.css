@@ -242,18 +242,7 @@ input[type="checkbox"] {
   min-width: 64px;
 }
 
-.form4 section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2em;
-  column-gap: 5em;
-  justify-content: center;
-  align-items: center;
-  padding: 1em 0;
-}
-
-.form5 section {
+.form4 section, .form5 section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -350,10 +339,10 @@ input::file-selector-button {
 
 @media (max-aspect-ratio: 1/1) {
   .div-checkbox {
-    width: 110%;
-    justify-content: center;
+    width: 50vw;
+    justify-content: space-between;
     height: 110%;
-    gap: 2em;
+    gap: .5em;
   }
 
   .Form label {
