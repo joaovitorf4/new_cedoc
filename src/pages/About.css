@@ -52,11 +52,13 @@ ul {
 }
 
 #main-about li {
+  text-align: center;
   font-weight: 100;
   list-style-position: inside;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: .5em;
   padding: 3em;
   background-color: white;
@@ -86,9 +88,7 @@ ul {
   }
 
   #main-about li {
-    flex-direction: column;
     width: 75vw;
-    text-align: center;
   }
 
   #main-about div {
