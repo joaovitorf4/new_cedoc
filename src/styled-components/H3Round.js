@@ -5,6 +5,7 @@ const LabelTitle = styled.h3`
     padding: .5em;
     border-radius: 2em;
     color: white;
+    margin: 0 .5em;
 `;
 
 export default LabelTitle;

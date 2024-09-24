@@ -239,6 +239,7 @@ input[type="checkbox"] {
 .div-checkbox input[type="number"]{
   width: 5vw;
   min-width: 64px;
+  height: 4em;
 }
 
 .form4 section, .form5 section {

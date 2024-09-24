@@ -6,6 +6,7 @@ import BackToTop from '../pages/BackToTop';
 import background from '../imgs/bg-cedoc.jpg';
 import H3Round from '../styled-components/H3Round';
 import Title from '../styled-components/Title';
+import ButtonZap from '../components/ButtonZap';
 
 function Scanning({bgImg = `url(${background})`}) {
   const style = {
@@ -55,6 +56,7 @@ function Scanning({bgImg = `url(${background})`}) {
           </div>
         </main>
       </CSSTransition>
+      <ButtonZap />
       <BackToTop />
     </div>
   );

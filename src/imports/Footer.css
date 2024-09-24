@@ -97,6 +97,11 @@ footer #second-sec li {
 }
 
 @media (max-aspect-ratio: 1.05/1) {
+
+  .Footer ul {
+    padding: 0 1.5em;
+  }
+
   #footer-content {
     flex-direction: column;
     justify-content: center;

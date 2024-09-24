@@ -6,7 +6,7 @@ import BackToTop from '../pages/BackToTop';
 import Title from '../styled-components/Title';
 import H3Round from '../styled-components/H3Round';
 import background from '../imgs/bg-cedoc.jpg';
-
+import ButtonZap from '../components/ButtonZap';
 
 function BPO({bgImg = `url(${background})`}) {
   const style = {
@@ -56,6 +56,7 @@ function BPO({bgImg = `url(${background})`}) {
           </div>
         </main>
       </CSSTransition>
+      <ButtonZap />
       <BackToTop />
     </div>
   );

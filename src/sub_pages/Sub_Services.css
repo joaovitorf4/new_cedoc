@@ -63,4 +63,8 @@
       max-width: 100vw;
       font-size: 4vh;
     }
+
+    .advantages {
+      font-size: 3em;
+    }
 }
