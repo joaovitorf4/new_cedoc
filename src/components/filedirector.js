@@ -1,17 +1,25 @@
-import { token } from "../pages/Auth";
+import {token} from "../pages/Auth";
 import {md5} from "js-md5";
+
 let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
 
 let guid = '';
-export const filedirector = async ( requisitante, telefone, meio, grau, observacao, pdf, ...uploadfile) =>{
-    let params = {
+export const filedirector = async (requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, pdf, ...uploadfile) =>{
+    let params = { //ENVIANDO NULL QUANDO SELECIONA O CHECKBOX MAS NÃO PREENXE
         "DocTypeId": "505b59e9",
         "IndexFields": [
             {"Id": "8D1782FD", "Value": requisitante},
             {"Id": "4BF72E9C", "Value": telefone},
             {"Id": "F6D55B57", "Value": meio},
             {"Id": "B455A072", "Value": grau},
-            {"Id": "BD3D362E", "Value": observacao}
+            {"Id": "BD3D362E", "Value": observacao},
+            {"Id": "02E2869E", "Value": caixasVaziasIn},
+            {"Id": "6ADCF5E0", "Value": etiquetasIn},
+            {"Id": "73BA3503", "Value": fitasIn},
+            {"Id": "48A4732F", "Value": lacresIn},
+            {"Id": "27DA53BB", "Value": requisicoesIn},
+            {"Id": "FB5ABF68", "Value": coletaIn},
+            {"Id": "74C0F79E", "Value": entregaIn},
         ]
     }
     let headers = {
@@ -120,8 +128,7 @@ const getFileHash = async (file) => {
 
 function arrayBufferToFile(arraybuffer, fileName, mimeType){
     const blob = new Blob([arraybuffer], {type: mimeType});
-    const file = new File([blob], fileName, {type: mimeType});
-    return file;
+    return new File([blob], fileName, {type: mimeType});
 }
 
 async function Delete (guid) {
