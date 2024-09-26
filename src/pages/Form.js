@@ -31,27 +31,43 @@ const Form = ({ bgImg = `url(${background})` }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setLoading(true);
+    setLoading(true);
 
-        const form = event.target;
+    const form = event.target;
 
-        let requisitante = document.querySelector("#requisitante").value;
-        let telefone = document.querySelector("#telefone").value;
-        let meio = document.querySelector('input[name="meio"]:checked').value.toUpperCase();
-        let grau = document.querySelector('input[name="grau"]:checked').value.toUpperCase();
-        let observacao = contentRef.current.innerText;
-
-        function redefineInput(id, shouldUpdate) {
-            const inputElement = document.querySelector(`#${id}`);
-            if (inputElement && !enabledInputs[id.replace('Input', '')]) {
-                inputElement.value = 0;  
-            }
-            if (shouldUpdate) {
-                return inputElement.value;
-            }
-            return inputElement.value || 0;
+    function redefineInput(id, shouldUpdate) {
+        const inputElement = document.querySelector(`#${id}`);
+        if (inputElement && !enabledInputs[id.replace('Input', '')]) {
+            inputElement.value = 0;  
+        }
+        if (shouldUpdate) {
+            return inputElement.value;
         }
 
+        return inputElement.value || 0;
+    }
+
+    const inputIds = [
+        'caixasInput', 
+        'etiquetasInput', 
+        'lacresInput', 
+        'fitasInput', 
+        'requisicoesInput', 
+        'coletaInput', 
+        'entregaInput', 
+        'requisitante', 
+        'telefone'
+    ];
+
+        for (const id of inputIds) {
+            const inputElement = document.querySelector(`#${id}`);
+            if (!inputElement || (inputElement.value.trim() === "" && !inputElement.disabled)) {
+                alert(`O campo ${inputElement ? inputElement.previousElementSibling.innerText : id} está vazio!`);
+                setLoading(false);
+                return;
+            }
+        }
+    
         let caixasVaziasIn = redefineInput('caixasInput', true);
         let etiquetasIn = redefineInput('etiquetasInput', true);
         let lacresIn = redefineInput('lacresInput', true);
@@ -59,34 +75,42 @@ const Form = ({ bgImg = `url(${background})` }) => {
         let requisicoesIn = redefineInput('requisicoesInput', true);
         let coletaIn = redefineInput('coletaInput', true);
         let entregaIn = redefineInput('entregaInput', true);
-
+        
+        let requisitante = document.querySelector("#requisitante").value;
+        let telefone = document.querySelector("#telefone").value;
+        let meio = document.querySelector('input[name="meio"]:checked').value.toUpperCase();
+        let grau = document.querySelector('input[name="grau"]:checked').value.toUpperCase();
+        let observacao = contentRef.current.innerText;
+    
         try {
             let file = await generatePDF(elementRef);
             let files = document.getElementById("uploadarquivo").files;
-
+    
             if (files.length === 0) {
                 await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
-
             } else {
-                await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
+                await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, files[0]);
             }
 
-            console.log(caixasVaziasIn);
-            console.log(etiquetasIn);
-            console.log(lacresIn);
-            console.log(fitasIn);
-            console.log(requisicoesIn);
-            console.log(coletaIn);
-            console.log(entregaIn);
-
+            console.log(caixasVaziasIn)
+            console.log(etiquetasIn)
+            console.log(lacresIn)
+            console.log(fitasIn)
+            console.log(requisicoesIn)
+            console.log(coletaIn)
+            console.log(entregaIn)
+    
             setLoading(false);
             alert("Formulário enviado com sucesso!");
-            setEnabledInputs(prevState => {
-                const updatedState = { ...prevState };
-                Object.keys(updatedState).forEach(key => {
-                    updatedState[key] = false;
-                });
-                return updatedState;
+            setEnabledInputs({
+                etiquetas: false,
+                caixas: false,
+                lacres: false,
+                fitas: false,
+                requisicoes: false,
+                caixasMovimentadas: false,
+                coleta: false,
+                entrega: false,
             });
             form.reset();
             contentRef.current.innerText = '';
@@ -96,6 +120,8 @@ const Form = ({ bgImg = `url(${background})` }) => {
             setLoading(false);
         }
     };
+    
+    
 
     const handleNumberChange = (event) => {
         const value = event.target.value;
