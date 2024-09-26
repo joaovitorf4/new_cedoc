@@ -2,6 +2,7 @@ import {token} from "../pages/Auth";
 import {md5} from "js-md5";
 
 let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
+// let baseurl = "http://192.168.0.87:9000/filedirector/rest/v1/";
 
 let guid = '';
 export const filedirector = async (requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, pdf, ...uploadfile) =>{
