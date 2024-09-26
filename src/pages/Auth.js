@@ -6,6 +6,7 @@ import { useUser } from './UserContext';
 import background from '../imgs/bg-cedoc.jpg';
 
 let token = '';
+let domain = '';
 
 function Auth({bgImg = `url(${background})`}) {
   const style = {
@@ -13,10 +14,10 @@ function Auth({bgImg = `url(${background})`}) {
   };
   const navigate = useNavigate();
   const { setUser } = useUser();
-  const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
-  // const url = "http://192.168.0.87:9000/filedirector/rest/v1/login";
-  const linkFormFile = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
-  
+  // const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
+  const url = "http://192.168.0.87:9000/filedirector/rest/v1/login";
+  // const linkFormFile = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
+
   useEffect(() => {
     const LoginForm = document.getElementById("frmLogin");
 
@@ -45,11 +46,13 @@ function Auth({bgImg = `url(${background})`}) {
           }
         });
 
-        if (response.status === 200 || response.status === 500) {
+        if ( response.status === 200 || response.status === 500 ) {
           token = await response.json();
           token = token['Token'];
+          let [domain, ...user] = username.split('\\');
+          const condition = domain === 'filedirector';
           setUser(true);
-          navigate('/form');
+          navigate('/form', { state: { showForm: condition } });
           //window.location.href = linkFormFile;
         } else {
           TratarErro();

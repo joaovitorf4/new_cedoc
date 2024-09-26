@@ -54,12 +54,18 @@ label {
   border-radius: .25em;
 }
 
-.form1 {
+.Form .form1 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 1.5em;
   width: 100%;
+}
+
+.div-inputs-sec {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
 .form1 .form-group {

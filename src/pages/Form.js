@@ -5,6 +5,8 @@ import logo from '../imgs/logo_cedoc.png';
 import background from '../imgs/bg-cedoc.jpg';
 import { generatePDF } from "./GeneratePDF";
 import PulseLoader from "react-spinners/PulseLoader";
+import CNPJ from '../components/CNPJ';
+import { useLocation } from 'react-router-dom';
 
 const Form = ({ bgImg = `url(${background})` }) => {
     const style = {
@@ -12,6 +14,9 @@ const Form = ({ bgImg = `url(${background})` }) => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% 100%',
     };
+
+    const location = useLocation();
+    const { showForm } = location.state || { showForm: true };
 
     const elementRef = useRef();
     const contentRef = useRef();
@@ -75,7 +80,18 @@ const Form = ({ bgImg = `url(${background})` }) => {
         let requisicoesIn = redefineInput('requisicoesInput', true);
         let coletaIn = redefineInput('coletaInput', true);
         let entregaIn = redefineInput('entregaInput', true);
+
+        let empresa;
+        let email;
         
+        if (showForm) {
+            empresa = document.querySelector("#empresa").value;
+            email = document.querySelector("#email").value;
+        }
+        else{
+            empresa = 0;
+            email = 0;
+        }
         let requisitante = document.querySelector("#requisitante").value;
         let telefone = document.querySelector("#telefone").value;
         let meio = document.querySelector('input[name="meio"]:checked').value.toUpperCase();
@@ -87,18 +103,10 @@ const Form = ({ bgImg = `url(${background})` }) => {
             let files = document.getElementById("uploadarquivo").files;
     
             if (files.length === 0) {
-                await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
+                await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
             } else {
-                await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, files[0]);
+                await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
             }
-
-            console.log(caixasVaziasIn)
-            console.log(etiquetasIn)
-            console.log(lacresIn)
-            console.log(fitasIn)
-            console.log(requisicoesIn)
-            console.log(coletaIn)
-            console.log(entregaIn)
     
             setLoading(false);
             alert("Formulário enviado com sucesso!");
@@ -149,16 +157,21 @@ const Form = ({ bgImg = `url(${background})` }) => {
                     <hr />
                 </div>
                 <div className="form1">
-                    <div className="form-group" id='nomeReq'>
-                        <label htmlFor="requisitante" className="bold-it">Nome do Requisitante</label>
-                        <input type="text" id="requisitante" name="requisitante" required />
-                    </div>
-                    <div className="adjust-aside" id='numTel'>
-                        <div className="form-group">
-                            <label htmlFor="telefone" className="bold-it">Telefone</label>
-                            <input type="text" id="telefone" name="telefone" required />
+                    <div className='div-inputs-sec'>
+                        <div className="form-group" id='nomeReq'>
+                            <label htmlFor="requisitante" className="bold-it">Nome do Requisitante</label>
+                            <input type="text" id="requisitante" name="requisitante" required />
+                        </div>
+                        <div className="adjust-aside" id='numTel'>
+                            <div className="form-group">
+                                <label htmlFor="telefone" className="bold-it">Telefone</label>
+                                <input type="text" id="telefone" name="telefone" required />
+                            </div>
                         </div>
                     </div>
+                   {showForm ? (
+                        <CNPJ></CNPJ>
+                    ) : (<div></div>)}
                 </div>
                 <div className="form2">
                     <div className="form-group" id='meioDisp'>
