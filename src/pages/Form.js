@@ -65,9 +65,10 @@ const Form = ({ bgImg = `url(${background})` }) => {
             let files = document.getElementById("uploadarquivo").files;
 
             if (files.length === 0) {
-                await filedirector(requisitante, telefone, meio, grau, observacao, file);
+                await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
+
             } else {
-                await filedirector(requisitante, telefone, meio, grau, observacao, file, files[0]);
+                await filedirector(requisitante, telefone, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
             }
 
             console.log(caixasVaziasIn);
