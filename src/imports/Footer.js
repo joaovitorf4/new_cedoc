@@ -2,7 +2,7 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import Title2Footer from '../styled-components/Title2';
+import Title2Footer from '../styled-components/Title2Footer';
 import Paragraph from '../styled-components/Paragraph';
 import { cedocLocationAdm, cedocLocationArm, comercialEmail, geralTel2 } from './Links';
 
