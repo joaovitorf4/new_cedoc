@@ -6,7 +6,7 @@ import { useUser } from './UserContext';
 import background from '../imgs/bg-cedoc.jpg';
 
 let token = '';
-let domain = '';
+let username = '';
 
 function Auth({bgImg = `url(${background})`}) {
   const style = {
@@ -23,9 +23,9 @@ function Auth({bgImg = `url(${background})`}) {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      const username = document.getElementById('txtUsername').value;
+      username = document.getElementById('txtUsername').value;
       const password = document.getElementById('txtPassword').value;
-      ValidateCredentials(username, password);
+      let _ignored =ValidateCredentials(username, password);
     };
 
     const TratarErro = () => {
@@ -49,7 +49,7 @@ function Auth({bgImg = `url(${background})`}) {
         if ( response.status === 200 || response.status === 500 ) {
           token = await response.json();
           token = token['Token'];
-          let [domain, ...user] = username.split('\\');
+          let [domain, _user] = username.split('\\');
           const condition = domain === 'filedirector';
           setUser(true);
           navigate('/form', { state: { showForm: condition } });
@@ -116,4 +116,4 @@ function Auth({bgImg = `url(${background})`}) {
 }
 
 export default Auth;
-export { token };
+export { token, username};

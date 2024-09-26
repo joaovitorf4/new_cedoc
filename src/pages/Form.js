@@ -165,7 +165,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         <div className="adjust-aside" id='numTel'>
                             <div className="form-group">
                                 <label htmlFor="telefone" className="bold-it">Telefone</label>
-                                <input type="text" id="telefone" name="telefone" required />
+                                <input type="tel" id="telefone" name="telefone" required />
                             </div>
                         </div>
                     </div>
