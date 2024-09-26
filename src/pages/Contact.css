@@ -34,7 +34,7 @@
   flex-direction: column;
   width: 30vw;
   gap: 1em;
-  background-color: var(--darkBlue);
+  background-color: rgb(255 255 255 / 75%);
   padding: 2em;
   border-radius: 1.5em;
   min-height: 30vh;
