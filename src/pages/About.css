@@ -61,9 +61,11 @@ ul {
   flex-direction: column;
   gap: .5em;
   padding: 3em;
-  background-color: white;
+  background-color: #ffffff24;
   border-radius: 1.5em;
   width: 35vw;
+  outline: 1px solid var(--white);
+  backdrop-filter: blur(10px);
 }
 
 .count-up {
