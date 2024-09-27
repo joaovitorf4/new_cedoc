@@ -5,7 +5,6 @@ import logo from '../imgs/efalia_logo.png';
 import { useUser } from './UserContext';
 import background from '../imgs/bg-cedoc.jpg';
 
-let token = '';
 let username = '';
 
 function Auth({bgImg = `url(${background})`}) {
@@ -14,8 +13,8 @@ function Auth({bgImg = `url(${background})`}) {
   };
   const navigate = useNavigate();
   const { setUser } = useUser();
-  const url = "https://fd.cedoc.net.br/filedirector/rest/v1/login";
-  // const url = "http://192.168.0.87:9000/filedirector/rest/v1/login";
+  const url = "https://fd.cedoc.net.br/filedirector/rest/v1/";
+  // const url = "http://192.168.0.87:9000/filedirector/rest/v1/";
   // const linkFormFile = "https://fd.cedoc.net.br/FileDirector/basicaccess?action=getform&id1=qeJv5z5QnWt8aXVRmEN%2fJQ%3d%3d&id2=O%2fvC1DDXwGKM49gfCLzuzH%2fpzrRUkTEvgZ23%2btPA3gM%3d";
 
   useEffect(() => {
@@ -32,9 +31,16 @@ function Auth({bgImg = `url(${background})`}) {
       document.querySelector("#error").classList.add("error-show");
     };
 
+    const logout = async (token) => {
+      let _response = await fetch(url + "logout", {
+        method: 'GET',
+        headers: {'Authorization': 'Bearer ' + token},
+      })
+    }
+
     const ValidateCredentials = async (username, password) => {
       try {
-        const response = await fetch(url, {
+        const response = await fetch(url + "login", {
           method: 'POST',
           body: JSON.stringify({
             NameOrMail: username,
@@ -46,9 +52,10 @@ function Auth({bgImg = `url(${background})`}) {
           }
         });
 
-        if ( response.status === 200 || response.status === 500 ) {
-          token = await response.json();
+        if ( response.status === 200 || response.status === 500 ) { //dar logout
+          let token = await response.json();
           token = token['Token'];
+          await logout(token);
           let [domain, _user] = username.split('\\');
           const condition = domain === 'filedirector';
           setUser(true);
@@ -116,4 +123,4 @@ function Auth({bgImg = `url(${background})`}) {
 }
 
 export default Auth;
-export { token, username};
+export { username};
