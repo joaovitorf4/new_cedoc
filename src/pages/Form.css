@@ -130,12 +130,13 @@ label {
 #observacao {
   background-color: white;
   width: 100%;
-  min-height: 20vw;
+  min-height: 10vw;
   font-size: 1.5em;
   text-align: left;
   border: 1px solid;
   padding: .5em;
-  border-radius: .25em;
+  border-radius: .25em; 
+  max-width: 50vw;
 }
 
 #loginpane {
