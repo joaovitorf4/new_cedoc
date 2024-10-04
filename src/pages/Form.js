@@ -220,7 +220,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                                     checked={enabledInputs.caixas}
                                     onChange={handleCheckboxChange}
                                 />
-                                <label htmlFor="caixas" className="bold-it">Caixas Vazias</label>
+                                <label htmlFor="caixas" className="bold-it">Caixas 20Kg Vazias</label>
                                 <input
                                     type="number"
                                     id="caixasInput"
