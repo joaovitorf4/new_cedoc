@@ -15,6 +15,7 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
         console.log(error);
         return error;
     }
+    let DocTypeId = "505b59e9";
     if (email === 0){
         let response = await accounts();
         let id = response;
@@ -29,9 +30,12 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
             empresa = domain;
             requisitante = response["FullName"];
         }
+        if (empresa === "cohab"){
+            DocTypeId = "dcc5e7f1";
+        }
     }
     let params = {
-        "DocTypeId": "505b59e9",
+        "DocTypeId": DocTypeId,
         "IndexFields": [
             {"Id": "8D1782FD", "Value": requisitante},
             {"Id": "4BF72E9C", "Value": telefone},
@@ -68,7 +72,7 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
     let pdfFile = await arrayBufferToFile(pdf, "form.pdf", "application/pdf");
     let size = pdfFile.size;
     try {
-        await addFile(hash, size, pdfFile);
+        await addFile(DocTypeId, hash, size, pdfFile);
     }
     catch (error) {
         await Delete(guid);
@@ -86,8 +90,9 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
         await logout();
         return ('Error:' + error);
     }
-    await checkIn();
+    await checkIn(DocTypeId);
     await logout();
+    return true;
 }
 
 function md5ArrayBuffer(arrayBuffer) {
@@ -95,9 +100,9 @@ function md5ArrayBuffer(arrayBuffer) {
     return md5.base64(wordArray);
 }
 
-async function addFile(hash, size, file) {
+async function addFile(DocTypeId, hash, size, file) {
     let data = {
-        "DocTypeId": "505b59e9",
+        "DocTypeId": DocTypeId,
         "HashType": "MD5",
         "Hash": hash,
         "Offset": 0,
@@ -122,7 +127,7 @@ async function addFile(hash, size, file) {
         });
 }
 
-async function checkIn() { //enviando bloqueado??
+async function checkIn(DocTypeId) { //processo nao esta enviando email quando o arquivo eh enviado pela api
     await fetch (baseurl + "DF65779E/" + guid + "/checkIn", {
         method: 'POST',
         headers: {
@@ -130,7 +135,7 @@ async function checkIn() { //enviando bloqueado??
             'Authorization': 'Bearer ' + Token
         },
         body: JSON.stringify({
-            "DocTypeId": '505b59e9',
+            "DocTypeId": DocTypeId,
             "AutoactionConfirmed": true
         })
     })
@@ -202,7 +207,7 @@ async function logout(){
     });
 }
 
-async function accounts(){ //vou ter q refatorar ja que n vai usar mais o token do auth, e sim o usuario do .env
+async function accounts(){
     let response = await fetch (baseurl + "accounts", {
         method: 'GET',
         headers: {

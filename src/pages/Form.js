@@ -103,13 +103,19 @@ const Form = ({ bgImg = `url(${background})` }) => {
             let files = document.getElementById("uploadarquivo").files;
     
             if (files.length === 0) {
-                await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
+                let response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
             } else {
-                await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
+                let response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
             }
-    
+
             setLoading(false);
-            alert("Formulário enviado com sucesso!");
+            if (response === true){
+                alert("Formulário enviado com sucesso!");
+            }
+            else{
+                alert("Erro enviando formulario!");
+            }
+
             setEnabledInputs({
                 etiquetas: false,
                 caixas: false,
