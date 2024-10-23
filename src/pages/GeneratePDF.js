@@ -10,7 +10,12 @@ export const generatePDF = async (elementRef) => {
     });
     const imgData = canvas.toDataURL('image/png');
 
-    const pdf = new jsPDF('p', 'pt', 'a4');
+    const pdf = new jsPDF({
+        orientation: 'p',
+        unit: 'pt',
+        format: 'a4',
+        compress: true // Enable compression
+    });
 
     const imgWidth = pdf.internal.pageSize.getWidth();
     const imgHeight = (canvas.height * imgWidth) / canvas.width;

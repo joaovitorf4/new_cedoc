@@ -51,7 +51,7 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
             {"Id": "74C0F79E", "Value": entregaIn},
             {"Id": "1B172FF6", "Value": empresa},
             {"Id": "42959748", "Value": email},
-            {"Id": "BF2827E1", "Value": username},
+            {"Id": "BF2827E1", "Value": username}
         ]
     }
     await fetch(baseurl + "DF65779E/createDocument", {
@@ -82,7 +82,8 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
         if (uploadfile.length !== 0) {
             const hash2 = await getFileHash(uploadfile[0]);
             let size2 = uploadfile[0].size;
-            await addFile(hash2, size2, uploadfile[0]);
+            console.log(size2);
+            await addFile(DocTypeId, hash2, size2, uploadfile[0]);
         }
     }
     catch (error) {
@@ -92,7 +93,7 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
     }
     await checkIn(DocTypeId);
     await logout();
-    return true;
+    return 0;
 }
 
 function md5ArrayBuffer(arrayBuffer) {
@@ -119,15 +120,14 @@ async function addFile(DocTypeId, hash, size, file) {
     await fetch(baseurl + "DF65779E/" + guid + "/addFile", {
         method: 'POST',
         headers: headers,
-        body: formdata})
-        .then(response => response.json())
-        .then(data => {console.log(data)})
-        .catch((error) => {
-            return ('Error:' + error);
-        });
+        body: formdata
+    }).catch((error) => {
+        console.log('Error: ' + error);
+        return ('Error:' + error);
+    });
 }
 
-async function checkIn(DocTypeId) { //processo nao esta enviando email quando o arquivo eh enviado pela api
+async function checkIn(DocTypeId) {
     await fetch (baseurl + "DF65779E/" + guid + "/checkIn", {
         method: 'POST',
         headers: {
@@ -138,14 +138,9 @@ async function checkIn(DocTypeId) { //processo nao esta enviando email quando o 
             "DocTypeId": DocTypeId,
             "AutoactionConfirmed": true
         })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch((error) => {
-            return ('Error:' + error);
-        });
+    }).catch((error) => {
+        return ('Error:' + error);
+    });
 }
 
 const getFileHash = async (file) => {

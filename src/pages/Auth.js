@@ -53,10 +53,12 @@ function Auth({bgImg = `url(${background})`}) {
         });
 
         if ( response.status === 200 || response.status === 500 ) { //dar logout
-          let token = await response.json();
-          token = token['Token'];
-          await logout(token);
           let [domain, _user] = username.split('\\');
+          if (domain === 'filedirector'){
+            let token = await response.json();
+            token = token['Token'];
+            await logout(token);
+          }
           const condition = domain === 'filedirector';
           setUser(true);
           navigate('/form', { state: { showForm: condition } });

@@ -99,17 +99,18 @@ const Form = ({ bgImg = `url(${background})` }) => {
         let observacao = contentRef.current.innerText;
     
         try {
+            let response = '';
             let file = await generatePDF(elementRef);
             let files = document.getElementById("uploadarquivo").files;
     
             if (files.length === 0) {
-                let response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
+                response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
             } else {
-                let response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
+                response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
             }
 
             setLoading(false);
-            if (response === true){
+            if (response === 0){
                 alert("Formulário enviado com sucesso!");
             }
             else{
