@@ -33,6 +33,9 @@ export const filedirector = async (requisitante, telefone, empresa, email, meio,
         if (empresa === "cohab"){
             DocTypeId = "dcc5e7f1";
         }
+        else if (empresa === "odilonbehrens"){
+            DocTypeId = "1e4c7ebc";
+        }
     }
     let params = {
         "DocTypeId": DocTypeId,
