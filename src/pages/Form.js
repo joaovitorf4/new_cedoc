@@ -36,6 +36,11 @@ const Form = ({ bgImg = `url(${background})` }) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        if (window.innerWidth < 800) {
+            alert('Submissao bloqueada: Utilize o site em tela cheia.');
+            return;
+        }
+
     setLoading(true);
 
     const form = event.target;

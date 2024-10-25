@@ -94,6 +94,14 @@ label {
   width: 60%;
 }
 
+#nomeEmp{
+  width: 50%;
+}
+
+#numEmail{
+  width: 50%;
+}
+
 #numTel, #grauSoli {
   width: 40%;
 }
