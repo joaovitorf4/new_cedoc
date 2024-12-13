@@ -52,7 +52,7 @@ function Auth({bgImg = `url(${background})`}) {
           }
         });
 
-        if ( response.status === 200 || response.status === 500 ) { //dar logout
+        if ( response.status === 200 || response.status === 500 ) { //MELHOR GAMBIARRA DO SITE
           let [domain, _user] = username.split('\\');
           if (domain === 'filedirector'){
             let token = await response.json();

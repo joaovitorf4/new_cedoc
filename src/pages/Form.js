@@ -41,7 +41,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
             return;
         }
 
-    setLoading(true);
+    //setLoading(true);
 
     const form = event.target;
 
@@ -108,19 +108,19 @@ const Form = ({ bgImg = `url(${background})` }) => {
             let file = await generatePDF(elementRef);
             let files = document.getElementById("uploadarquivo").files;
     
-            if (files.length === 0) {
-                response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
-            } else {
-                response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
-            }
+            // if (files.length === 0) {
+            //     response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
+            // } else {
+            //     response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
+            // }
 
-            setLoading(false);
-            if (response === 0){
-                alert("Formulário enviado com sucesso!");
-            }
-            else{
-                alert("Erro enviando formulario!");
-            }
+            // setLoading(false);
+            // if (response === 0){
+            //     alert("Formulário enviado com sucesso!");
+            // }
+            // else{
+            //     alert("Erro enviando formulario!");
+            // }
 
             setEnabledInputs({
                 etiquetas: false,
@@ -132,7 +132,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
                 coleta: false,
                 entrega: false,
             });
-            form.reset();
+            //form.reset();
             contentRef.current.innerText = '';
         } catch (error) {
             console.error('Erro ao enviar formulário:', error);
@@ -406,7 +406,10 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         <input id="uploadarquivo" name='uploadarquivo' type="file" />
                     </div>
                     <div>
-                        <hr />
+                        <p id={"assinatura-recebedor"} className={"label-assinatura"}>Assinatura do recebedor:</p>
+                        <hr/>
+                        <p id={"assinatura-entregador"} className={"label-assinatura"}>Assinatura do entregador:</p>
+                        <hr/>
                     </div>
                     <div className="form-group">
                         {loading ? (

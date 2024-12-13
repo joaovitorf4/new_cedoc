@@ -1,7 +1,7 @@
 .Form form {
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 70vw;
   gap: 1.5em;
   padding: 3em;
   border-radius: 1em;
@@ -33,9 +33,17 @@
   width: 40%;
 }
 
+#assinatura-entregador{
+  margin-top: 8vh;
+}
+
+.label-assinatura {
+  font-size: 1.5em;
+}
+
 hr {
-  height: 2px;
-  background-color: #ccc;
+  height: 3px;
+  background-color: black;
   border: none;
 }
 
@@ -105,13 +113,13 @@ label {
 #numTel, #grauSoli {
   width: 40%;
 }
+
 #grausoli {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 1em;
 }
-
 
 .form3 .form-group {
   display: flex;

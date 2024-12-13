@@ -17,7 +17,7 @@ export const generatePDF = async (elementRef) => {
         compress: true // Enable compression
     });
 
-    const imgWidth = pdf.internal.pageSize.getWidth();
+    const imgWidth = pdf.internal.pageSize.getWidth(); //pegar tamanho a4
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
     const scaledWidth = imgWidth * 0.85;
@@ -38,7 +38,7 @@ export const generatePDF = async (elementRef) => {
 
     // alert("Formulário enviado!");
     let file = pdf.output('arraybuffer');
+    pdf.save('form.pdf');
     return file;
-    // pdf.save('generated.pdf');
 
   };
