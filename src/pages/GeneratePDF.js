@@ -38,7 +38,7 @@ export const generatePDF = async (elementRef) => {
 
     // alert("Formulário enviado!");
     let file = pdf.output('arraybuffer');
-    pdf.save('form.pdf');
+    // pdf.save('form.pdf');
     return file;
 
   };

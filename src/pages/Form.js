@@ -41,7 +41,7 @@ const Form = ({ bgImg = `url(${background})` }) => {
             return;
         }
 
-    //setLoading(true);
+    setLoading(true);
 
     const form = event.target;
 
@@ -108,19 +108,19 @@ const Form = ({ bgImg = `url(${background})` }) => {
             let file = await generatePDF(elementRef);
             let files = document.getElementById("uploadarquivo").files;
     
-            // if (files.length === 0) {
-            //     response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
-            // } else {
-            //     response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
-            // }
+            if (files.length === 0) {
+                response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file);
+            } else {
+                response = await filedirector(requisitante, telefone, empresa, email, meio, grau, observacao, caixasVaziasIn, etiquetasIn, lacresIn, fitasIn, requisicoesIn, coletaIn, entregaIn, file, files[0]);
+            }
 
-            // setLoading(false);
-            // if (response === 0){
-            //     alert("Formulário enviado com sucesso!");
-            // }
-            // else{
-            //     alert("Erro enviando formulario!");
-            // }
+            setLoading(false);
+            if (response === 0){
+                alert("Formulário enviado com sucesso!");
+            }
+            else{
+                alert("Erro enviando formulario!");
+            }
 
             setEnabledInputs({
                 etiquetas: false,
