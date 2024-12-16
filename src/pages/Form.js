@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import './Form.css';
 import { filedirector } from "../components/filedirector";
 import logo from '../imgs/logo_cedoc.png';
@@ -140,8 +140,16 @@ const Form = ({ bgImg = `url(${background})` }) => {
             setLoading(false);
         }
     };
-    
-    
+
+    const [currentDate, setCurrentDate] = useState(new Date());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentDate(new Date());
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     const handleNumberChange = (event) => {
         const value = event.target.value;
@@ -164,6 +172,10 @@ const Form = ({ bgImg = `url(${background})` }) => {
                 <div className="form-header">
                     <img src={logo} alt="logo cedoc" />
                     <h1>Formulário de Requisição</h1>
+                    <div>
+                        <p>{currentDate.toLocaleDateString()}</p>
+                        <p>{currentDate.toLocaleTimeString()}</p>
+                    </div>
                 </div>
                 <div>
                     <hr />
@@ -405,11 +417,15 @@ const Form = ({ bgImg = `url(${background})` }) => {
                         <label htmlFor="uploadarquivo">Você pode anexar arquivos logo abaixo:</label>
                         <input id="uploadarquivo" name='uploadarquivo' type="file" />
                     </div>
-                    <div>
-                        <p id={"assinatura-recebedor"} className={"label-assinatura"}>Assinatura do recebedor:</p>
+                    <div className="assinatura">
+                        <p id={"assinatura-recebedor"} className={"ass-item"}>Ass.: CEDOC:</p>
                         <hr/>
-                        <p id={"assinatura-entregador"} className={"label-assinatura"}>Assinatura do entregador:</p>
+                        <p className={"ass-item"}>Data:___/___/___</p>
+                    </div>
+                    <div className="assinatura">
+                        <p id={"assinatura-entregador"} className={"ass-item"}>Ass.: Cliente:</p>
                         <hr/>
+                        <p className={"ass-item"}>Data:___/___/___</p>
                     </div>
                     <div className="form-group">
                         {loading ? (
