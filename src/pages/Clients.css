@@ -68,12 +68,8 @@ main p:hover {
 }
 
 .logos-carousel .logo-item {
-  filter: grayscale(100%);
-  transition: all .2s ease-in;
-}
-
-.logos-carousel .logo-item:hover {
   filter: grayscale(0%);
+  transition: all .2s ease-in;
 }
 
 .logo-link:hover {
