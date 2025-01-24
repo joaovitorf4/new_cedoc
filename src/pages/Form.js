@@ -400,10 +400,11 @@ const Form = ({ bgImg = `url(${background})` }) => {
                             contentEditable="true"
                             required
                             ref={contentRef}
-                            maxlength="100"
+                            maxlength="150"
+                            rows="10"
                             style={{ direction: 'ltr', textAlign: 'left' }}
                         />
-                        <p id="warning">Aviso: Há um limite de 100 caracteres no envio do formulário, caso esse limite seja excedido recomenda-se enviar um arquivo .xlsx ou .docx com as observações desejadas</p>
+                        <p id="warning">Aviso: Há um limite de 150 caracteres no envio do formulário, caso esse limite seja excedido recomenda-se enviar um arquivo .xlsx ou .docx com as observações desejadas</p>
                     </div>
                     <div className="form-group">
                         <strong>
