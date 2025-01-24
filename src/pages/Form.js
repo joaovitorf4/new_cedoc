@@ -393,14 +393,17 @@ const Form = ({ bgImg = `url(${background})` }) => {
                 <div className="form3">
                     <div className="form-group">
                         <label htmlFor="observacao" className="bold-it">Observação do Pedido</label>
-                        <div
+                        
+                        <textarea
                             id="observacao"
                             name="observacao"
                             contentEditable="true"
                             required
                             ref={contentRef}
+                            maxlength="100"
                             style={{ direction: 'ltr', textAlign: 'left' }}
                         />
+                        <p id="warning">Aviso: Há um limite de 100 caracteres no envio do formulário, caso esse limite seja excedido recomenda-se enviar um arquivo .xlsx ou .docx com as observações desejadas</p>
                     </div>
                     <div className="form-group">
                         <strong>

@@ -116,7 +116,7 @@ function Auth({bgImg = `url(${background})`}) {
           </div>
 
           <div id="footer-small">
-            <p>© Copyright 2006-2024 Efalia GmbH - All rights reserved.</p>
+            <p>© Copyright 2006-2025 Efalia GmbH - All rights reserved.</p>
           </div>
         </div>
       </div>
