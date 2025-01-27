@@ -148,18 +148,6 @@ label {
   text-align: justify;
 }
 
-#observacao {
-  background-color: white;
-  width: 100%;
-  min-height: 10vw;
-  font-size: 1.5em;
-  text-align: left;
-  border: 1px solid;
-  padding: .5em;
-  border-radius: .25em; 
-  max-width: 50vw;
-}
-
 #loginpane {
   background-color: var(--white);
 }
@@ -366,6 +354,7 @@ input::file-selector-button {
 }
 
 #warning{
+  color: red;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -403,11 +392,6 @@ input::file-selector-button {
 
   .Form form {
     width: 90vw;
-  }
-
-  #observacao {
-    max-width: none;
-    width: 80vw;
   }
 
   .form-group {
