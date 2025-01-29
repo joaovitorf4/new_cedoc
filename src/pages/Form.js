@@ -166,20 +166,23 @@ const Form = ({ bgImg = `url(${background})` }) => {
         }));
     };
 
-    const [texto, setTexto] = useState('');
-    const maxLength = 140; 
-    const handleObservacaoChange = (e) => {
-        const novoTexto = e.target.innerText;
-        if (novoTexto.length <= maxLength) {
-            setTexto(novoTexto);
-        } else {
-            
-            e.preventDefault();
-            e.stopPropagation();
-            e.target.innerText = novoTexto.substring(0, maxLength);
+    const handleInput = () => {
+        const element = contentRef.current;
+        if (element.scrollHeight > 300) {
+          element.innerHTML = element.innerHTML.slice(0, element.innerHTML.lastIndexOf(" "));
         }
-    };
+      };
 
+      const handleKeyDown = (e) => {
+        const element = contentRef.current;
+    
+        if (element.scrollHeight >= 300) {
+          if (e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') {
+            e.preventDefault();
+          }
+        }
+      };
+    
     return (
         <div className="Form" style={style}>
             <form onSubmit={handleSubmit} ref={elementRef} style={{ background: '#ffffff', whiteSpace: 'pre-wrap' }} id="myForm">
@@ -415,19 +418,18 @@ const Form = ({ bgImg = `url(${background})` }) => {
                             style={{
                                 width: '900px',
                                 height: '300px',
+                                overflowY: 'clip',
                                 border: '1px solid black',
                                 padding: '5px',
-                                whiteSpace: 'pre-wrap',
-                                overflowY: 'auto',
                                 direction: 'ltr', 
                                 textAlign: 'left',
                                 fontSize: '20px',
                               }}
                             ref={contentRef}
-                            onInput={handleObservacaoChange}/>
-                        <p>{maxLength - texto.length} caracteres restantes</p>     
-                        <p id="warning">Aviso: Há um limite de {maxLength} caracteres no envio do formulário, caso esse limite seja excedido recomenda-se enviar um arquivo .xlsx ou .docx com as observações desejadas</p>
-                             
+                            onInput={handleInput}
+                            onKeyDown={handleKeyDown}
+                            />
+                            <p id='warning'>Aviso: Não exceder o limite do formulário</p>
                     </div>
                     <div className="form-group">
                         <strong>

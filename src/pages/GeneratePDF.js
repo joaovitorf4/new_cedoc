@@ -20,8 +20,8 @@ export const generatePDF = async (elementRef) => {
     const imgWidth = pdf.internal.pageSize.getWidth(); //pegar tamanho a4
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    const scaledWidth = imgWidth * 0.85;
-    const scaledHeight = imgHeight * 0.85;
+    const scaledWidth = imgWidth * 0.9;
+    const scaledHeight = imgHeight * 0.9;
 
     const marginX = (imgWidth - scaledWidth) / 2;
     const marginY = (pdf.internal.pageSize.getHeight() - scaledHeight) / 2;

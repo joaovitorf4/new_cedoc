@@ -1,8 +1,8 @@
 import {username} from "../pages/Auth";
 import {md5} from "js-md5";
 
-// let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
-let baseurl = "http://192.168.0.87:9000/filedirector/rest/v1/";
+let baseurl = "https://fd.cedoc.net.br/filedirector/rest/v1/";
+// let baseurl = "http://192.168.0.87:9000/filedirector/rest/v1/";
 
 let Token = '';
 
